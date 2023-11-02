@@ -1,0 +1,16 @@
+<!-- < % if user_signed_in? %> -->
+  <%= link_to 'Publicar Perro Perdido', new_perdido_path %>
+ 
+ <!-- < % end % > -->
+ <% if @perdidos.empty?%>
+    <p> No hay Perros Perdidos</p>
+ <% else %>
+    <% @perdidos.each do |perdido| %>
+    <%= link_to perdido_path(perdido.id) do %>
+      <h3><%= perdido.nombre %></h3>
+    <% end %>
+    <p>Tiene <%=perdido.edad%> años y se perdió en <%= perdido.ubicacion %> </p>
+    <p>Su altura es <%= perdido.tamano %> cm y de raza: <%= perdido.raza %> </p>
+    <% end%>
+
+  <% end%>

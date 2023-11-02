@@ -1,0 +1,6 @@
+<%= link_to 'volver', perdidos_path %>
+<h2><%= @perdido.nombre %>   </h2>
+<p>Tiene <%=@perdido.edad%> años y se perdió en <%= @perdido.ubicacion %> </p>
+<p>Su altura es <%= @perdido.tamano %> cm y de raza: <%= @perdido.raza %> </p>
+  <%= image_tag @perdido.photo, width: 200 if @perdido.photo.attached? %>
+<%= render 'shared/formulariocontactar' %>
