@@ -32801,3 +32801,23 @@ Started GET "/hfhfd" for 127.0.0.1 at 2023-11-02 16:05:29 -0300
   
 ActionController::RoutingError (No route matches [GET] "/hfhfd"):
   
+Started GET "/" for 127.0.0.1 at 2023-11-02 17:50:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 39ms (ActiveRecord: 0.0ms | Allocations: 2880)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 17:50:27 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 6.7ms | Allocations: 826)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 38.1ms | Allocations: 4860)
+  Rendered layout layouts/application.html.erb (Duration: 252.6ms | Allocations: 43825)
+Completed 200 OK in 333ms (Views: 274.1ms | ActiveRecord: 2.0ms | Allocations: 53106)
+
+
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-02 17:50:35 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perdidos"):
+  
