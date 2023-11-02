@@ -38616,3 +38616,33 @@ Processing by MainController#home as HTML
 Completed 200 OK in 31ms (Views: 23.5ms | ActiveRecord: 1.4ms | Allocations: 8584)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-02 18:25:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.0ms | Allocations: 2864)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 18:25:11 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 6.1ms | Allocations: 814)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 30.8ms | Allocations: 5008)
+  Rendered layout layouts/application.html.erb (Duration: 181.4ms | Allocations: 49820)
+Completed 200 OK in 229ms (Views: 193.8ms | ActiveRecord: 1.8ms | Allocations: 59114)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
+Started GET "/cuidadores" for 127.0.0.1 at 2023-11-02 18:27:29 -0300
+Processing by CuidadoresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cuidadores/index.html.erb within layouts/application
+  [1m[36mCuidador Load (0.3ms)[0m  [1m[34mSELECT "cuidadors".* FROM "cuidadors"[0m
+  ↳ app/views/cuidadores/index.html.erb:5
+  Rendered cuidadores/index.html.erb within layouts/application (Duration: 18.2ms | Allocations: 5256)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 8703)
+Completed 200 OK in 33ms (Views: 27.5ms | ActiveRecord: 1.4ms | Allocations: 10104)
+
+
