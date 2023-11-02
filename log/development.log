@@ -32611,3 +32611,149 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 4750)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:12:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.6ms | Allocations: 826)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 26.0ms | Allocations: 5393)
+  Rendered layout layouts/application.html.erb (Duration: 167.3ms | Allocations: 44368)
+Completed 200 OK in 236ms (Views: 184.5ms | ActiveRecord: 1.1ms | Allocations: 56423)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 15:12:35 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 470)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:12:35 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 186)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1597)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 4213)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 4977)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 15:12:38 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 435)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:12:38 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 186)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1597)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 4214)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 4992)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 15:12:40 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 337)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:12:40 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1528)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4060)
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 4771)
+
+
+Started GET "/homeCampana" for 127.0.0.1 at 2023-11-02 15:12:47 -0300
+Processing by ApplicationController#homeCampana as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 325)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:12:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1528)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 4035)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.0ms | Allocations: 4728)
+
+
+Started GET "/homeCampana" for 127.0.0.1 at 2023-11-02 15:13:10 -0300
+Processing by ApplicationController#homeCampana as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 328)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:13:10 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1528)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 4035)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 4737)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 15:13:18 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 328)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:13:18 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1528)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4035)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 4728)
+
+
+Started GET "/homeCampana" for 127.0.0.1 at 2023-11-02 15:13:37 -0300
+Processing by ApplicationController#homeCampana as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:13:37 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1528)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 4035)
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 4725)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 15:13:38 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:13:38 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1528)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 4051)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 4749)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 15:13:39 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:13:40 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1528)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 4044)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 4734)
+
+
