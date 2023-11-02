@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Veterinaria Oh My Dog</title>
+    <title>VeterinariaOhMyDog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "custom_link", media: "all" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application" %>
   </head>
-
+  <h1>Veteriana Oh my dog</h1>
+  <h3>Perros Perdidos</h3>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <p class="navbar-text pull-right">
-
-
-
     <%= yield %>
   </body>
 </html>

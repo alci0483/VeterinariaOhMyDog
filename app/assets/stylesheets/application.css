@@ -13,25 +13,3 @@
  *= require_tree .
  *= require_self
  */
- /* application.css */
- nav {
-   background-color: #333; /* Color de fondo de la barra de navegación */
-   color: #fff; /* Color del texto */
-   padding: 10px 0; /* Espacio de relleno en la parte superior e inferior */
- }
-
- .nav-list {
-   list-style: none; /* Elimina los puntos de la lista */
-   display: flex; /* Muestra los elementos de la lista en línea */
-   padding: 0;
-   margin: 0;
- }
-
- .nav-item {
-   margin-right: 20px; /* Espacio entre elementos de la lista */
- }
-
- .nav-link {
-   text-decoration: none; /* Elimina la subrayado de los enlaces */
-   color: #fff; /* Color del texto de los enlaces */
- }
