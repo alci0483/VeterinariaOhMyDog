@@ -33114,3 +33114,20 @@ Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.5ms | Allocations: 3645
   
 ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
   
+Started GET "/" for 127.0.0.1 at 2023-11-02 17:23:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 24.1ms | Allocations: 4626)
+  Rendered layout layouts/application.html.erb (Duration: 152.9ms | Allocations: 48577)
+Completed 200 OK in 179ms (Views: 157.6ms | ActiveRecord: 1.5ms | Allocations: 54122)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
