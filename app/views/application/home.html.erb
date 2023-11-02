@@ -6,53 +6,115 @@
   <title>Veterinaria Oh My Dog</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-success p-2 text-dark bg-opacity-50 " >
 
   <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success p-2 text-white bg-opacity-25 border border-success p-2 mb-2" >
     <div class="container">
 
-
-      <a class="navbar-brand" href="#" style="font-size: 34px;">Veterinaria Oh My Dog</a>
+      <a class="navbar-brand" style="font-size: 35px;">Veterinaria Oh My Dog </a>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Cerrar Sesión</a>
+          <% if user_signed_in? %>
+            <%= link_to destroy_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+                <p1> Cerrar Sesión </p1>
+              </div>
+            <% end %>
+          <% end %>
         </li>
       </ul>
     </div>
   </nav>
 
   <!-- Sección "Quiénes Somos" -->
-  <div class="bg-light py-4">
+
+  <div class="bg-light py-4 border border-success p-2 mb-2 bg-success p-2 text-white bg-opacity-25">
     <div class="container">
-      <p class="text-center mb-0">Somos una veterinaria especializada en el cuidado de perros. ¡Estamos aquí para ayudarte!</p>
+        <h4 class="text-center text-black"> ¿Quiénes Somos? </h4>
+        <p class="text-center text-black">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
+        compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
+        convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
+        diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
+        perros y sus familias.
+        </p>
     </div>
   </div>
 
   <!-- Sección de Servicios -->
-  <div class="container my-5">
-    <div class="row">
-      <div class="col-md-6">
-        <!-- Servicio 1 -->
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Servicio 1</h5>
-            <p class="card-text">Descripción del servicio 1.</p>
+  <div class="container-fluid my-5 ">
+
+    <div class="row gx-5">
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Gestion de Veterinaria general</h5>
+                <p class="card-text text-center">Aca podras sacar turnos para que tu perrito tenga
+                la mejor atencion sobre su salud</p>
+              </div>
+            <% end %>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-md-6">
-        <!-- Servicio 2 -->
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Servicio 2</h5>
-            <p class="card-text">Descripción del servicio 2.</p>
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Adopcion de Perros</h5>
+                <p class="card-text text-center">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
+                queridos amigos de cuatro paras</p>
+              </div>
+            <% end %>
           </div>
-        </div>
+      </div>
+    </div>
+
+    <div class="row gx-5">
+      <div class="col-md-6">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to main_home_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Paseadores y Cuidadores</h5>
+                <p class="card-text text-center">Encuentra personas tambien amantes de los perros que puedan
+                  ayudarte con tu mascota cuando tu no puedas </p>
+                </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Perros Perdidos y encontrados</h5>
+                <p class="card-text text-center">Difundamos informacion para que nuetros amigos caninos
+                  no pasen tiempo lejos de sus familias</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="row gx-5">
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Campañas</h5>
+                <p class="card-text text-center">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
       </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
