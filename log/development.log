@@ -38500,3 +38500,19 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 86ms (Views: 73.1ms | ActiveRecord: 0.6ms | Allocations: 53335)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-02 17:32:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 31ms (ActiveRecord: 0.0ms | Allocations: 2853)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 17:32:11 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.4ms | Allocations: 814)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 23.0ms | Allocations: 5008)
+  Rendered layout layouts/application.html.erb (Duration: 308.4ms | Allocations: 54532)
+Completed 200 OK in 356ms (Views: 322.7ms | ActiveRecord: 1.4ms | Allocations: 63814)
+
+
