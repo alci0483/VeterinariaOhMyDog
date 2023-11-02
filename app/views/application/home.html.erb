@@ -21,6 +21,12 @@
                 <p1> Cerrar Sesión </p1>
               </div>
             <% end %>
+          <% else %>
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+                <p1> Iniciar Sesión </p1>
+              </div>
+            <% end %>
           <% end %>
         </li>
       </ul>
