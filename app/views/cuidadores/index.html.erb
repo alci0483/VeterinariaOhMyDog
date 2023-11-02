@@ -1,0 +1,20 @@
+
+<div class="cuidadores-list">
+  <h1>Lista de cuidadores de Perros</h1>
+  <ul>
+    <% @cuidadores.each do |cuidador| %>
+      <li class="cuidador-item">
+        <div class="cuidador-avatar">
+          <!-- Agrega la imagen del paseador aquí -->
+        </div>
+        <div class="cuidador-info">
+          <h2><%= cuidador.nombre %> <%= cuidador.apellido %></h2>
+          <p><strong>Horarios:</strong> <%= cuidador.horarios %></p>
+          <p><strong>Ubicación:</strong> <%= cuidador.ubicacion %></p>
+          <a class="btn btn-primary" href="<%= cuidadore_path(cuidador) %>">Ver detalles</a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <a class="btn btn-secondary" href="<%= root_path %>">Volver</a>
+</div>

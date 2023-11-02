@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @paseador.nombre %></title>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- Columna 1: Información del Paseador -->
+      <div class="col-md-6">
+        <h1><%= @paseador.nombre %></h1>
+        <p>Apellido: <%= @paseador.apellido %></p>
+        <p>Horarios: <%= @paseador.horarios %></p>
+        <p>Ubicación: <%= @paseador.ubicacion %></p>
+        <p>Contacto: <%= @paseador.contacto %></p>
+
+        <%= link_to "Volver", root_path, class: "btn btn-primary" %>
+
+
+      </div>
+
+
+    </div>
+  </div>
+</body>
+</html>
