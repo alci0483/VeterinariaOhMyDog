@@ -32757,3 +32757,8 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 4734)
 
 
+Started GET "/perdidos/" for 127.0.0.1 at 2023-11-02 15:49:48 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/perdidos"):
+  
