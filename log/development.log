@@ -33228,3 +33228,16 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 2905)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 18:35:43 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1387)
+  Rendered layout layouts/application.html.erb (Duration: 131.7ms | Allocations: 45325)
+Completed 200 OK in 186ms (Views: 146.5ms | ActiveRecord: 1.3ms | Allocations: 57006)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
