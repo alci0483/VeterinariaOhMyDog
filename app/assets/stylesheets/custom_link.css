@@ -1,0 +1,9 @@
+.custom-link {
+  color: green; /* Cambia el color del texto a verde */
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  /* Otros estilos que desees aplicar */
+}
+.navigation {
+  display: flex; /* Utiliza flexbox para distribuir elementos horizontalmente */
+  align-items: center; /* Alinea verticalmente los elementos en el centro */
+}
