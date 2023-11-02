@@ -1,0 +1,19 @@
+<div class="paseadores-list">
+  <h1>Lista de Paseadores de Perros</h1>
+  <ul>
+    <% @paseadores.each do |paseador| %>
+      <li class="paseador-item">
+        <div class="paseador-avatar">
+          <!-- Agrega la imagen del paseador aquí -->
+        </div>
+        <div class="paseador-info">
+          <h2><%= paseador.nombre %> <%= paseador.apellido %></h2>
+          <p><strong>Horarios:</strong> <%= paseador.horarios %></p>
+          <p><strong>Ubicación:</strong> <%= paseador.ubicacion %></p>
+          <a class="btn btn-primary" href="<%= paseadore_path(paseador) %>">Ver detalles</a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <a class="btn btn-secondary" href="<%= root_path %>">Volver</a>
+</div>

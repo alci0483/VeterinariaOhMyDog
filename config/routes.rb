@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root 'main#home'
+
+  resources :cuidadores, only: [:show,:index, :new, :create]
+  resources :paseadores, only: [:index,:show,:new, :create, :edit, :update]
+
+
+
 
   # Defines the root path route ("/")
     get '/home', to: 'application#home'
@@ -7,5 +14,6 @@ Rails.application.routes.draw do
     get '/homeCampana', to: 'application#homeCampana'
 
   # root "articles#index"
-  root "application#home"
+  #root "application#home"
+
 end
