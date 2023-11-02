@@ -32762,3 +32762,18 @@ Started GET "/perdidos/" for 127.0.0.1 at 2023-11-02 15:49:48 -0300
   
 ActionController::RoutingError (No route matches [GET] "/perdidos"):
   
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 15:55:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.5ms | Allocations: 826)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 26.1ms | Allocations: 5392)
+  Rendered layout layouts/application.html.erb (Duration: 224.1ms | Allocations: 42780)
+Completed 200 OK in 293ms (Views: 239.1ms | ActiveRecord: 1.4ms | Allocations: 54444)
+
+
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-02 15:55:26 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perdidos"):
+  
