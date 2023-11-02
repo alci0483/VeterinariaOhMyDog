@@ -29110,3 +29110,3439 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 4428)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-02 11:54:50 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms | Allocations: 6437)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 11:54:51 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 850)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 4901)
+  Rendered layout layouts/application.html.erb (Duration: 51.2ms | Allocations: 17393)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.6ms | Allocations: 28753)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+app/assets/config/manifest.js:4
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:09:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms | Allocations: 2845)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:09:31 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 850)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 4171)
+  Rendered layout layouts/application.html.erb (Duration: 68.0ms | Allocations: 27502)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.7ms | Allocations: 37249)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+app/assets/config/manifest.js:4
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:10:01 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 187)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1426)
+  Rendered layout layouts/application.html.erb (Duration: 74.0ms | Allocations: 47831)
+Completed 200 OK in 76ms (Views: 74.6ms | ActiveRecord: 0.0ms | Allocations: 48665)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:10:28 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alexis@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "alexis@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 225ms (ActiveRecord: 0.1ms | Allocations: 6452)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:10:28 -0300
+Processing by MainController#home as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2924)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 5700)
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 0.6ms | Allocations: 9152)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-02 12:10:40 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 8ms (ActiveRecord: 0.1ms | Allocations: 2961)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:10:40 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:10:40 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 187)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1370)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3986)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 4711)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:18:34 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 228)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1610)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 16477)
+Completed 200 OK in 23ms (Views: 18.4ms | ActiveRecord: 0.3ms | Allocations: 20103)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:18:36 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1301)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3807)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 4557)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:18:56 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alexis@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "alexis@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 218ms (ActiveRecord: 0.1ms | Allocations: 2877)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:18:56 -0300
+Processing by MainController#home as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1675)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4447)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 7721)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-02 12:19:03 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 3ms (ActiveRecord: 0.1ms | Allocations: 2117)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:19:03 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:19:03 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 186)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1342)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3859)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 4557)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:20:22 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 228)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1611)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 16465)
+Completed 200 OK in 22ms (Views: 16.7ms | ActiveRecord: 0.8ms | Allocations: 20524)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:20:24 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1300)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3828)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4567)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:20:26 -0300
+Processing by MainController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  Rendered main/home.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2357)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2446)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 4107)
+
+
+  
+ActionView::Template::Error (undefined method `admin?' for nil:NilClass
+
+'.freeze;     if current_user.admin? 
+                             ^^^^^^^):
+     7:       <a href="<%= edit_user_registration_path %>" class="nav-link">Editar Perfil</a>
+     8:     </li>
+     9: 
+    10:     <% if current_user.admin? %>
+    11:       <li class="nav-item">
+    12:         <a href="<%= new_cuidadore_path %>" class="nav-link">Publicar Cuidador</a>
+    13:       </li>
+  
+app/views/main/home.html.erb:10
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:20:43 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 1291)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:20:43 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 228)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1595)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 16463)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 0.5ms | Allocations: 20500)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:22:47 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:22:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1300)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3807)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4511)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:23:17 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1300)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3805)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4465)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:23:18 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1300)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3805)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 4456)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:23:26 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:23:26 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1300)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3807)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 4465)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:23:54 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alexis@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "alexis@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 218ms (ActiveRecord: 0.1ms | Allocations: 2864)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:23:54 -0300
+Processing by MainController#home as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2200)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 4994)
+Completed 200 OK in 15ms (Views: 6.1ms | ActiveRecord: 0.7ms | Allocations: 9750)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:24:24 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3214)
+  Rendered layout layouts/application.html.erb (Duration: 66.4ms | Allocations: 41119)
+Completed 200 OK in 99ms (Views: 68.1ms | ActiveRecord: 1.1ms | Allocations: 56918)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-02 12:24:37 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 4ms (ActiveRecord: 0.1ms | Allocations: 3379)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:24:37 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 452)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:24:37 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 839)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 3889)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6599)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 8178)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:24:48 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"byron@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "byron@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 221ms (ActiveRecord: 0.2ms | Allocations: 4283)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:24:48 -0300
+Processing by MainController#home as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1170)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3835)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 5700)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:25:51 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1569)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:25:51 -0300
+Processing by MainController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1137)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3654)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 5276)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-02 12:25:55 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 3ms (ActiveRecord: 0.1ms | Allocations: 1814)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:25:55 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:25:55 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 186)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1341)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3873)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 4558)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:25:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1301)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3806)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 4457)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:26:20 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:26:20 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1300)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3807)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4483)
+
+
+Started GET "/users/sign_upjnajkn" for 127.0.0.1 at 2023-11-02 12:29:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_upjnajkn"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:33:55 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 839)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 4324)
+  Rendered layout layouts/application.html.erb (Duration: 80.3ms | Allocations: 42289)
+Completed 200 OK in 107ms (Views: 83.3ms | ActiveRecord: 1.7ms | Allocations: 51924)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:34:07 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alexis@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "alexis@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 221ms (ActiveRecord: 0.1ms | Allocations: 5651)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:34:07 -0300
+Processing by ApplicationController#home as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 756)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3521)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 5891)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:34:35 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1748)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:34:35 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2730)
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 4313)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:37:55 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2728)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 4263)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:37:59 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2728)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 4271)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 12:38:10 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/homeAdopcion.html.erb within layouts/application
+  Rendered application/homeAdopcion.html.erb within layouts/application (Duration: 0.4ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2700)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 4351)
+
+
+Started GET "/homeCampana" for 127.0.0.1 at 2023-11-02 12:38:14 -0300
+Processing by ApplicationController#homeCampana as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/homeCampana.html.erb within layouts/application
+  Rendered application/homeCampana.html.erb within layouts/application (Duration: 0.5ms | Allocations: 181)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2695)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 4285)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:38:27 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2729)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 4317)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:39:35 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 733)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3685)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 5870)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:47:53 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.9ms | Allocations: 827)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 15964)
+Completed 200 OK in 22ms (Views: 14.3ms | ActiveRecord: 0.3ms | Allocations: 21893)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:48:49 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 252)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2765)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 4496)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:48:57 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 252)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2765)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 4314)
+
+
+Started GET "/hfgjfj" for 127.0.0.1 at 2023-11-02 12:49:04 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/hfgjfj"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:50:05 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 2.7ms | Allocations: 823)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3774)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.1ms | Allocations: 5933)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:50:07 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1984)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:50:07 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 283)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2931)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 4548)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:50:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.1ms | Allocations: 1494)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:50:12 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 260)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2799)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 4374)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:56:24 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1516)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1605)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms | Allocations: 3987)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria Oh My Dog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-success p-2 text-dark bg-opacity-50 " >
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success p-2 text-white bg-opacity-25 border border-success p-2 mb-2" >
+    <div class="container">
+
+      <a class="navbar-brand" style="font-size: 35px;">Veterinaria Oh My Dog </a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <%= if user_signed_in? %>
+            <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+                <p1> Cerrar Sesión </p1>
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+                <p1> Iniciar Sesión </p1>
+              </div>
+            <% end %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sección "Quiénes Somos" -->
+
+  <div class="bg-light py-4 border border-success p-2 mb-2 bg-success p-2 text-white bg-opacity-25">
+    <div class="container">
+        <h4 class="text-center text-black"> ¿Quiénes Somos? </h4>
+        <p class="text-center text-black">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
+        compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
+        convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
+        diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
+        perros y sus familias.
+        </p>
+    </div>
+  </div>
+
+  <!-- Sección de Servicios -->
+  <div class="container-fluid my-5 ">
+
+    <div class="row gx-5">
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Gestion de Veterinaria general</h5>
+                <p class="card-text text-center">Aca podras sacar turnos para que tu perrito tenga
+                la mejor atencion sobre su salud</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Adopcion de Perros</h5>
+                <p class="card-text text-center">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
+                queridos amigos de cuatro paras</p>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+
+    <div class="row gx-5">
+      <div class="col-md-6">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Paseadores y Cuidadores</h5>
+                <p class="card-text text-center">Encuentra personas tambien amantes de los perros que puedan
+                  ayudarte con tu mascota cuando tu no puedas </p>
+                </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Perros Perdidos y encontrados</h5>
+                <p class="card-text text-center">Difundamos informacion para que nuetros amigos caninos
+                  no pasen tiempo lejos de sus familias</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="row gx-5">
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Campañas</h5>
+                <p class="card-text text-center">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html lang="es">
+3:    <head>
+4:      <meta charset="UTF-8">
+5:      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6:      <title>Veterinaria Oh My Dog</title>
+7:      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+8:    </head>
+9:    <body class="bg-success p-2 text-dark bg-opacity-50 " >
+10:    
+11:      <!-- Barra de navegación -->
+12:      <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success p-2 text-white bg-opacity-25 border border-success p-2 mb-2" >
+13:        <div class="container">
+14:    
+15:          <a class="navbar-brand" style="font-size: 35px;">Veterinaria Oh My Dog </a>
+16:          <ul class="navbar-nav ms-auto">
+17:            <li class="nav-item">
+18:              <%= if user_signed_in? %>
+19:                <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+20:                  <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+21:                    <p1> Cerrar Sesión </p1>
+22:                  </div>
+23:                <% end %>
+24:              <% else %>
+25:                <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+26:                  <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+27:                    <p1> Iniciar Sesión </p1>
+28:                  </div>
+29:                <% end %>
+30:              <% end %>
+31:            </li>
+32:          </ul>
+33:        </div>
+34:      </nav>
+35:    
+36:      <!-- Sección "Quiénes Somos" -->
+37:    
+38:      <div class="bg-light py-4 border border-success p-2 mb-2 bg-success p-2 text-white bg-opacity-25">
+39:        <div class="container">
+40:            <h4 class="text-center text-black"> ¿Quiénes Somos? </h4>
+41:            <p class="text-center text-black">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
+42:            compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
+43:            convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
+44:            diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
+45:            perros y sus familias.
+46:            </p>
+47:        </div>
+48:      </div>
+49:    
+50:      <!-- Sección de Servicios -->
+51:      <div class="container-fluid my-5 ">
+52:    
+53:        <div class="row gx-5">
+54:          <div class="col-md-6 ">
+55:            <a class="nav-link" href="#">
+56:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+57:                <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+58:                  <div class="card-body">
+59:                    <h5 class="card-title text-center">Gestion de Veterinaria general</h5>
+60:                    <p class="card-text text-center">Aca podras sacar turnos para que tu perrito tenga
+61:                    la mejor atencion sobre su salud</p>
+62:                  </div>
+63:                <% end %>
+64:              </div>
+65:            </a>
+66:          </div>
+67:          <div class="col-md-6">
+68:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+69:                <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+70:                  <div class="card-body">
+71:                    <h5 class="card-title text-center">Adopcion de Perros</h5>
+72:                    <p class="card-text text-center">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
+73:                    queridos amigos de cuatro paras</p>
+74:                  </div>
+75:                <% end %>
+76:              </div>
+77:          </div>
+78:        </div>
+79:    
+80:        <div class="row gx-5">
+81:          <div class="col-md-6">
+82:            <a class="nav-link" href="#">
+83:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+84:                <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+85:                  <div class="card-body">
+86:                    <h5 class="card-title text-center">Paseadores y Cuidadores</h5>
+87:                    <p class="card-text text-center">Encuentra personas tambien amantes de los perros que puedan
+88:                      ayudarte con tu mascota cuando tu no puedas </p>
+89:                    </div>
+90:                <% end %>
+91:              </div>
+92:            </a>
+93:          </div>
+94:          <div class="col-md-6 ">
+95:            <a class="nav-link" href="#">
+96:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+97:                <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+98:                  <div class="card-body">
+99:                    <h5 class="card-title text-center">Perros Perdidos y encontrados</h5>
+100:                    <p class="card-text text-center">Difundamos informacion para que nuetros amigos caninos
+101:                      no pasen tiempo lejos de sus familias</p>
+102:                  </div>
+103:                <% end %>
+104:              </div>
+105:            </a>
+106:          </div>
+107:        </div>
+108:    
+109:        <div class="row gx-5">
+110:          <div class="col-md-6 ">
+111:            <a class="nav-link" href="#">
+112:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+113:                <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+114:                  <div class="card-body">
+115:                    <h5 class="card-title text-center">Campañas</h5>
+116:                    <p class="card-text text-center">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
+117:                  </div>
+118:                <% end %>
+119:              </div>
+120:            </a>
+121:          </div>
+122:        </div>
+123:      </div>
+124:    
+125:    </body>
+126:    </html>
+  
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:56:28 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1453)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1533)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 3252)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria Oh My Dog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-success p-2 text-dark bg-opacity-50 " >
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success p-2 text-white bg-opacity-25 border border-success p-2 mb-2" >
+    <div class="container">
+
+      <a class="navbar-brand" style="font-size: 35px;">Veterinaria Oh My Dog </a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <%= if user_signed_in? %>
+            <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+                <p1> Cerrar Sesión </p1>
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+                <p1> Iniciar Sesión </p1>
+              </div>
+            <% end %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sección "Quiénes Somos" -->
+
+  <div class="bg-light py-4 border border-success p-2 mb-2 bg-success p-2 text-white bg-opacity-25">
+    <div class="container">
+        <h4 class="text-center text-black"> ¿Quiénes Somos? </h4>
+        <p class="text-center text-black">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
+        compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
+        convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
+        diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
+        perros y sus familias.
+        </p>
+    </div>
+  </div>
+
+  <!-- Sección de Servicios -->
+  <div class="container-fluid my-5 ">
+
+    <div class="row gx-5">
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Gestion de Veterinaria general</h5>
+                <p class="card-text text-center">Aca podras sacar turnos para que tu perrito tenga
+                la mejor atencion sobre su salud</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Adopcion de Perros</h5>
+                <p class="card-text text-center">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
+                queridos amigos de cuatro paras</p>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+
+    <div class="row gx-5">
+      <div class="col-md-6">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Paseadores y Cuidadores</h5>
+                <p class="card-text text-center">Encuentra personas tambien amantes de los perros que puedan
+                  ayudarte con tu mascota cuando tu no puedas </p>
+                </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Perros Perdidos y encontrados</h5>
+                <p class="card-text text-center">Difundamos informacion para que nuetros amigos caninos
+                  no pasen tiempo lejos de sus familias</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="row gx-5">
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Campañas</h5>
+                <p class="card-text text-center">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html lang="es">
+3:    <head>
+4:      <meta charset="UTF-8">
+5:      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6:      <title>Veterinaria Oh My Dog</title>
+7:      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+8:    </head>
+9:    <body class="bg-success p-2 text-dark bg-opacity-50 " >
+10:    
+11:      <!-- Barra de navegación -->
+12:      <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success p-2 text-white bg-opacity-25 border border-success p-2 mb-2" >
+13:        <div class="container">
+14:    
+15:          <a class="navbar-brand" style="font-size: 35px;">Veterinaria Oh My Dog </a>
+16:          <ul class="navbar-nav ms-auto">
+17:            <li class="nav-item">
+18:              <%= if user_signed_in? %>
+19:                <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+20:                  <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+21:                    <p1> Cerrar Sesión </p1>
+22:                  </div>
+23:                <% end %>
+24:              <% else %>
+25:                <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+26:                  <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+27:                    <p1> Iniciar Sesión </p1>
+28:                  </div>
+29:                <% end %>
+30:              <% end %>
+31:            </li>
+32:          </ul>
+33:        </div>
+34:      </nav>
+35:    
+36:      <!-- Sección "Quiénes Somos" -->
+37:    
+38:      <div class="bg-light py-4 border border-success p-2 mb-2 bg-success p-2 text-white bg-opacity-25">
+39:        <div class="container">
+40:            <h4 class="text-center text-black"> ¿Quiénes Somos? </h4>
+41:            <p class="text-center text-black">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
+42:            compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
+43:            convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
+44:            diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
+45:            perros y sus familias.
+46:            </p>
+47:        </div>
+48:      </div>
+49:    
+50:      <!-- Sección de Servicios -->
+51:      <div class="container-fluid my-5 ">
+52:    
+53:        <div class="row gx-5">
+54:          <div class="col-md-6 ">
+55:            <a class="nav-link" href="#">
+56:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+57:                <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+58:                  <div class="card-body">
+59:                    <h5 class="card-title text-center">Gestion de Veterinaria general</h5>
+60:                    <p class="card-text text-center">Aca podras sacar turnos para que tu perrito tenga
+61:                    la mejor atencion sobre su salud</p>
+62:                  </div>
+63:                <% end %>
+64:              </div>
+65:            </a>
+66:          </div>
+67:          <div class="col-md-6">
+68:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+69:                <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+70:                  <div class="card-body">
+71:                    <h5 class="card-title text-center">Adopcion de Perros</h5>
+72:                    <p class="card-text text-center">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
+73:                    queridos amigos de cuatro paras</p>
+74:                  </div>
+75:                <% end %>
+76:              </div>
+77:          </div>
+78:        </div>
+79:    
+80:        <div class="row gx-5">
+81:          <div class="col-md-6">
+82:            <a class="nav-link" href="#">
+83:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+84:                <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+85:                  <div class="card-body">
+86:                    <h5 class="card-title text-center">Paseadores y Cuidadores</h5>
+87:                    <p class="card-text text-center">Encuentra personas tambien amantes de los perros que puedan
+88:                      ayudarte con tu mascota cuando tu no puedas </p>
+89:                    </div>
+90:                <% end %>
+91:              </div>
+92:            </a>
+93:          </div>
+94:          <div class="col-md-6 ">
+95:            <a class="nav-link" href="#">
+96:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+97:                <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+98:                  <div class="card-body">
+99:                    <h5 class="card-title text-center">Perros Perdidos y encontrados</h5>
+100:                    <p class="card-text text-center">Difundamos informacion para que nuetros amigos caninos
+101:                      no pasen tiempo lejos de sus familias</p>
+102:                  </div>
+103:                <% end %>
+104:              </div>
+105:            </a>
+106:          </div>
+107:        </div>
+108:    
+109:        <div class="row gx-5">
+110:          <div class="col-md-6 ">
+111:            <a class="nav-link" href="#">
+112:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+113:                <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+114:                  <div class="card-body">
+115:                    <h5 class="card-title text-center">Campañas</h5>
+116:                    <p class="card-text text-center">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
+117:                  </div>
+118:                <% end %>
+119:              </div>
+120:            </a>
+121:          </div>
+122:        </div>
+123:      </div>
+124:    
+125:    </body>
+126:    </html>
+  
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+Started GET "/dgfjfjj" for 127.0.0.1 at 2023-11-02 12:56:35 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/dgfjfjj"):
+  
+Started GET "/dgfjfjj" for 127.0.0.1 at 2023-11-02 12:57:01 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/dgfjfjj"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:57:07 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1497)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1586)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 3695)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria Oh My Dog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-success p-2 text-dark bg-opacity-50 " >
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success p-2 text-white bg-opacity-25 border border-success p-2 mb-2" >
+    <div class="container">
+
+      <a class="navbar-brand" style="font-size: 35px;">Veterinaria Oh My Dog </a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <%= if user_signed_in? %>
+            <%= link_to destroy_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+                <p1> Cerrar Sesión </p1>
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+                <p1> Iniciar Sesión </p1>
+              </div>
+            <% end %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sección "Quiénes Somos" -->
+
+  <div class="bg-light py-4 border border-success p-2 mb-2 bg-success p-2 text-white bg-opacity-25">
+    <div class="container">
+        <h4 class="text-center text-black"> ¿Quiénes Somos? </h4>
+        <p class="text-center text-black">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
+        compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
+        convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
+        diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
+        perros y sus familias.
+        </p>
+    </div>
+  </div>
+
+  <!-- Sección de Servicios -->
+  <div class="container-fluid my-5 ">
+
+    <div class="row gx-5">
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Gestion de Veterinaria general</h5>
+                <p class="card-text text-center">Aca podras sacar turnos para que tu perrito tenga
+                la mejor atencion sobre su salud</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Adopcion de Perros</h5>
+                <p class="card-text text-center">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
+                queridos amigos de cuatro paras</p>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+
+    <div class="row gx-5">
+      <div class="col-md-6">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Paseadores y Cuidadores</h5>
+                <p class="card-text text-center">Encuentra personas tambien amantes de los perros que puedan
+                  ayudarte con tu mascota cuando tu no puedas </p>
+                </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Perros Perdidos y encontrados</h5>
+                <p class="card-text text-center">Difundamos informacion para que nuetros amigos caninos
+                  no pasen tiempo lejos de sus familias</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="row gx-5">
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Campañas</h5>
+                <p class="card-text text-center">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
+              </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html lang="es">
+3:    <head>
+4:      <meta charset="UTF-8">
+5:      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6:      <title>Veterinaria Oh My Dog</title>
+7:      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+8:    </head>
+9:    <body class="bg-success p-2 text-dark bg-opacity-50 " >
+10:    
+11:      <!-- Barra de navegación -->
+12:      <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success p-2 text-white bg-opacity-25 border border-success p-2 mb-2" >
+13:        <div class="container">
+14:    
+15:          <a class="navbar-brand" style="font-size: 35px;">Veterinaria Oh My Dog </a>
+16:          <ul class="navbar-nav ms-auto">
+17:            <li class="nav-item">
+18:              <%= if user_signed_in? %>
+19:                <%= link_to destroy_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+20:                  <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+21:                    <p1> Cerrar Sesión </p1>
+22:                  </div>
+23:                <% end %>
+24:              <% else %>
+25:                <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+26:                  <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+27:                    <p1> Iniciar Sesión </p1>
+28:                  </div>
+29:                <% end %>
+30:              <% end %>
+31:            </li>
+32:          </ul>
+33:        </div>
+34:      </nav>
+35:    
+36:      <!-- Sección "Quiénes Somos" -->
+37:    
+38:      <div class="bg-light py-4 border border-success p-2 mb-2 bg-success p-2 text-white bg-opacity-25">
+39:        <div class="container">
+40:            <h4 class="text-center text-black"> ¿Quiénes Somos? </h4>
+41:            <p class="text-center text-black">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
+42:            compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
+43:            convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
+44:            diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
+45:            perros y sus familias.
+46:            </p>
+47:        </div>
+48:      </div>
+49:    
+50:      <!-- Sección de Servicios -->
+51:      <div class="container-fluid my-5 ">
+52:    
+53:        <div class="row gx-5">
+54:          <div class="col-md-6 ">
+55:            <a class="nav-link" href="#">
+56:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+57:                <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+58:                  <div class="card-body">
+59:                    <h5 class="card-title text-center">Gestion de Veterinaria general</h5>
+60:                    <p class="card-text text-center">Aca podras sacar turnos para que tu perrito tenga
+61:                    la mejor atencion sobre su salud</p>
+62:                  </div>
+63:                <% end %>
+64:              </div>
+65:            </a>
+66:          </div>
+67:          <div class="col-md-6">
+68:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+69:                <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+70:                  <div class="card-body">
+71:                    <h5 class="card-title text-center">Adopcion de Perros</h5>
+72:                    <p class="card-text text-center">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
+73:                    queridos amigos de cuatro paras</p>
+74:                  </div>
+75:                <% end %>
+76:              </div>
+77:          </div>
+78:        </div>
+79:    
+80:        <div class="row gx-5">
+81:          <div class="col-md-6">
+82:            <a class="nav-link" href="#">
+83:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+84:                <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+85:                  <div class="card-body">
+86:                    <h5 class="card-title text-center">Paseadores y Cuidadores</h5>
+87:                    <p class="card-text text-center">Encuentra personas tambien amantes de los perros que puedan
+88:                      ayudarte con tu mascota cuando tu no puedas </p>
+89:                    </div>
+90:                <% end %>
+91:              </div>
+92:            </a>
+93:          </div>
+94:          <div class="col-md-6 ">
+95:            <a class="nav-link" href="#">
+96:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+97:                <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+98:                  <div class="card-body">
+99:                    <h5 class="card-title text-center">Perros Perdidos y encontrados</h5>
+100:                    <p class="card-text text-center">Difundamos informacion para que nuetros amigos caninos
+101:                      no pasen tiempo lejos de sus familias</p>
+102:                  </div>
+103:                <% end %>
+104:              </div>
+105:            </a>
+106:          </div>
+107:        </div>
+108:    
+109:        <div class="row gx-5">
+110:          <div class="col-md-6 ">
+111:            <a class="nav-link" href="#">
+112:              <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+113:                <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+114:                  <div class="card-body">
+115:                    <h5 class="card-title text-center">Campañas</h5>
+116:                    <p class="card-text text-center">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
+117:                  </div>
+118:                <% end %>
+119:              </div>
+120:            </a>
+121:          </div>
+122:        </div>
+123:      </div>
+124:    
+125:    </body>
+126:    </html>
+  
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:18: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/application/home.html.erb:24: syntax error, unexpected `else', expecting ')'
+app/views/application/home.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/application/home.html.erb:129: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:57:49 -0300
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 926)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3901)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 6272)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-02 12:57:53 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 11ms (ActiveRecord: 0.1ms | Allocations: 4766)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 12:57:53 -0300
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 12:57:53 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 663)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2472)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 5181)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 6470)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:01:05 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 602)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2371)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 5290)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 6803)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:01:07 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 183)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1299)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3804)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 4565)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:02:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1627)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4573)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 5971)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:02:38 -0300
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 374)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:02:38 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1058)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3567)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4285)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:03:15 -0300
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 337)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:03:15 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1058)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3565)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4237)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:04:14 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3084)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 4486)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:04:15 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2510)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 3259)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:04:56 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 965)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3905)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 5307)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:04:59 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 302)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2828)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3570)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:06:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 631)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3151)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 6073)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 7480)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:12:11 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2932)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3020)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 4493)
+
+
+  
+ActionView::Template::Error (Missing partial devise/sessions/__newhome.html.erb with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/alexis/Veterinaria_ohmydog/VeterinariaOhMyDog/app/views"
+  * "/home/alexis/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views"
+  * "/home/alexis/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views"
+  * "/home/alexis/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.8/app/views"
+  * "/home/alexis/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.8/app/views"
+
+Did you mean?  devise/sessions/newhome
+               devise/shared/error_messages
+               devise/shared/links
+               action_text/attachables/remote_image
+               active_storage/blobs/blob
+               action_text/attachables/missing_attachable):
+    1: <%= render "devise/sessions/_newhome.html.erb" %>
+    2: 
+    3: <h2>Log in</h2>
+    4: 
+  
+app/views/devise/sessions/new.html.erb:1
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:12:46 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2938)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3026)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4505)
+
+
+  
+ActionView::Template::Error (Missing partial devise/sessions/__newhome with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/alexis/Veterinaria_ohmydog/VeterinariaOhMyDog/app/views"
+  * "/home/alexis/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views"
+  * "/home/alexis/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views"
+  * "/home/alexis/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.8/app/views"
+  * "/home/alexis/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.8/app/views"
+
+Did you mean?  devise/sessions/newhome
+               devise/shared/error_messages
+               devise/shared/links
+               active_storage/blobs/blob
+               layouts/action_text/contents/content
+               action_text/contents/content):
+    1: <%= render "devise/sessions/_newhome" %>
+    2: 
+    3: <h2>Log in</h2>
+    4: 
+  
+app/views/devise/sessions/new.html.erb:1
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:12:56 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 1.2ms | Allocations: 935)
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 628)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3370)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6313)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 7820)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:15:01 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 644)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2479)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 5398)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 6885)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:15:03 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1322)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3827)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 4576)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:15:21 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 2.2ms | Allocations: 894)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1526)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4487)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 5894)
+
+
+Started GET "/dgfjfjj" for 127.0.0.1 at 2023-11-02 13:20:22 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/dgfjfjj"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:20:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 283)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 389)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2894)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3610)
+
+
+Started GET "/users/sign_injljh" for 127.0.0.1 at 2023-11-02 13:20:50 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_injljh"):
+  
+Started GET "/rails/info/routes?path=mai" for 127.0.0.1 at 2023-11-02 13:22:59 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"mai"}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3117)
+
+
+Started GET "/rails/info/routes?path=main" for 127.0.0.1 at 2023-11-02 13:23:01 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"main"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 875)
+
+
+Started GET "/rails/info/routes?path=ho" for 127.0.0.1 at 2023-11-02 13:23:08 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"ho"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 912)
+
+
+Started GET "/rails/info/routes?path=hom" for 127.0.0.1 at 2023-11-02 13:23:08 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"hom"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 912)
+
+
+Started GET "/rails/info/routes?path=home" for 127.0.0.1 at 2023-11-02 13:23:09 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"home"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 930)
+
+
+Started GET "/users/sign_injljh" for 127.0.0.1 at 2023-11-02 13:24:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_injljh"):
+  
+Started GET "/rails/info/routes?path=ma" for 127.0.0.1 at 2023-11-02 13:24:22 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"ma"}
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 3707)
+
+
+Started GET "/rails/info/routes?path=main" for 127.0.0.1 at 2023-11-02 13:24:23 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"main"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 899)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:25:36 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 1.0ms | Allocations: 911)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1557)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 16676)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.2ms | Allocations: 20775)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 13:25:39 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 464)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:25:39 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 315)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 427)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3052)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3807)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 13:25:45 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 334)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:25:45 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2904)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3571)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 13:25:46 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:25:46 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.4ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2904)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3597)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 13:25:50 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 334)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:25:50 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.6ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 2904)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 3597)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 13:25:51 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:25:51 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2914)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3585)
+
+
+Started GET "/homeCampana" for 127.0.0.1 at 2023-11-02 13:26:12 -0300
+Processing by ApplicationController#homeCampana as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 325)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:26:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2904)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3576)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:26:19 -0300
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 325)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:26:19 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.5ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2907)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 3589)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:26:26 -0300
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:26:26 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 1.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2904)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3618)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:26:26 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2902)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3577)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:26:33 -0300
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 307)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:26:33 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.5ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2911)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3593)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 13:26:38 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:26:38 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2904)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3603)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 13:26:40 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:26:40 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.4ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2904)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 3586)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 13:26:48 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:26:48 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.4ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2904)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3597)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:27:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.5ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2902)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3550)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 13:27:08 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:27:08 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2904)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 3591)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:27:17 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.7ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 2926)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 3579)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 13:27:29 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 316)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:27:29 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.5ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2904)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3597)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:27:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 1.2ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2902)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 3555)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 13:27:36 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 301)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:27:36 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2921)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3602)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:27:39 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.8ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2902)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3570)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 13:27:55 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 328)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:27:55 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2910)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 3600)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:34:05 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 2.1ms | Allocations: 911)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1566)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 16685)
+Completed 200 OK in 33ms (Views: 21.2ms | ActiveRecord: 0.4ms | Allocations: 20768)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 13:34:09 -0300
+Processing by MainController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  Rendered main/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 3040)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 3128)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 4959)
+
+
+  
+ActionView::Template::Error (undefined method `admin?' for nil:NilClass
+
+'.freeze;     if current_user.admin? 
+                             ^^^^^^^):
+     7:       <a href="<%= edit_user_registration_path %>" class="nav-link">Editar Perfil</a>
+     8:     </li>
+     9: 
+    10:     <% if current_user.admin? %>
+    11:       <li class="nav-item">
+    12:         <a href="<%= new_cuidadore_path %>" class="nav-link">Publicar Cuidador</a>
+    13:       </li>
+  
+app/views/main/home.html.erb:10
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 13:36:15 -0300
+Processing by MainController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3260)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 6261)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 1.0ms | Allocations: 7240)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-02 13:36:24 -0300
+Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 1ms (ActiveRecord: 0.0ms | Allocations: 542)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:36:24 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1277)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4030)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4720)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 13:36:33 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/homeAdopcion.html.erb within layouts/application
+  Rendered application/homeAdopcion.html.erb within layouts/application (Duration: 0.3ms | Allocations: 181)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2920)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3253)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 13:36:40 -0300
+Processing by MainController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1507)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4021)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 4319)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-02 13:36:56 -0300
+Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 1ms (ActiveRecord: 0.0ms | Allocations: 513)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:36:56 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 551)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3066)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3308)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:37:27 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 2.0ms | Allocations: 902)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1538)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4259)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 5426)
+
+
+Started GET "/users/sign_injljh" for 127.0.0.1 at 2023-11-02 13:47:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_injljh"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:41 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 1.6ms | Allocations: 902)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1539)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4476)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 5927)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:43 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2902)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3662)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:45 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2902)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3561)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:46 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.6ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2902)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 3540)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.7ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2902)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 3567)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 1.2ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2902)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 3555)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:48 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.7ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2902)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3552)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:48 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.7ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 2913)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 3564)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:49 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.7ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2912)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 3554)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:49 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.6ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2902)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 3561)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:49 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 1.4ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 2902)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 3549)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:50 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.6ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2902)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3552)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:50 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.7ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2902)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 3561)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:51 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.6ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2902)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3561)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:51 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.5ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2902)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 3550)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:52 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.7ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2902)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 3573)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:52 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 1.2ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 2902)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 3570)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:52 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 1.4ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 2914)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 3576)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:47:53 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.5ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2911)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3561)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:48:23 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 1.6ms | Allocations: 903)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1543)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4480)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 5872)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:48:26 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.5ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2902)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3637)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:48:27 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2902)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3567)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:48:27 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.4ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2902)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3567)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:48:31 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.8ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 2902)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 3555)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:48:31 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.6ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2902)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3561)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:48:38 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.6ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2902)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 3558)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:48:39 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.7ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2902)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3546)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:48:39 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.6ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 2902)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 3561)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:48:54 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1267)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4003)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4602)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 13:48:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/_newhome.html.erb (Duration: 0.5ms | Allocations: 291)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 401)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2907)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3579)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:49:10 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 541)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3054)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3295)
+
+
+Started GET "/main/home" for 127.0.0.1 at 2023-11-02 13:49:13 -0300
+Processing by MainController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2453)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5206)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.4ms | Allocations: 5913)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 13:49:17 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/homeAdopcion.html.erb within layouts/application
+  Rendered application/homeAdopcion.html.erb within layouts/application (Duration: 0.5ms | Allocations: 181)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2908)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3236)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:51:13 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1259)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4210)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 5086)
+
+
+Started GET "/iniciar_sesion" for 127.0.0.1 at 2023-11-02 13:51:16 -0300
+  
+SyntaxError (/home/alexis/Veterinaria_ohmydog/VeterinariaOhMyDog/app/controllers/sessions_controller.rb:10: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:10: syntax error, unexpected `end', expecting end-of-input
+app/controllers/sessions_controller.rb:10: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:51:52 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 714)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 15631)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 16243)
+
+
+Started GET "/iniciar_sesion" for 127.0.0.1 at 2023-11-02 13:51:54 -0300
+Processing by SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/iniciar_sesion".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 783)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/iniciar_sesion".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.9.3) app/controllers/devise_controller.rb:104:in `unknown_action!'
+devise (4.9.3) app/controllers/devise_controller.rb:79:in `assert_is_devise_resource!'
+devise (4.9.3) app/controllers/devise_controller.rb:117:in `require_no_authentication'
+activesupport (7.0.8) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.8) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:53:14 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1235)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4210)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 5097)
+
+
+Started GET "/iniciar_sesion" for 127.0.0.1 at 2023-11-02 13:53:16 -0300
+Processing by SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/iniciar_sesion".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 671)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/iniciar_sesion".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.9.3) app/controllers/devise_controller.rb:104:in `unknown_action!'
+devise (4.9.3) app/controllers/devise_controller.rb:79:in `assert_is_devise_resource!'
+devise (4.9.3) app/controllers/devise_controller.rb:117:in `require_no_authentication'
+activesupport (7.0.8) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.8) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:53:19 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 544)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3081)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3338)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:56:15 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1253)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4204)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 5072)
+
+
+Started GET "/iniciar_sesion" for 127.0.0.1 at 2023-11-02 13:56:17 -0300
+Processing by SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/iniciar_sesion".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 671)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/iniciar_sesion".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.9.3) app/controllers/devise_controller.rb:104:in `unknown_action!'
+devise (4.9.3) app/controllers/devise_controller.rb:79:in `assert_is_devise_resource!'
+devise (4.9.3) app/controllers/devise_controller.rb:117:in `require_no_authentication'
+activesupport (7.0.8) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.8) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2023-11-02 13:56:21 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 550)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3087)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 3344)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:02:46 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1244)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4219)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 5088)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:02:54 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 538)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3051)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3309)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:03:45 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1281)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4233)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 5113)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:03:46 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 529)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3058)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3316)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:03:47 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 559)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3080)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3320)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:04:33 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1262)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4213)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 5089)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:05:46 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 535)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3048)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3306)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:05:47 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 541)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3054)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 3294)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:05:53 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 532)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3045)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3285)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:06:06 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1832)
+  Rendered layout layouts/application.html.erb (Duration: 67.2ms | Allocations: 39938)
+Completed 200 OK in 77ms (Views: 69.7ms | ActiveRecord: 0.0ms | Allocations: 44355)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:09:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 37.1ms | Allocations: 6736)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 6846)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.0ms | Allocations: 11202)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `iniciar_sesion_path' for #<ActionView::Base:0x0000000000c5d0>
+
+@output_buffer.safe_append='            '.freeze;@output_buffer.append=  link_to iniciar_sesion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do @output_buffer.safe_append='
+                                                                                 ^^^^^^^^^^^^^^^^^^^):
+    22:               </div>
+    23:             <% end %>
+    24:           <% else %>
+    25:             <%= link_to iniciar_sesion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+    26:               <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+    27:                 <p1> Iniciar Sesión </p1>
+    28:               </div>
+  
+app/views/application/home.html.erb:25
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:10:10 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1233)
+  Rendered layout layouts/application.html.erb (Duration: 130.3ms | Allocations: 39183)
+Completed 200 OK in 136ms (Views: 132.9ms | ActiveRecord: 0.0ms | Allocations: 40116)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:11:21 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1154)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4106)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 5010)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:11:22 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 484)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3003)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3265)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:11:37 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1717)
+  Rendered layout layouts/application.html.erb (Duration: 66.5ms | Allocations: 39631)
+Completed 200 OK in 77ms (Views: 70.4ms | ActiveRecord: 0.0ms | Allocations: 44047)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:13:03 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 596)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3240)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 3539)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:13:04 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 502)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3016)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3260)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:14:41 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1154)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4106)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 5009)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:14:41 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 490)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3004)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3265)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:14:42 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 487)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3000)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 3240)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:14:42 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 490)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3003)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3243)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:14:43 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 523)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3036)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 3276)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:14:43 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 484)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2997)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3237)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:14:43 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 502)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3015)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3255)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:14:43 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3018)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3258)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:14:44 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3018)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 3258)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:14:44 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 490)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3003)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 3243)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:17 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 499)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3036)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 3278)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:17 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 499)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3012)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3252)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:18 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 493)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3006)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3246)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:18 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 502)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3015)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3255)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:18 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 487)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3000)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3240)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:18 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3018)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3258)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:19 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 517)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3046)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3287)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:19 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3025)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3265)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:19 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 496)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3010)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 3250)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:19 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 487)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3000)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 3240)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:19 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 487)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3000)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 3240)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:20 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3018)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3258)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:15:34 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 481)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2994)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 3235)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:16:35 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1159)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4110)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 4993)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:18:06 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms | Allocations: 2863)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 14:18:07 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 850)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 4165)
+  Rendered layout layouts/application.html.erb (Duration: 63.2ms | Allocations: 41708)
+Completed 200 OK in 86ms (Views: 69.8ms | ActiveRecord: 0.7ms | Allocations: 50982)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-11-02 14:18:25 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alexis@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "alexis@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 222ms (ActiveRecord: 0.1ms | Allocations: 5960)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:18:25 -0300
+Processing by MainController#home as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2933)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 5709)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 0.7ms | Allocations: 9119)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-02 14:18:30 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 4ms (ActiveRecord: 0.1ms | Allocations: 2830)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:18:30 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 378)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 14:18:30 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 187)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1371)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3987)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 4718)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-11-02 14:18:53 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"byron@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "byron@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 217ms (ActiveRecord: 0.1ms | Allocations: 2483)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:18:53 -0300
+Processing by MainController#home as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  [1m[36mPaseador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "paseadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:35
+  [1m[36mCuidador Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cuidadors" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/main/home.html.erb:57
+  Rendered main/home.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1164)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3684)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 5300)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-02 14:18:57 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 3ms (ActiveRecord: 0.1ms | Allocations: 1748)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-02 14:18:57 -0300
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 319)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 14:18:57 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1304)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3835)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 4500)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 14:19:43 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 631)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3071)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 5990)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 7394)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-02 14:20:02 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 14:20:02 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1528)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4037)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 4749)
+
+

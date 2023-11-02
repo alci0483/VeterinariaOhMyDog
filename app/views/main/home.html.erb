@@ -7,7 +7,7 @@
       <a href="<%= edit_user_registration_path %>" class="nav-link">Editar Perfil</a>
     </li>
 
-    <% if current_user.admin? %>
+    <% if  user_signed_in? && current_user.admin? %>
       <li class="nav-item">
         <a href="<%= new_cuidadore_path %>" class="nav-link">Publicar Cuidador</a>
       </li>
