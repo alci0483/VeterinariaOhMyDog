@@ -32972,3 +32972,16 @@ Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 296
   
 ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
   
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 16:37:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1387)
+  Rendered layout layouts/application.html.erb (Duration: 168.2ms | Allocations: 46708)
+Completed 200 OK in 229ms (Views: 184.3ms | ActiveRecord: 1.3ms | Allocations: 58377)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
