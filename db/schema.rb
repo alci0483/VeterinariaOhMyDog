@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_02_221737) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_03_115956) do
   create_table "adopcions", force: :cascade do |t|
     t.string "nombre"
     t.integer "tamanio"
     t.integer "edad"
     t.string "ubicacion"
     t.string "raza"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "campanas", force: :cascade do |t|
+    t.string "nombre_campana"
+    t.string "objetivo"
+    t.integer "monto"
+    t.integer "dni_titular_responsable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

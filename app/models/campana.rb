@@ -1,0 +1,2 @@
+class Campana < ApplicationRecord
+end

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @campana %>
+
+<div>
+  <%= link_to "Edit this campana", edit_campana_path(@campana) %> |
+  <%= link_to "Back to campanas", campanas_path %>
+
+  <%= button_to "Destroy this campana", @campana, method: :delete %>
+</div>
