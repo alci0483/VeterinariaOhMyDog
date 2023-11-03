@@ -1,20 +1,62 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria Oh My Dog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-success p-2 text-dark bg-opacity-50 " >
 
-<div class="cuidadores-list">
-  <h1>Lista de cuidadores de Perros</h1>
-  <ul>
-    <% @cuidadores.each do |cuidador| %>
-      <li class="cuidador-item">
-        <div class="cuidador-avatar">
-          <!-- Agrega la imagen del paseador aquí -->
-        </div>
-        <div class="cuidador-info">
-          <h2><%= cuidador.nombre %> <%= cuidador.apellido %></h2>
-          <p><strong>Horarios:</strong> <%= cuidador.horarios %></p>
-          <p><strong>Ubicación:</strong> <%= cuidador.ubicacion %></p>
-          <a class="btn btn-primary" href="<%= cuidadore_path(cuidador) %>">Ver detalles</a>
-        </div>
-      </li>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success p-2 text-white bg-opacity-25 border border-success p-2 mb-2" >
+    <div class="container">
+
+      <a class="navbar-brand" style="font-size: 35px;">Veterinaria Oh My Dog </a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="bg-light py-4 border border-success p-2 mb-2 bg-success p-2 text-white bg-opacity-25">
+    <div class="container">
+        <h4 class="text-center text-black"> ¿Quiénes Somos? </h4>
+        <p class="text-center text-black">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
+        compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
+        convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
+        diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
+        perros y sus familias.
+        </p>
+    </div>
+  </div>
+
+  <div class="cuidadores-list container">
+    <h1>Lista de cuidadores de Perros</h1>
+    <ul>
+      <% if @cuidadores.any? %>
+        <% @cuidadores.each do |cuidador| %>
+          <li class="cuidador-item">
+            <div class="cuidador-avatar">
+              <!-- Agrega la imagen del paseador aquí -->
+            </div>
+            <div class="cuidador-info">
+              <h2><%= cuidador.nombre %> <%= cuidador.apellido %></h2>
+              <p><strong>Horarios:</strong> <%= cuidador.horarios %></p>
+              <p><strong>Ubicación:</strong> <%= cuidador.ubicacion %></p>
+              <a class="btn btn-primary" href="<%= cuidadore_path(cuidador) %>">Ver detalles</a>
+            </div>
+          </li>
+        <% end %>
+      <% else %>
+        <p>No hay publicaciones de cuidadores para mostrar en este momento.</p>
+      <% end %>
+    </ul>
+    <% if user_signed_in? %>
+      <a class="btn btn-secondary" href="<%= main_home_path %>">Volver</a>
+    <% else %>
+      <a class="btn btn-secondary" href="<%= new_user_session_path %>">Volver</a>
     <% end %>
-  </ul>
-  <a class="btn btn-secondary" href="<%= root_path %>">Volver</a>
-</div>
+  </div>
