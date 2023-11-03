@@ -29110,3 +29110,52 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 4428)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-03 09:10:42 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#home as HTML
+Completed 401 Unauthorized in 27ms (ActiveRecord: 0.0ms | Allocations: 2824)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-03 09:10:43 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.3ms | Allocations: 850)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 30.9ms | Allocations: 4160)
+  Rendered layout layouts/application.html.erb (Duration: 175.8ms | Allocations: 34606)
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 3.9ms | Allocations: 43824)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+app/assets/config/manifest.js:4
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-03 09:11:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.0ms | Allocations: 850)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 18.2ms | Allocations: 4692)
+  Rendered layout layouts/application.html.erb (Duration: 57.8ms | Allocations: 17388)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 1.1ms | Allocations: 29321)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+app/assets/config/manifest.js:4
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-03 09:12:02 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 187)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1420)
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 11068)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.0ms | Allocations: 15304)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+app/assets/config/manifest.js:4
