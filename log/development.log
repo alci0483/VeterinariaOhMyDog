@@ -42413,3 +42413,29 @@ Processing by ApplicationController#homeAdopcion as HTML
 Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 3784)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-03 09:17:32 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 14.5ms | Allocations: 1787)
+  Rendered layout layouts/application.html.erb (Duration: 141.0ms | Allocations: 47225)
+Completed 200 OK in 160ms (Views: 146.2ms | ActiveRecord: 0.0ms | Allocations: 51669)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-03 09:19:22 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 15.5ms | Allocations: 1766)
+  Rendered layout layouts/application.html.erb (Duration: 221.1ms | Allocations: 46714)
+Completed 200 OK in 246ms (Views: 225.9ms | ActiveRecord: 0.0ms | Allocations: 51158)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
