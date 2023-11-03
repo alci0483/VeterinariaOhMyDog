@@ -43,39 +43,29 @@
   <div class="container-fluid my-5 ">
 
     <div class="row gx-5">
-      <div class="col-md-6 ">
-        <a class="nav-link" href="#">
-          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
-            <div class="card-body">
-              <!--
-              <h5 class="card-title text-center">Gestion de Veterinaria general</h5>
-              <p class="card-text text-center">Aca podras sacar turnos para que tu perrito tenga
-                la mejor atencion sobre su salud</p>
-              -->
-            </div>
-          </div>
-        </a>
-      </div>
       <div class="col-md-6">
-        <a class="nav-link" href="#">
+
           <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to new_adopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
             <div class="card-body">
-              <!--
-              <h5 class="card-title text-center">Adopcion de Perros</h5>
-              <p class="card-text text-center">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
-                queridos amigos de cuatro paras</p>
-              -->
+              <h5 class="text-center text-black"> Publicar Adopcion <h5>
             </div>
+            <% end %>
           </div>
-        </a>
+
       </div>
     </div>
 
     <div class="row gx-5">
       <div class="col-md-6">
 
-      </div>
-      <div class="col-md-6 ">
+        <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+          <%= link_to adopcions_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+          <div class="card-body">
+            <h5 class="text-center text-black"> Ver Lista de Perros en Adopcion <h5>
+          </div>
+          <% end %>
+        </div>
 
       </div>
     </div>

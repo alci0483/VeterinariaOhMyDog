@@ -1,0 +1,42 @@
+<%= form_with(model: adopcion) do |form| %>
+  <% if adopcion.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(adopcion.errors.count, "error") %> prohibited this adopcion from being saved:</h2>
+
+      <ul>
+        <% adopcion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div>
+    <%= form.label :tamanio, style: "display: block" %>
+    <%= form.number_field :tamanio %>
+  </div>
+
+  <div>
+    <%= form.label :edad, style: "display: block" %>
+    <%= form.number_field :edad %>
+  </div>
+
+  <div>
+    <%= form.label :ubicacion, style: "display: block" %>
+    <%= form.text_field :ubicacion %>
+  </div>
+
+  <div>
+    <%= form.label :raza, style: "display: block" %>
+    <%= form.text_field :raza %>
+  </div>
+
+  <div>
+    <%= form.submit 'Publicar Adopcion'%>
+  </div>
+<% end %>
