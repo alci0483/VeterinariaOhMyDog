@@ -39328,6 +39328,7 @@ Processing by CuidadoresController#index as HTML
 Completed 200 OK in 33ms (Views: 27.5ms | ActiveRecord: 1.4ms | Allocations: 10104)
 
 
+<<<<<<< HEAD
 >>>>>>> main_version_1
 Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 18:38:28 -0300
   [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -39728,10 +39729,14 @@ app/views/devise/sessions/new.html.erb:191: syntax error, unexpected `end', expe
 app/views/devise/sessions/new.html.erb:184: else without rescue is useless
 app/views/devise/sessions/new.html.erb:191: syntax error, unexpected `end', expecting end-of-input
 Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-02 18:39:36 -0300
+=======
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-03 09:13:09 -0300
+>>>>>>> main_version_1
   [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by Devise::SessionsController#new as HTML
   Rendering layout layouts/application.html.erb
   Rendering devise/sessions/new.html.erb within layouts/application
+<<<<<<< HEAD
   Rendered devise/shared/_links.html.erb (Duration: 5.1ms | Allocations: 814)
   Rendered devise/sessions/new.html.erb within layouts/application (Duration: 28.5ms | Allocations: 5631)
   Rendered layout layouts/application.html.erb (Duration: 157.7ms | Allocations: 52433)
@@ -42356,8 +42361,55 @@ Processing by ApplicationController#home as HTML
   Rendered application/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 487)
   Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 3412)
 Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 3671)
+=======
+  Rendered devise/shared/_links.html.erb (Duration: 3.0ms | Allocations: 814)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 20.4ms | Allocations: 5539)
+  Rendered layout layouts/application.html.erb (Duration: 146.3ms | Allocations: 52255)
+Completed 200 OK in 191ms (Views: 157.8ms | ActiveRecord: 1.0ms | Allocations: 63917)
+>>>>>>> main_version_1
 
 
   
 ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
   
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-03 09:14:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 814)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 23.4ms | Allocations: 5631)
+  Rendered layout layouts/application.html.erb (Duration: 124.4ms | Allocations: 50868)
+Completed 200 OK in 181ms (Views: 146.2ms | ActiveRecord: 1.0ms | Allocations: 62494)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
+Started GET "/homeCampana" for 127.0.0.1 at 2023-11-03 09:14:42 -0300
+Processing by ApplicationController#homeCampana as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/homeCampana.html.erb within layouts/application
+  Rendered application/homeCampana.html.erb within layouts/application (Duration: 2.2ms | Allocations: 464)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 3831)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 4544)
+
+
+Started GET "/homeCampana" for 127.0.0.1 at 2023-11-03 09:14:49 -0300
+Processing by ApplicationController#homeCampana as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/homeCampana.html.erb within layouts/application
+  Rendered application/homeCampana.html.erb within layouts/application (Duration: 0.9ms | Allocations: 112)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 3178)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 3441)
+
+
+Started GET "/homeAdopcion" for 127.0.0.1 at 2023-11-03 09:15:02 -0300
+Processing by ApplicationController#homeAdopcion as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/homeAdopcion.html.erb within layouts/application
+  Rendered application/homeAdopcion.html.erb within layouts/application (Duration: 2.7ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 3463)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 3784)
+
+
