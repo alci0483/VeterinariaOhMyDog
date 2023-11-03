@@ -46,7 +46,7 @@
               <h2><%= cuidador.nombre %> <%= cuidador.apellido %></h2>
               <p><strong>Horarios:</strong> <%= cuidador.horarios %></p>
               <p><strong>Ubicación:</strong> <%= cuidador.ubicacion %></p>
-              <a class="btn btn-primary" href="<%= cuidadore_path(cuidador) %>">Ver detalles</a>
+                <a class="btn btn-primary" href="<%= contactar_cuidadore_path(cuidador) %>">Solicitar Contacto</a>
             </div>
           </li>
         <% end %>
