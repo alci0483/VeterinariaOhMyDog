@@ -1,0 +1,39 @@
+
+<%= form_with model: @perdido do |form| %>
+    <% @perdido.errors.full_messages.each do |error| %>
+        <div>
+          <%= error %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+      <%= form.label        :nombre, 'Nombre'%>
+      <%= form.text_field   :nombre, class: 'form-control' %>
+    </div>
+  
+    <div class="form-group">
+      <%= form.label        :tamano, 'Tamaño'      %>
+      <%= form.number_field :tamano, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label        :edad, 'Edad'%>
+      <%= form.number_field :edad, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+    <%= form.label          :ubicacion, 'Ubucación'%>
+    <%= form.text_field     :ubicacion, class: 'form-control'%>
+    </div> 
+
+    <div class="form-group">
+    <%= form.label          :raza, 'Raza'%>
+    <%= form.text_field     :raza, class: 'form-control'%> 
+    </div>
+    <div class="form-group">
+    <%= form.label            :foto_del_Perro%>
+    <%= form.file_field      :photo%>
+  </div> 
+    <%= form.submit 'Publicar' %>
+  <% end %>
+  

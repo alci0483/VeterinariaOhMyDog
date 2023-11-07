@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :cuidadores, only: [:show,:index, :new, :create]
   resources :paseadores, only: [:index,:show,:new, :create, :edit, :update]
-
+  resources :perdidos, only:  [:show,:index, :new, :create]
   get 'main/home', to: 'main#home'
 
 
@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   get '/homeAdopcion', to: 'application#homeAdopcion'
   get '/homeCampana', to: 'application#homeCampana'
 
-
+  
 end

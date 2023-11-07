@@ -1,0 +1,39 @@
+/* Estilos personalizados */
+.perdidos-list {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.perdido-item {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.perdido-avatar {
+  flex: 1;
+  margin-right: 30px;
+  
+  /* Estilo para la imagen del paseador */
+}
+
+.perdido-info {
+  flex: 4;
+}
+
+/* Estilos para los botones */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fc9700;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: rgba(0, 255, 170, 0.467);
+}
