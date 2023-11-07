@@ -44543,3 +44543,29 @@ Processing by MainController#home as HTML
 Completed 200 OK in 46ms (Views: 38.1ms | ActiveRecord: 2.2ms | Allocations: 14648)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-07 19:19:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.0ms | Allocations: 814)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 21.6ms | Allocations: 5631)
+  Rendered layout layouts/application.html.erb (Duration: 178.9ms | Allocations: 53752)
+Completed 200 OK in 236ms (Views: 196.5ms | ActiveRecord: 1.0ms | Allocations: 65808)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-07 19:20:08 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1223)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 4390)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.0ms | Allocations: 5149)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
