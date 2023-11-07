@@ -76,9 +76,7 @@
         <p>No hay publicaciones de cuidadores para mostrar en este momento.</p>
       <% end %>
     </ul>
-    <% if user_signed_in? %>
+
       <a class="btn btn-secondary" href="<%= main_home_path %>">Volver</a>
-    <% else %>
-      <a class="btn btn-secondary" href="<%= new_user_session_path %>">Volver</a>
-    <% end %>
+    
   </div>

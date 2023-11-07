@@ -24,7 +24,7 @@
               </div>
             <% end %>
           <% else %>
-            <%= link_to "#", class: "btn bg-warning p-2 text-white bg-opacity-50" do %>
+            <%= link_to new_user_session_path, class: "btn bg-warning p-2 text-white bg-opacity-50" do %>
               <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
                 <p1> Iniciar Sesión </p1>
               </div>
@@ -69,7 +69,7 @@
       </div>
       <div class="col-md-6">
          <div class="card mb-3" style="background-color: #FFA500; color: white;">
-            <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+            <%= link_to adopcions_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center text-dark">Adopcion de Perros</h5>
                 <p class="card-text text-center text-dark">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
@@ -113,7 +113,7 @@
       <div class="col-md-6 ">
         <a class="nav-link" href="#">
           <div class="card mb-3" style="background-color: #FFA500; color: white;">
-            <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+            <%= link_to campanas_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center text-dark">Campañas</h5>
                 <p class="card-text text-center text-dark">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
