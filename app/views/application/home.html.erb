@@ -18,8 +18,8 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <% if user_signed_in? %>
-            <%= link_to destroy_user_session_path, class: "btn bg-warning p-2 text-white bg-opacity-50" do %>
-              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+            <%= link_to destroy_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+                <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
                 <p1> Cerrar Sesión </p1>
               </div>
             <% end %>
@@ -37,7 +37,8 @@
 
   <!-- Sección "Quiénes Somos" -->
 
-  <div class="py-4 border border-warning p-2 mb-2 bg-warning p-2 text-white bg-opacity-25">
+  <div class="py-4" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+
     <div class="container">
         <h4 class="text-center text-black"> ¿Quiénes Somos? </h4>
         <p class="text-center text-black">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
@@ -55,8 +56,8 @@
     <div class="row gx-5">
       <div class="col-md-6 ">
         <a class="nav-link" href="#">
-          <div class="card mb-3 bg-warning p-2 text-white bg-opacity-50">
-            <%= link_to "#", class: "btn bg-warning p-2 text-white bg-opacity-50" do %>
+         <div class="card mb-3" style="background-color: #FFA500; color: white;">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center text-dark">Gestion de Veterinaria general</h5>
                 <p class="card-text text-center text-dark">Aca podras sacar turnos para que tu perrito tenga
@@ -67,8 +68,8 @@
         </a>
       </div>
       <div class="col-md-6">
-          <div class="card mb-3 bg-warning p-2 text-white bg-opacity-50">
-            <%= link_to homeAdopcion_path, class: "btn bg-warning p-2 text-white bg-opacity-50" do %>
+         <div class="card mb-3" style="background-color: #FFA500; color: white;">
+            <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center text-dark">Adopcion de Perros</h5>
                 <p class="card-text text-center text-dark">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
@@ -82,8 +83,8 @@
     <div class="row gx-5">
       <div class="col-md-6">
         <a class="nav-link" href="#">
-          <div class="card mb-3 bg-warning p-2 text-white bg-opacity-50">
-            <%= link_to main_home_path, class: "btn bg-warning p-2 text-white bg-opacity-50" do %>
+          <div class="card mb-3" style="background-color: #FFA500; color: white;">
+            <%= link_to main_home_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center text-dark">Paseadores y Cuidadores</h5>
                 <p class="card-text text-center text-dark">Encuentra personas tambien amantes de los perros que puedan
@@ -95,8 +96,8 @@
       </div>
       <div class="col-md-6 ">
         <a class="nav-link" href="#">
-          <div class="card mb-3 bg-warning p-2 text-white bg-opacity-50">
-            <%= link_to "#", class: "btn bg-warning p-2 text-white bg-opacity-50" do %>
+           <div class="card mb-3" style="background-color: #FFA500; color: white;">
+            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center text-dark">Perros Perdidos y encontrados</h5>
                 <p class="card-text text-center text-dark">Difundamos informacion para que nuetros amigos caninos
@@ -111,8 +112,8 @@
     <div class="row gx-5">
       <div class="col-md-6 ">
         <a class="nav-link" href="#">
-          <div class="card mb-3 bg-warning p-2 text-white bg-opacity-50">
-            <%= link_to homeCampana_path, class: "btn bg-warning p-2 text-white bg-opacity-50" do %>
+          <div class="card mb-3" style="background-color: #FFA500; color: white;">
+            <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center text-dark">Campañas</h5>
                 <p class="card-text text-center text-dark">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>

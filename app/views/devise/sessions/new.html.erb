@@ -1,38 +1,6 @@
-<!DOCTYPE html>
+<!DOCTYPE html>7
+ <img src="assets/logo.jpeg" alt="Imagen de inicio de sesión"> 
 
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-<!-- Agregar un mensaje para mostrar el rol -->
-<% if user_signed_in? %>
-  <p>Conectado como <%= current_user.email %> (Rol: <%= current_user.role %>)</p>
-<% end %>
-
-
-<%= render "devise/shared/links" %>
-
-<!--
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -40,54 +8,97 @@
   <title>Veterinaria Oh My Dog</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-success p-2 text-dark bg-opacity-50 " >
+<body class="bg-light p-2 text-dark bg-opacity-50">
 
-  <!-- Barra de navegación --> <!--
-  <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success p-2 text-white bg-opacity-25 border border-success p-2 mb-2" >
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white; color: #28a745; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
     <div class="container">
+      <a class="navbar-brand" style="font-size: 35px; color: #28a745;">
+        <p>  </p>
 
-      <a class="navbar-brand" style="font-size: 35px;">Veterinaria Oh My Dog </a>
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <% if user_signed_in? %>
-            <%= link_to destroy_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
-                <p1> Cerrar Sesión </p1>
-              </div>
-            <% end %>
-          <% else %>
-            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
-                <p1> Iniciar Sesión </p1>
-              </div>
-            <% end %>
-          <% end %>
-        </li>
-      </ul>
+      </a>
+      <div class="float-right"> <!-- Agregar esta clase para alinear a la derecha -->
+        <!-- Formulario de inicio de sesión -->
+        <h2>Log in</h2>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </div>
+        <!-- Enlaces relacionados con la autenticación   <% if devise_mapping.rememberable? %>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>-->
+          <div class="actions">
+            <%= f.submit "Log in" %>
+          </div>
+        <% end %>
+
+        <!-- Mensaje para mostrar el rol -->
+        <% if user_signed_in? %>
+          <p>Conectado como <%= current_user.email %> (Rol: <%= current_user.role %>)</p>
+        <% end %>
+
+        <!-- Enlaces relacionados con la autenticación -->
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </nav>
 
-  <!-- Sección "Quiénes Somos" -->  <!--
+  <!-- Resto del contenido de la página -->
+  <!-- ... -->
+</body>
+</html>
 
-  <div class="bg-light py-4 border border-success p-2 mb-2 bg-success p-2 text-white bg-opacity-25">
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria Oh My Dog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light p-2 text-dark bg-opacity-50">
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
     <div class="container">
-        <h4 class="text-center text-black"> ¿Quiénes Somos? </h4>
-        <p class="text-center text-black">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
-        compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
-        convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
-        diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
-        perros y sus familias.
-        </p>
+      <div class="row">
+        <!-- Columna para el formulario de inicio de sesión -->
+        <div class="col-md-6">
+          <a class="navbar-brand text-white" style="font-size: 35px;">Veterinaria Oh My Dog</a>
+        </div>
+        <!-- Columna para la sección "Quiénes Somos" -->
+        <div class="col-md-6">
+          <!-- Aquí se cambió a bg-success -->
+          <div class="py-4" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+            <div class="container">
+              <h4 class="text-center text-orange"> ¿Quiénes Somos? </h4>
+              <p class="text-center text-orange">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los perros y sus familias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- Sección de Servicios -->   <!--
+  </nav>
+  <!-- Sección de Servicios -->
   <div class="container-fluid my-5 ">
 
     <div class="row gx-5">
       <div class="col-md-6 ">
         <a class="nav-link" href="#">
-          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+          <div class="card mb-3" style="background-color: #FFA500; color: white;">
             <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center">Gestion de Veterinaria general</h5>
@@ -99,7 +110,7 @@
         </a>
       </div>
       <div class="col-md-6">
-          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+              <div class="card mb-3" style="background-color: #FFA500; color: white;">
             <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center">Adopcion de Perros</h5>
@@ -114,7 +125,7 @@
     <div class="row gx-5">
   <div class="col-md-6">
     <a class="nav-link" href="#">
-      <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+          <div class="card mb-3" style="background-color: #FFA500; color: white;">
         <% if user_signed_in? %>
           <%= link_to main_home_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
             <div class="card-body">
@@ -144,7 +155,7 @@
 
       <div class="col-md-6 ">
         <a class="nav-link" href="#">
-          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+               <div class="card mb-3" style="background-color: #FFA500; color: white;">
             <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center">Perros Perdidos y encontrados</h5>
@@ -160,7 +171,7 @@
     <div class="row gx-5">
       <div class="col-md-6 ">
         <a class="nav-link" href="#">
-          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+              <div class="card mb-3" style="background-color: #FFA500; color: white;">
             <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
                 <h5 class="card-title text-center">Campañas</h5>
@@ -175,4 +186,7 @@
 
 </body>
 </html>
--->
+
+<% if flash[:alert].present? %>
+  <p class="alert alert-danger"><%= flash[:alert] %></p>
+<% end %>
