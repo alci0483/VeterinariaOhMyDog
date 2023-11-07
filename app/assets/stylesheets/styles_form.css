@@ -1,0 +1,9 @@
+.input-tamanocampo {
+    font-size: 20px; /* Aumenta el tamaño de la fuente */
+    padding: 15px; /* Aumenta el espaciado interno */
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  }
+.form-group label {
+    font-size: 21px; /* Aumenta el tamaño de la fuente de las etiquetas */
+  }
+ 
