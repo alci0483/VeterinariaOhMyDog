@@ -1,76 +1,142 @@
-<nav>
-  <ul class="nav-list">
-    <li class="nav-item">
-      <a href="<%= root_path %>" class="nav-link">Inicio</a>
-    </li>
-    <li class="nav-item">
-      <a href="<%= edit_user_registration_path %>" class="nav-link">Editar Perfil</a>
-    </li>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria Oh My Dog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light p-2 text-dark bg-opacity-50">
 
-    <% if current_user.admin? %>
-      <li class="nav-item">
-        <a href="<%= new_cuidadore_path %>" class="nav-link">Publicar Cuidador</a>
-      </li>
-      <li class="nav-item">
-        <a href="<%= new_paseadore_path %>" class="nav-link">Publicar Paseador</a>
-      </li>
-    <% end %>
-    <li class="nav-item">
-      <a href="<%= destroy_user_session_path %>" data-method="delete" class="nav-link">Cerrar Sesión</a>
-    </li>
-    <% unless current_user %>
-      <li class="nav-item">
-        <a href="<%= new_user_registration_path %>" class="nav-link">Registrarse</a>
-      </li>
-      <li class="nav-item">
-        <a href="<%= new_user_session_path %>" class="nav-link">Iniciar Sesión</a>
-      </li>
-    <% end %>
-  </ul>
-</nav>
-<div class="list-container">
-  <div class="column">
-    <div class="paseadores-list">
-      <h1>Lista de Paseadores de Perros</h1>
-      <% if @paseadores.any? %>
-        <ul>
-          <% @paseadores.each do |paseador| %>
-            <li class="paseador-item">
-              <!-- Agrega la imagen del paseador aquí -->
-              <div class="paseador-info">
-                <h2><%= paseador.nombre %> <%= paseador.apellido %></h2>
-                <p><strong>Horarios:</strong> <%= paseador.horarios %></p>
-                <p><strong>Ubicación:</strong> <%= paseador.ubicacion %></p>
-                <a class="btn btn-primary" href="<%= paseadore_path(paseador) %>">Ver detalles</a>
+
+
+
+
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+
+
+
+
+
+    <div class="container">
+
+      <a class="navbar-brand text-white" style="font-size: 35px;">Veterinaria Oh My Dog</a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <% if user_signed_in? %>
+            <%= link_to destroy_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+            <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+                <p1> Cerrar Sesión </p1>
               </div>
-            </li>
+            <% end %>
           <% end %>
-        </ul>
-      <% else %>
-        <p>No hay publicaciones de paseadores para mostrar en este momento.</p>
-      <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sección "Quiénes Somos" -->
+
+  <div class="py-4" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+
+<!-- Aquí se cambió a bg-success -->
+
+
+    <div class="container">
+        <h4 class="text-center text-orange"> ¿Quiénes Somos? </h4>
+        <p class="text-center text-orange">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
+        compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
+        convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
+        diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
+        perros y sus familias.
+        </p>
     </div>
   </div>
-  <div class="column">
-    <div class="cuidadores-list">
-      <h1>Lista de Cuidadores de Perros</h1>
-      <% if @cuidadores.any? %>
-        <ul>
-          <% @cuidadores.each do |cuidador| %>
-            <li class="cuidador-item">
-              <!-- Agrega la imagen del cuidador aquí -->
-              <div class="cuidador-info">
-                <h2><%= cuidador.nombre %> <%= cuidador.apellido %></h2>
-                <p><strong>Horarios:</strong> <%= cuidador.horarios %></p>
-                <p><strong>Ubicación:</strong> <%= cuidador.ubicacion %></p>
-                <a class="btn btn-primary" href="<%= cuidadore_path(cuidador) %>">Ver detalles</a>
+
+  <!-- Sección de opciones -->
+  <div class="container-fluid my-5 ">
+
+    <div class="row gx-5">
+      <div class="col-md-6 ">
+        <a class="nav-link" href="#">
+             <div class="card mb-3" style="background-color: #FFA500; color: white;">
+            <%= link_to edit_user_registration_path , class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Editar Perfil</h5>
+                <p class="card-text text-center"> </p>
               </div>
-            </li>
-          <% end %>
-        </ul>
-      <% else %>
-        <p>No hay publicaciones de cuidadores para mostrar en este momento.</p>
-      <% end %>
-    </div>
-  </div>
-</div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+
+    <div class="row gx-5">
+      <div class="col-md-6">
+        <a class="nav-link" href="#">
+           <div class="card mb-3" style="background-color: #FFA500; color: white;">
+            <%= link_to  cuidadores_path , class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Ver lista de Cuidadores</h5>
+                <p class="card-text text-center">Encuentra cuidadores   para asegurarte de que tu peludo amigo reciba
+                  el amor y la supervisión que se merece cuando no puedes estar a su lado </p>
+                </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+
+
+
+      <div class="col-md-6">
+        <a class="nav-link" href="#">
+            <div class="card mb-3" style="background-color: #FFA500; color: white;">
+            <%= link_to  paseadores_path , class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Ver lista de Paseadores</h5>
+                <p class="card-text text-center">Encuentra paseadores que garantizarán que tu leal amigo disfrute de la atención
+                  y el ejercicio necesarios cuando no puedas acompañarlo. Confía en estos apasionados amantes de los perros
+                  para brindarle a tu peludo compañero los paseos y cuidados que necesita </p>
+                </div>
+            <% end %>
+          </div>
+        </a>
+      </div>
+
+
+        <div class="col-md-6">
+          <a class="nav-link" href="#">
+              <div class="card mb-3" style="background-color: #FFA500; color: white;">
+              <% if user_signed_in? && current_user.admin?  %>
+                 <%= link_to  new_cuidadore_path , class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <% end %>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Publicar Cuidador</h5>
+                  <p class="card-text text-center">Promociona estas personas para que cuide </p>
+                  </div>
+              <% end %>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a class="nav-link" href="#">
+               <div class="card mb-3" style="background-color: #FFA500; color: white;">
+              <% if user_signed_in? && current_user.admin?  %>
+                 <%= link_to   new_paseadore_path , class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <% end %>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Publicar Paseador</h5>
+                  <p class="card-text text-center">Promociona estas personas para que paseen </p>
+                  </div>
+              <% end %>
+            </div>
+          </a>
+        </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h2>Solicitud de contacto de un usuario</h2>
+  <p>¡Hola, <%= @cuidador.nombre %>!</p>
+  <p>Has recibido una solicitud de contacto de un usuario:</p>
+  <p>Nombre del usuario: <%= @solicitud.nombre %></p>
+  <p>Correo electrónico del usuario: <%= @solicitud.email %></p>
+  <p>Mensaje del usuario:</p>
+  <p><%= @solicitud.mensaje %></p>
+  <p>Por favor, contáctate con el usuario para continuar.</p>
+</body>
+</html>

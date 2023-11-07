@@ -22,6 +22,22 @@ class PaseadoresController < ApplicationController
     end
   end
 
+  def contactar
+    @paseador = Paseador.find(params[:id])
+    # Muestra el formulario de solicitud de contacto
+  end
+
+  def enviar_contacto
+    @paseador = Paseador.find(params[:id])
+    @solicitud = SolicitudContacto.new(params[:solicitud_contacto])
+    if @solicitud.save
+      ContactoMailer.enviar_solicitud_contacto(@solicitud, @paseador).deliver
+      redirect_to paseadores_path, notice: 'Tu solicitud de contacto ha sido enviada.'
+    else
+      render :contactar
+    end
+  end
+
   private
 
   def paseador_params

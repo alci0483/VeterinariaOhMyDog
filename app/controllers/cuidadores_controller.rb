@@ -20,6 +20,39 @@ class CuidadoresController < ApplicationController
     render :new, status: :unprocessable_entity
   end
 end
+def contactar
+ @cuidador = Cuidador.find(params[:id])
+  @solicitud = Solicitud.new
+ render 'cuidadores/contactar'
+
+end
+
+def enviar_contacto
+  @cuidador = Cuidador.find(params[:id])
+
+  if user_signed_in?
+    @solicitud = Solicitud.new(solicitud_params)
+    @solicitud.user = current_user
+  else
+    @solicitud = Solicitud.new(solicitud_params)
+  end
+
+  if @solicitud.save
+    ContactoMailer.enviar_solicitud_contacto_cuidador(@solicitud, @cuidador, current_user).deliver
+    redirect_to cuidadores_path, notice: 'Tu solicitud de contacto ha sido enviada.'
+  else
+    # Maneja el caso en que la solicitud no se pueda guardar
+    # Puedes mostrar un mensaje de error o redirigir a una página de error
+  end
+end
+
+
+private
+
+def solicitud_params
+  params.require(:solicitud).permit(:nombre, :email, :mensaje)
+end
+
 
 
 
