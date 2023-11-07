@@ -1,1 +1,15 @@
-<%= render "indexp"%>
+<p style="color: green"><%= notice %></p>
+<h1>Adopcions</h1>
+
+<div id="adopcions">
+  <% @adopcions.each do |adopcion| %>
+    <%= render adopcion %>
+    <p>
+      <%= link_to "Ver esta Adopcion", adopcion %>
+    </p>
+  <% end %>
+</div>
+
+<!--
+<%= link_to "Nueva Adopcion", new_adopcion_path %>
+-->
