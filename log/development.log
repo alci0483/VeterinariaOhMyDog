@@ -25215,3 +25215,1325 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 184)
 
 
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-08 16:36:41 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PerdidosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering perdidos/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:14
+  [1m[36mPerdido Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "perdidos" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:20
+  [1m[36mPerdido Load (0.3ms)[0m  [1m[34mSELECT "perdidos".* FROM "perdidos"[0m
+  ↳ app/views/perdidos/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Perdido"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  Rendered perdidos/index.html.erb within layouts/application (Duration: 179.4ms | Allocations: 37224)
+  Rendered layout layouts/application.html.erb (Duration: 464.8ms | Allocations: 74965)
+Completed 500 Internal Server Error in 528ms (ActiveRecord: 6.6ms | Allocations: 81418)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+bootsnap (1.17.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:17:in `require'
+bootsnap (1.17.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:17:in `require'
+zeitwerk (2.6.12) lib/zeitwerk/kernel.rb:38:in `require'
+sprockets (4.2.1) lib/sprockets/autoload/sassc.rb:2:in `<main>'
+bootsnap (1.17.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+bootsnap (1.17.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+zeitwerk (2.6.12) lib/zeitwerk/kernel.rb:38:in `require'
+sprockets (4.2.1) lib/sprockets/sassc_processor.rb:42:in `initialize'
+sprockets (4.2.1) lib/sprockets/sassc_processor.rb:27:in `new'
+sprockets (4.2.1) lib/sprockets/sassc_processor.rb:27:in `instance'
+sprockets (4.2.1) lib/sprockets/sassc_processor.rb:31:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:22:in `block in <class:CompositeProcessor>'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:33:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:41:in `block in call'
+sprockets (4.2.1) lib/sprockets/utils.rb:175:in `dfs'
+sprockets (4.2.1) lib/sprockets/bundle.rb:42:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:32:in `block in call'
+/home/byron/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0/set.rb:511:in `each_key'
+/home/byron/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0/set.rb:511:in `each'
+sprockets (4.2.1) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-08 16:37:12 -0300
+Processing by PerdidosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering perdidos/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:14
+  [1m[36mPerdido Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "perdidos" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:20
+  [1m[36mPerdido Load (0.1ms)[0m  [1m[34mSELECT "perdidos".* FROM "perdidos"[0m
+  ↳ app/views/perdidos/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Perdido"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  Rendered perdidos/index.html.erb within layouts/application (Duration: 26.8ms | Allocations: 4738)
+  Rendered layout layouts/application.html.erb (Duration: 67.9ms | Allocations: 11158)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 1.0ms | Allocations: 12095)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-08 16:38:43 -0300
+Processing by PerdidosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering perdidos/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:14
+  [1m[36mPerdido Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "perdidos" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:20
+  [1m[36mPerdido Load (0.2ms)[0m  [1m[34mSELECT "perdidos".* FROM "perdidos"[0m
+  ↳ app/views/perdidos/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Perdido"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  Rendered perdidos/index.html.erb within layouts/application (Duration: 29.7ms | Allocations: 4726)
+  Rendered layout layouts/application.html.erb (Duration: 72.6ms | Allocations: 11133)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.9ms | Allocations: 12062)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-08 16:39:07 -0300
+Processing by PerdidosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering perdidos/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:14
+  [1m[36mPerdido Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "perdidos" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:20
+  [1m[36mPerdido Load (0.2ms)[0m  [1m[34mSELECT "perdidos".* FROM "perdidos"[0m
+  ↳ app/views/perdidos/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Perdido"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  Rendered perdidos/index.html.erb within layouts/application (Duration: 28.7ms | Allocations: 3894)
+  Rendered layout layouts/application.html.erb (Duration: 245.3ms | Allocations: 47004)
+Completed 200 OK in 248ms (Views: 246.2ms | ActiveRecord: 1.1ms | Allocations: 47356)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDE5OjM5OjIxLjU4MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--922f2eb687ab31a03cfc4b7d8de817e66ff22f76/toby.jpeg" for 127.0.0.1 at 2023-11-08 16:39:08 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"toby"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 598)
+
+
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-08 16:40:31 -0300
+Processing by PerdidosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering perdidos/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:14
+  [1m[36mPerdido Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "perdidos" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:20
+  [1m[36mPerdido Load (0.2ms)[0m  [1m[34mSELECT "perdidos".* FROM "perdidos"[0m
+  ↳ app/views/perdidos/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Perdido"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  Rendered perdidos/index.html.erb within layouts/application (Duration: 25.2ms | Allocations: 4728)
+  Rendered layout layouts/application.html.erb (Duration: 123.9ms | Allocations: 16468)
+Completed 200 OK in 132ms (Views: 128.6ms | ActiveRecord: 1.0ms | Allocations: 17461)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a9333ccec9c18fecd683c7b847e7737a26aaed29/toby.jpeg" for 127.0.0.1 at 2023-11-08 16:40:31 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a9333ccec9c18fecd683c7b847e7737a26aaed29", "filename"=>"toby"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (2.3ms) [0m[34mGenerated URL for file at key: 8s3i37gdkgh9ma5zeisuqyrah92k (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDE5OjQ1OjMxLjczOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--46ecd9c9e4a16af1366c3d26f231b457fcf72980/toby.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDE5OjQ1OjMxLjczOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--46ecd9c9e4a16af1366c3d26f231b457fcf72980/toby.jpeg
+Completed 302 Found in 37ms (ActiveRecord: 0.2ms | Allocations: 2553)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDE5OjQ1OjMxLjczOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--46ecd9c9e4a16af1366c3d26f231b457fcf72980/toby.jpeg" for 127.0.0.1 at 2023-11-08 16:40:31 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"toby"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 191)
+
+
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-08 16:41:33 -0300
+Processing by PerdidosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering perdidos/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:14
+  [1m[36mPerdido Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "perdidos" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:20
+  [1m[36mPerdido Load (0.2ms)[0m  [1m[34mSELECT "perdidos".* FROM "perdidos"[0m
+  ↳ app/views/perdidos/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Perdido"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  Rendered perdidos/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 4047)
+  Rendered layout layouts/application.html.erb (Duration: 82.1ms | Allocations: 15396)
+Completed 200 OK in 85ms (Views: 83.3ms | ActiveRecord: 0.9ms | Allocations: 15713)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDE5OjQ1OjMxLjczOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--46ecd9c9e4a16af1366c3d26f231b457fcf72980/toby.jpeg" for 127.0.0.1 at 2023-11-08 16:41:33 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"toby"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-08 16:49:32 -0300
+Processing by PerdidosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering perdidos/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:14
+  [1m[36mPerdido Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "perdidos" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:20
+  [1m[36mPerdido Load (0.2ms)[0m  [1m[34mSELECT "perdidos".* FROM "perdidos"[0m
+  ↳ app/views/perdidos/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Perdido"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  Rendered perdidos/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 4178)
+  Rendered layout layouts/application.html.erb (Duration: 59.4ms | Allocations: 14206)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 2.1ms | Allocations: 14483)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a9333ccec9c18fecd683c7b847e7737a26aaed29/toby.jpeg" for 127.0.0.1 at 2023-11-08 16:49:33 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a9333ccec9c18fecd683c7b847e7737a26aaed29", "filename"=>"toby"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: 8s3i37gdkgh9ma5zeisuqyrah92k (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDE5OjU0OjMzLjAzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--92c88361c543b1be4ce3a9318d60558f2a5c7761/toby.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDE5OjU0OjMzLjAzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--92c88361c543b1be4ce3a9318d60558f2a5c7761/toby.jpeg
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 1328)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDE5OjU0OjMzLjAzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--92c88361c543b1be4ce3a9318d60558f2a5c7761/toby.jpeg" for 127.0.0.1 at 2023-11-08 16:49:33 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"toby"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 167)
+
+
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-08 16:51:30 -0300
+Processing by PerdidosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering perdidos/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:14
+  [1m[36mPerdido Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "perdidos" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:20
+  [1m[36mPerdido Load (0.1ms)[0m  [1m[34mSELECT "perdidos".* FROM "perdidos"[0m
+  ↳ app/views/perdidos/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Perdido"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  Rendered perdidos/index.html.erb within layouts/application (Duration: 23.8ms | Allocations: 3894)
+  Rendered layout layouts/application.html.erb (Duration: 82.6ms | Allocations: 14041)
+Completed 200 OK in 84ms (Views: 82.6ms | ActiveRecord: 0.8ms | Allocations: 14318)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDE5OjU0OjMzLjAzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--92c88361c543b1be4ce3a9318d60558f2a5c7761/toby.jpeg" for 127.0.0.1 at 2023-11-08 16:51:31 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"toby"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-08 16:51:53 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.2ms | Allocations: 2069)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-08 16:51:53 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/home.html.erb:18
+  Rendered application/home.html.erb within layouts/application (Duration: 9.5ms | Allocations: 2203)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 6760)
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 0.2ms | Allocations: 7477)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 16:52:19 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.4ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 44.2ms | Allocations: 7471)
+  Rendered layout layouts/application.html.erb (Duration: 60.0ms | Allocations: 12006)
+Completed 200 OK in 84ms (Views: 66.4ms | ActiveRecord: 2.7ms | Allocations: 14435)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7fd47b9b3b860608991b52a032dabae2c23b3e75/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 16:52:19 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7fd47b9b3b860608991b52a032dabae2c23b3e75", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (2.9ms) [0m[34mGenerated URL for file at key: 9ktp2n2ek9da5krs8pjabphus6i8 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQxOTo1NzoxOS41NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b6ccd34ec45bdc976ff8c053fda325977a5cf8bf/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQxOTo1NzoxOS41NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b6ccd34ec45bdc976ff8c053fda325977a5cf8bf/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms | Allocations: 1414)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQxOTo1NzoxOS41NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b6ccd34ec45bdc976ff8c053fda325977a5cf8bf/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 16:52:19 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 16:53:45 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.2ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 25.0ms | Allocations: 3906)
+  Rendered layout layouts/application.html.erb (Duration: 61.2ms | Allocations: 14207)
+Completed 200 OK in 64ms (Views: 61.8ms | ActiveRecord: 1.0ms | Allocations: 14498)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQxOTo1NzoxOS41NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b6ccd34ec45bdc976ff8c053fda325977a5cf8bf/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 16:53:45 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-08 16:54:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms | Allocations: 1503)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-08 16:54:06 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/home.html.erb:18
+  Rendered application/home.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1257)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 5560)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.2ms | Allocations: 5803)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 16:55:47 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.2ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 46.6ms | Allocations: 3912)
+  Rendered layout layouts/application.html.erb (Duration: 75.5ms | Allocations: 8229)
+Completed 200 OK in 79ms (Views: 77.4ms | ActiveRecord: 1.1ms | Allocations: 8509)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 16:56:51 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.1ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 40.3ms | Allocations: 3897)
+  Rendered layout layouts/application.html.erb (Duration: 94.3ms | Allocations: 14098)
+Completed 200 OK in 98ms (Views: 96.0ms | ActiveRecord: 1.0ms | Allocations: 14375)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQxOTo1NzoxOS41NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b6ccd34ec45bdc976ff8c053fda325977a5cf8bf/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 16:56:51 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 16:57:42 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.1ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 22.2ms | Allocations: 3904)
+  Rendered layout layouts/application.html.erb (Duration: 93.0ms | Allocations: 14104)
+Completed 200 OK in 98ms (Views: 95.6ms | ActiveRecord: 1.0ms | Allocations: 14383)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7fd47b9b3b860608991b52a032dabae2c23b3e75/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 16:57:42 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7fd47b9b3b860608991b52a032dabae2c23b3e75", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: 9ktp2n2ek9da5krs8pjabphus6i8 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDowMjo0Mi45MzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--85515a766eb031ce7205e0618d3ebcf3e63b9c7c/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDowMjo0Mi45MzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--85515a766eb031ce7205e0618d3ebcf3e63b9c7c/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg
+Completed 302 Found in 12ms (ActiveRecord: 0.2ms | Allocations: 1825)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDowMjo0Mi45MzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--85515a766eb031ce7205e0618d3ebcf3e63b9c7c/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 16:57:42 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 167)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 16:59:08 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.2ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 31.7ms | Allocations: 3897)
+  Rendered layout layouts/application.html.erb (Duration: 99.4ms | Allocations: 14091)
+Completed 200 OK in 102ms (Views: 100.0ms | ActiveRecord: 1.1ms | Allocations: 14368)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDowMjo0Mi45MzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--85515a766eb031ce7205e0618d3ebcf3e63b9c7c/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 16:59:09 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 16:59:50 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.2ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 32.5ms | Allocations: 3897)
+  Rendered layout layouts/application.html.erb (Duration: 101.1ms | Allocations: 14095)
+Completed 200 OK in 109ms (Views: 105.1ms | ActiveRecord: 0.9ms | Allocations: 14372)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDowMjo0Mi45MzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--85515a766eb031ce7205e0618d3ebcf3e63b9c7c/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 16:59:51 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-08 17:00:03 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 1453)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-08 17:00:03 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/home.html.erb:18
+  Rendered application/home.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 5552)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.2ms | Allocations: 5794)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 17:00:11 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.1ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 23.2ms | Allocations: 3897)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 8206)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.9ms | Allocations: 8485)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-08 17:00:13 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1452)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-08 17:00:13 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/home.html.erb:18
+  Rendered application/home.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1271)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 5569)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.2ms | Allocations: 5811)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 17:00:16 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.2ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 28.0ms | Allocations: 3888)
+  Rendered layout layouts/application.html.erb (Duration: 40.4ms | Allocations: 8189)
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 1.3ms | Allocations: 8468)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-08 17:05:31 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms | Allocations: 1425)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-08 17:05:31 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/home.html.erb:18
+  Rendered application/home.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1278)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 5637)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.2ms | Allocations: 5879)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 17:06:42 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.1ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 26.3ms | Allocations: 3894)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 8199)
+Completed 200 OK in 45ms (Views: 43.1ms | ActiveRecord: 0.9ms | Allocations: 8479)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 17:07:22 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.3ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 4740)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 10286)
+Completed 200 OK in 44ms (Views: 41.3ms | ActiveRecord: 1.0ms | Allocations: 11245)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7fd47b9b3b860608991b52a032dabae2c23b3e75/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 17:07:22 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7fd47b9b3b860608991b52a032dabae2c23b3e75", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (1.2ms) [0m[34mGenerated URL for file at key: 9ktp2n2ek9da5krs8pjabphus6i8 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDoxMjoyMi42NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--3bedf6c70c5c4e5b2200fa869bf453f417c4529f/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDoxMjoyMi42NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--3bedf6c70c5c4e5b2200fa869bf453f417c4529f/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms | Allocations: 1411)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDoxMjoyMi42NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--3bedf6c70c5c4e5b2200fa869bf453f417c4529f/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 17:07:22 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 200 OK in 6ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 17:09:25 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.1ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 31.4ms | Allocations: 4729)
+  Rendered layout layouts/application.html.erb (Duration: 61.2ms | Allocations: 10017)
+Completed 200 OK in 67ms (Views: 63.8ms | ActiveRecord: 0.9ms | Allocations: 10974)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDoxMjoyMi42NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--3bedf6c70c5c4e5b2200fa869bf453f417c4529f/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 17:09:25 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 17:09:48 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.2ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 26.2ms | Allocations: 4732)
+  Rendered layout layouts/application.html.erb (Duration: 50.5ms | Allocations: 10004)
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 1.0ms | Allocations: 10961)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDoxMjoyMi42NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--3bedf6c70c5c4e5b2200fa869bf453f417c4529f/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 17:09:49 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 17:10:02 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (8.3ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (7.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 47.1ms | Allocations: 4728)
+  Rendered layout layouts/application.html.erb (Duration: 69.1ms | Allocations: 10025)
+Completed 200 OK in 87ms (Views: 69.1ms | ActiveRecord: 16.3ms | Allocations: 10983)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDoxMjoyMi42NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--3bedf6c70c5c4e5b2200fa869bf453f417c4529f/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 17:10:02 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 17:13:15 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.1ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 30.4ms | Allocations: 3888)
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 9004)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.9ms | Allocations: 9297)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7fd47b9b3b860608991b52a032dabae2c23b3e75/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 17:13:15 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7fd47b9b3b860608991b52a032dabae2c23b3e75", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (1.1ms) [0m[34mGenerated URL for file at key: 9ktp2n2ek9da5krs8pjabphus6i8 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDoxODoxNS43OTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--6551c3e5cee777d1568143411a593cf72cec9ad1/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDoxODoxNS43OTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--6551c3e5cee777d1568143411a593cf72cec9ad1/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms | Allocations: 1390)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMDoxODoxNS43OTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--6551c3e5cee777d1568143411a593cf72cec9ad1/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 17:13:15 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-08 17:13:23 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1507)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-08 17:13:23 -0300
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/home.html.erb:18
+  Rendered application/home.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2151)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 7172)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms | Allocations: 7770)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-08 19:37:37 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 18.7ms | Allocations: 1740)
+  Rendered layout layouts/application.html.erb (Duration: 998.5ms | Allocations: 58407)
+Completed 200 OK in 1040ms (Views: 1006.4ms | ActiveRecord: 0.0ms | Allocations: 62836)
+
+
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-08 19:37:45 -0300
+Processing by PerdidosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering perdidos/index.html.erb within layouts/application
+  [1m[36mPerdido Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "perdidos" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:20
+  [1m[36mPerdido Load (0.3ms)[0m  [1m[34mSELECT "perdidos".* FROM "perdidos"[0m
+  ↳ app/views/perdidos/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Perdido"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  Rendered perdidos/index.html.erb within layouts/application (Duration: 183.7ms | Allocations: 30878)
+  Rendered layout layouts/application.html.erb (Duration: 198.0ms | Allocations: 35944)
+Completed 200 OK in 217ms (Views: 195.4ms | ActiveRecord: 7.8ms | Allocations: 38795)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a9333ccec9c18fecd683c7b847e7737a26aaed29/toby.jpeg" for 127.0.0.1 at 2023-11-08 19:37:45 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a9333ccec9c18fecd683c7b847e7737a26aaed29", "filename"=>"toby"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.9ms) [0m[34mGenerated URL for file at key: 8s3i37gdkgh9ma5zeisuqyrah92k (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQyOjQ1LjYzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4920cf12d6d55c856e31e6a623af7c619523f2f1/toby.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQyOjQ1LjYzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4920cf12d6d55c856e31e6a623af7c619523f2f1/toby.jpeg
+Completed 302 Found in 13ms (ActiveRecord: 0.2ms | Allocations: 2878)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQyOjQ1LjYzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4920cf12d6d55c856e31e6a623af7c619523f2f1/toby.jpeg" for 127.0.0.1 at 2023-11-08 19:37:45 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"toby"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-08 19:38:18 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.7ms | Allocations: 811)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 36.5ms | Allocations: 4217)
+  Rendered layout layouts/application.html.erb (Duration: 59.6ms | Allocations: 9218)
+Completed 200 OK in 107ms (Views: 65.2ms | ActiveRecord: 1.8ms | Allocations: 15743)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-08 19:38:26 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 153)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1283)
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | Allocations: 6050)
+Completed 200 OK in 59ms (Views: 53.3ms | ActiveRecord: 0.0ms | Allocations: 6782)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-08 19:40:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 18.7ms | Allocations: 1886)
+  Rendered layout layouts/application.html.erb (Duration: 201.4ms | Allocations: 43604)
+Completed 200 OK in 230ms (Views: 211.1ms | ActiveRecord: 0.0ms | Allocations: 48034)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 19:41:37 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mEncontrado Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.3ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 152.6ms | Allocations: 30336)
+  Rendered layout layouts/application.html.erb (Duration: 169.8ms | Allocations: 35416)
+Completed 200 OK in 188ms (Views: 169.3ms | ActiveRecord: 4.0ms | Allocations: 38222)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7fd47b9b3b860608991b52a032dabae2c23b3e75/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 19:41:37 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7fd47b9b3b860608991b52a032dabae2c23b3e75", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (6.1ms) [0m[34mGenerated URL for file at key: 9ktp2n2ek9da5krs8pjabphus6i8 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMjo0NjozNy44OTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--58251a8eb5fe07d69de600c9bf2b75d563884626/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMjo0NjozNy44OTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--58251a8eb5fe07d69de600c9bf2b75d563884626/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg
+Completed 302 Found in 22ms (ActiveRecord: 0.2ms | Allocations: 2926)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMjo0NjozNy44OTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--58251a8eb5fe07d69de600c9bf2b75d563884626/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 19:41:37 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-08 19:42:09 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.6ms | Allocations: 812)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 20.3ms | Allocations: 4217)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 9213)
+Completed 200 OK in 67ms (Views: 38.1ms | ActiveRecord: 1.3ms | Allocations: 15737)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-08 19:42:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 153)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1283)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 6068)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.0ms | Allocations: 6778)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-11-08 19:42:21 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alexis@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "alexis@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 366ms (ActiveRecord: 1.5ms | Allocations: 4611)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-08 19:42:21 -0300
+Processing by ApplicationController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering application/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/home.html.erb:18
+  Rendered application/home.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1519)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 6445)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.3ms | Allocations: 6785)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 19:42:26 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.2ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 28.9ms | Allocations: 3989)
+  Rendered layout layouts/application.html.erb (Duration: 54.3ms | Allocations: 8764)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 1.0ms | Allocations: 9047)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMjo0NjozNy44OTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--58251a8eb5fe07d69de600c9bf2b75d563884626/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 19:42:26 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 178)
+
+
+Started GET "/encontrados/new" for 127.0.0.1 at 2023-11-08 19:42:27 -0300
+Processing by EncontradosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/new.html.erb within layouts/application
+  Rendered shared/_formularioencontrado.html.erb (Duration: 10.4ms | Allocations: 2200)
+  Rendered encontrados/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 2566)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 7472)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.0ms | Allocations: 7872)
+
+
+Started POST "/encontrados" for 127.0.0.1 at 2023-11-08 19:43:00 -0300
+Processing by EncontradosController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "encontrado"=>{"nombre"=>"Pepo", "tamano"=>"12", "ubicacion"=>"San Carlos", "raza"=>"mestizo", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f3fb95479c8 @tempfile=#<Tempfile:/tmp/RackMultipart20231108-4376-jktk51.jpeg>, @content_type="image/jpeg", @original_filename="descarga.jpeg", @headers="Content-Disposition: form-data; name=\"encontrado[photo]\"; filename=\"descarga.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Publicar"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/encontrado.rb:14:in `validacion_perros_no_repetidos'
+  [1m[36mEncontrado Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" WHERE "encontrados"."nombre" = ? AND "encontrados"."tamano" = ? AND "encontrados"."raza" = ? AND "encontrados"."ubicacion" = ? LIMIT ?[0m  [["nombre", "Pepo"], ["tamano", 12], ["raza", "mestizo"], ["ubicacion", "San Carlos"], ["LIMIT", 1]]
+  ↳ app/models/encontrado.rb:14:in `validacion_perros_no_repetidos'
+  [1m[36mEncontrado Create (0.4ms)[0m  [1m[32mINSERT INTO "encontrados" ("nombre", "tamano", "ubicacion", "raza", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nombre", "Pepo"], ["tamano", 12], ["ubicacion", "San Carlos"], ["raza", "mestizo"], ["created_at", "2023-11-08 22:43:00.090267"], ["updated_at", "2023-11-08 22:43:00.090267"]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mActiveStorage::Blob Create (3.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "nl80gdzw07w5zcjvg916k0fxaah9"], ["filename", "descarga.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 11725], ["checksum", "BVQu7WsTvdYcD4RvqqI9oA=="], ["created_at", "2023-11-08 22:43:00.206084"]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mActiveStorage::Attachment Create (2.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "photo"], ["record_type", "Encontrado"], ["record_id", 2], ["blob_id", 3], ["created_at", "2023-11-08 22:43:00.218949"]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mEncontrado Update (0.2ms)[0m  [1m[33mUPDATE "encontrados" SET "updated_at" = ? WHERE "encontrados"."id" = ?[0m  [["updated_at", "2023-11-08 22:43:00.225333"], ["id", 2]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+[36m  Disk Storage (0.5ms) [0m[32mUploaded file to key: nl80gdzw07w5zcjvg916k0fxaah9 (checksum: BVQu7WsTvdYcD4RvqqI9oA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9cc274cd-2cb1-4a36-931e-d8bd0e5fd641) to Async(default) with arguments: #<GlobalID:0x00007f3fbb7ebbf0 @uri=#<URI::GID gid://app/ActiveStorage::Blob/3>>
+Redirected to http://127.0.0.1:3000/encontrados
+Completed 302 Found in 192ms (ActiveRecord: 14.4ms | Allocations: 14612)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9cc274cd-2cb1-4a36-931e-d8bd0e5fd641]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 19:43:00 -0300
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9cc274cd-2cb1-4a36-931e-d8bd0e5fd641] Performing ActiveStorage::AnalyzeJob (Job ID: 9cc274cd-2cb1-4a36-931e-d8bd0e5fd641) from Async(default) enqueued at 2023-11-08T22:43:00Z with arguments: #<GlobalID:0x00007f3fbb7dd3c0 @uri=#<URI::GID gid://app/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9cc274cd-2cb1-4a36-931e-d8bd0e5fd641] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9cc274cd-2cb1-4a36-931e-d8bd0e5fd641]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9cc274cd-2cb1-4a36-931e-d8bd0e5fd641]   [1m[36mActiveStorage::Blob Update (1.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9cc274cd-2cb1-4a36-931e-d8bd0e5fd641]   [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9cc274cd-2cb1-4a36-931e-d8bd0e5fd641] Performed ActiveStorage::AnalyzeJob (Job ID: 9cc274cd-2cb1-4a36-931e-d8bd0e5fd641) from Async(default) in 33.7ms
+Processing by EncontradosController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.2ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 37.2ms | Allocations: 5889)
+  Rendered layout layouts/application.html.erb (Duration: 50.9ms | Allocations: 10835)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 1.2ms | Allocations: 11173)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9704ef2f7052407067decb8c8086de5eb850d349/descarga.jpeg" for 127.0.0.1 at 2023-11-08 19:43:00 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9704ef2f7052407067decb8c8086de5eb850d349", "filename"=>"descarga"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (1.2ms) [0m[34mGenerated URL for file at key: nl80gdzw07w5zcjvg916k0fxaah9 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibXc0TUdka2VuY3dOM2MxZW1OcWRtYzVNVFpyTUdaNFlXRm9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjAwLjQ0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8216211b407acacb2c25d70c84ba66d2da88a6ef/descarga.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibXc0TUdka2VuY3dOM2MxZW1OcWRtYzVNVFpyTUdaNFlXRm9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjAwLjQ0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8216211b407acacb2c25d70c84ba66d2da88a6ef/descarga.jpeg
+Completed 302 Found in 10ms (ActiveRecord: 0.3ms | Allocations: 1360)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibXc0TUdka2VuY3dOM2MxZW1OcWRtYzVNVFpyTUdaNFlXRm9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjAwLjQ0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8216211b407acacb2c25d70c84ba66d2da88a6ef/descarga.jpeg" for 127.0.0.1 at 2023-11-08 19:43:00 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"descarga"}
+Completed 200 OK in 13ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/encontrados/new" for 127.0.0.1 at 2023-11-08 19:43:13 -0300
+Processing by EncontradosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/new.html.erb within layouts/application
+  Rendered shared/_formularioencontrado.html.erb (Duration: 4.3ms | Allocations: 1255)
+  Rendered encontrados/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1371)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 6144)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 6431)
+
+
+Started POST "/encontrados" for 127.0.0.1 at 2023-11-08 19:43:29 -0300
+Processing by EncontradosController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "encontrado"=>{"nombre"=>"Pepo", "tamano"=>"123", "ubicacion"=>"San Carlos", "raza"=>"mestizo", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f3fbc34e8a8 @tempfile=#<Tempfile:/tmp/RackMultipart20231108-4376-8gu1jm.jpeg>, @content_type="image/jpeg", @original_filename="descarga.jpeg", @headers="Content-Disposition: form-data; name=\"encontrado[photo]\"; filename=\"descarga.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Publicar"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/encontrado.rb:14:in `validacion_perros_no_repetidos'
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" WHERE "encontrados"."nombre" = ? AND "encontrados"."tamano" = ? AND "encontrados"."raza" = ? AND "encontrados"."ubicacion" = ? LIMIT ?[0m  [["nombre", "Pepo"], ["tamano", 123], ["raza", "mestizo"], ["ubicacion", "San Carlos"], ["LIMIT", 1]]
+  ↳ app/models/encontrado.rb:14:in `validacion_perros_no_repetidos'
+  [1m[36mEncontrado Create (2.1ms)[0m  [1m[32mINSERT INTO "encontrados" ("nombre", "tamano", "ubicacion", "raza", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nombre", "Pepo"], ["tamano", 123], ["ubicacion", "San Carlos"], ["raza", "mestizo"], ["created_at", "2023-11-08 22:43:30.003883"], ["updated_at", "2023-11-08 22:43:30.003883"]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mActiveStorage::Blob Create (4.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "ma3u53439vp93pp7og0o64dhiqp9"], ["filename", "descarga.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 11725], ["checksum", "BVQu7WsTvdYcD4RvqqI9oA=="], ["created_at", "2023-11-08 22:43:30.024579"]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mActiveStorage::Attachment Create (2.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "photo"], ["record_type", "Encontrado"], ["record_id", 3], ["blob_id", 4], ["created_at", "2023-11-08 22:43:30.036859"]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mEncontrado Update (0.3ms)[0m  [1m[33mUPDATE "encontrados" SET "updated_at" = ? WHERE "encontrados"."id" = ?[0m  [["updated_at", "2023-11-08 22:43:30.045400"], ["id", 3]]
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/encontrados_controller.rb:14:in `create'
+[36m  Disk Storage (0.8ms) [0m[32mUploaded file to key: ma3u53439vp93pp7og0o64dhiqp9 (checksum: BVQu7WsTvdYcD4RvqqI9oA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 8e6a7551-0e79-4838-af38-f34c71c04cc6) to Async(default) with arguments: #<GlobalID:0x00007f3fbc2e4390 @uri=#<URI::GID gid://app/ActiveStorage::Blob/4>>
+Redirected to http://127.0.0.1:3000/encontrados
+Completed 302 Found in 74ms (ActiveRecord: 20.0ms | Allocations: 8658)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e6a7551-0e79-4838-af38-f34c71c04cc6]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e6a7551-0e79-4838-af38-f34c71c04cc6] Performing ActiveStorage::AnalyzeJob (Job ID: 8e6a7551-0e79-4838-af38-f34c71c04cc6) from Async(default) enqueued at 2023-11-08T22:43:30Z with arguments: #<GlobalID:0x00007f3fbc2d77f8 @uri=#<URI::GID gid://app/ActiveStorage::Blob/4>>
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 19:43:30 -0300
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e6a7551-0e79-4838-af38-f34c71c04cc6] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e6a7551-0e79-4838-af38-f34c71c04cc6]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e6a7551-0e79-4838-af38-f34c71c04cc6]   [1m[36mActiveStorage::Blob Update (1.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e6a7551-0e79-4838-af38-f34c71c04cc6]   [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e6a7551-0e79-4838-af38-f34c71c04cc6] Performed ActiveStorage::AnalyzeJob (Job ID: 8e6a7551-0e79-4838-af38-f34c71c04cc6) from Async(default) in 36.24ms
+Processing by EncontradosController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.5ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 34.7ms | Allocations: 7566)
+  Rendered layout layouts/application.html.erb (Duration: 47.0ms | Allocations: 12380)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 2.1ms | Allocations: 12663)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--39aab69045efec55c3c7419d9404f03f72d4b8f5/descarga.jpeg" for 127.0.0.1 at 2023-11-08 19:43:30 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--39aab69045efec55c3c7419d9404f03f72d4b8f5", "filename"=>"descarga"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: ma3u53439vp93pp7og0o64dhiqp9 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV0V6ZFRVek5ETTVkbkE1TTNCd04yOW5NRzgyTkdSb2FYRndPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjMwLjI1NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3c3871e83c6bbd858b61e287c6b7ea06ba5ae089/descarga.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV0V6ZFRVek5ETTVkbkE1TTNCd04yOW5NRzgyTkdSb2FYRndPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjMwLjI1NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3c3871e83c6bbd858b61e287c6b7ea06ba5ae089/descarga.jpeg
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 1308)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV0V6ZFRVek5ETTVkbkE1TTNCd04yOW5NRzgyTkdSb2FYRndPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjMwLjI1NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3c3871e83c6bbd858b61e287c6b7ea06ba5ae089/descarga.jpeg" for 127.0.0.1 at 2023-11-08 19:43:30 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"descarga"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 167)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 19:44:35 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.2ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 63.7ms | Allocations: 8398)
+  Rendered layout layouts/application.html.erb (Duration: 84.8ms | Allocations: 13675)
+Completed 200 OK in 96ms (Views: 91.6ms | ActiveRecord: 1.9ms | Allocations: 14641)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMjo0NjozNy44OTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--58251a8eb5fe07d69de600c9bf2b75d563884626/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 19:44:36 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibXc0TUdka2VuY3dOM2MxZW1OcWRtYzVNVFpyTUdaNFlXRm9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjAwLjQ0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8216211b407acacb2c25d70c84ba66d2da88a6ef/descarga.jpeg" for 127.0.0.1 at 2023-11-08 19:44:36 -0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV0V6ZFRVek5ETTVkbkE1TTNCd04yOW5NRzgyTkdSb2FYRndPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjMwLjI1NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3c3871e83c6bbd858b61e287c6b7ea06ba5ae089/descarga.jpeg" for 127.0.0.1 at 2023-11-08 19:44:36 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"descarga"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 170)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"descarga"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/encontrados/new" for 127.0.0.1 at 2023-11-08 19:44:51 -0300
+Processing by EncontradosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/new.html.erb within layouts/application
+  Rendered shared/_formularioencontrado.html.erb (Duration: 7.6ms | Allocations: 1710)
+  Rendered encontrados/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 2025)
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | Allocations: 6845)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.0ms | Allocations: 7201)
+
+
+Started GET "/peridos_path" for 127.0.0.1 at 2023-11-08 19:45:00 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/peridos_path"):
+  
+Started GET "/perdidos" for 127.0.0.1 at 2023-11-08 19:45:07 -0300
+Processing by PerdidosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering perdidos/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:14
+  [1m[36mPerdido Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "perdidos" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:20
+  [1m[36mPerdido Load (0.3ms)[0m  [1m[34mSELECT "perdidos".* FROM "perdidos"[0m
+  ↳ app/views/perdidos/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Perdido"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perdidos/index.html.erb:34
+  Rendered perdidos/index.html.erb within layouts/application (Duration: 49.4ms | Allocations: 8620)
+  Rendered layout layouts/application.html.erb (Duration: 74.8ms | Allocations: 13670)
+Completed 200 OK in 94ms (Views: 83.0ms | ActiveRecord: 2.5ms | Allocations: 16145)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a9333ccec9c18fecd683c7b847e7737a26aaed29/toby.jpeg" for 127.0.0.1 at 2023-11-08 19:45:07 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a9333ccec9c18fecd683c7b847e7737a26aaed29", "filename"=>"toby"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: 8s3i37gdkgh9ma5zeisuqyrah92k (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjUwOjA3LjQ4MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--94cc3fbfc59be0d3762cfb20b4ee0ab6918c4172/toby.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjUwOjA3LjQ4MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--94cc3fbfc59be0d3762cfb20b4ee0ab6918c4172/toby.jpeg
+Completed 302 Found in 13ms (ActiveRecord: 0.2ms | Allocations: 1367)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPSE16YVRNM1oyUnJaMmc1YldFMWVtVnBjM1Z4ZVhKaGFEa3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Sdllua3VhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmRHOWllUzVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjUwOjA3LjQ4MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--94cc3fbfc59be0d3762cfb20b4ee0ab6918c4172/toby.jpeg" for 127.0.0.1 at 2023-11-08 19:45:07 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"toby"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/encontrados/new" for 127.0.0.1 at 2023-11-08 19:45:34 -0300
+Processing by EncontradosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/new.html.erb within layouts/application
+  Rendered shared/_formularioencontrado.html.erb (Duration: 5.5ms | Allocations: 1794)
+  Rendered encontrados/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2185)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 7467)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.0ms | Allocations: 8451)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 19:45:36 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (2.9ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 53.6ms | Allocations: 8205)
+  Rendered layout layouts/application.html.erb (Duration: 73.3ms | Allocations: 13024)
+Completed 200 OK in 76ms (Views: 69.6ms | ActiveRecord: 5.3ms | Allocations: 13380)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMjo0NjozNy44OTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--58251a8eb5fe07d69de600c9bf2b75d563884626/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 19:45:36 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 178)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibXc0TUdka2VuY3dOM2MxZW1OcWRtYzVNVFpyTUdaNFlXRm9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjAwLjQ0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8216211b407acacb2c25d70c84ba66d2da88a6ef/descarga.jpeg" for 127.0.0.1 at 2023-11-08 19:45:36 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV0V6ZFRVek5ETTVkbkE1TTNCd04yOW5NRzgyTkdSb2FYRndPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjMwLjI1NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3c3871e83c6bbd858b61e287c6b7ea06ba5ae089/descarga.jpeg" for 127.0.0.1 at 2023-11-08 19:45:36 -0300
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"descarga"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"descarga"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/encontrados" for 127.0.0.1 at 2023-11-08 19:45:49 -0300
+Processing by EncontradosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering encontrados/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:17
+  [1m[36mEncontrado Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "encontrados" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:23
+  [1m[36mEncontrado Load (0.1ms)[0m  [1m[34mSELECT "encontrados".* FROM "encontrados"[0m
+  ↳ app/views/encontrados/index.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Encontrado"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/encontrados/index.html.erb:37
+  Rendered encontrados/index.html.erb within layouts/application (Duration: 53.1ms | Allocations: 8378)
+  Rendered layout layouts/application.html.erb (Duration: 76.4ms | Allocations: 13649)
+Completed 200 OK in 84ms (Views: 80.3ms | ActiveRecord: 2.1ms | Allocations: 14594)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV3QwY0RKdU1tVnJPV1JoTld0eWN6aHdhbUZpY0doMWN6WnBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJekxURXhMVEF4SUdGMElEQXdMalU0TGpBMUxtcHdaV2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFkb1lYUnpRWEJ3SlRJd1NXMWhaMlVsTWpBeU1ESXpMVEV4TFRBeEpUSXdZWFFsTWpBd01DNDFPQzR3TlM1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0xMS0wOFQyMjo0NjozNy44OTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--58251a8eb5fe07d69de600c9bf2b75d563884626/WhatsApp%20Image%202023-11-01%20at%2000.58.05.jpeg" for 127.0.0.1 at 2023-11-08 19:45:50 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"WhatsApp Image 2023-11-01 at 00.58.05"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibXc0TUdka2VuY3dOM2MxZW1OcWRtYzVNVFpyTUdaNFlXRm9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjAwLjQ0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8216211b407acacb2c25d70c84ba66d2da88a6ef/descarga.jpeg" for 127.0.0.1 at 2023-11-08 19:45:50 -0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV0V6ZFRVek5ETTVkbkE1TTNCd04yOW5NRzgyTkdSb2FYRndPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGMyTmhjbWRoTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJsYzJOaGNtZGhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTExLTA4VDIyOjQ4OjMwLjI1NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3c3871e83c6bbd858b61e287c6b7ea06ba5ae089/descarga.jpeg" for 127.0.0.1 at 2023-11-08 19:45:50 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"descarga"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"descarga"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
