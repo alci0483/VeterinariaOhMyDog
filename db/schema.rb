@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_01_180137) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_08_055321) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -48,6 +48,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_01_180137) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nombre", "ubicacion"], name: "index_cuidadors_on_nombre_and_ubicacion", unique: true
+  end
+
+  create_table "encontrados", force: :cascade do |t|
+    t.string "nombre", null: false
+    t.integer "tamano", null: false
+    t.string "ubicacion", null: false
+    t.string "raza", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "paseadors", force: :cascade do |t|

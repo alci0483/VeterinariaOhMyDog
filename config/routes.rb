@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :cuidadores, only: [:show,:index, :new, :create]
   resources :paseadores, only: [:index,:show,:new, :create, :edit, :update]
   resources :perdidos, only:  [:show,:index, :new, :create]
+  
   get 'main/home', to: 'main#home'
-
+  resources :encontrados, only:  [:show,:index, :new, :create]
 
   # Defines the root path route ("/")
   get '/home', to: 'application#home'
