@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag 'custom', media: 'all' %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "custom_link", media: "all" %>
     <%= javascript_importmap_tags %>
+    
+    <%= image_tag("descarga.jpeg", size: "180x120", class: "logo-image") %>
   </head>
 
   <body>

@@ -1,0 +1,57 @@
+<div class="Parte superior">
+        <h4 > Perros Perdidos </h4>
+        <p>
+        En un mundo donde nuestras mascotas son consideradas miembros de la familia, l
+        a pérdida de un perro puede ser una experiencia devastadora. Ya sea que se hayan 
+        escapado del hogar, hayan sido separados durante un paseo o hayan desaparecido por 
+        alguna otra razón, encontrar a un perro perdido es una prioridad para sus dueños. 
+        Es en momentos como estos que un servicio de publicación de perros perdidos puede 
+        marcar la diferencia.
+        </p>
+
+
+  <%= link_to "Volver a Inicio", new_user_session_path, class: "btn btn-primary" %>
+  <% if user_signed_in? %> 
+  <%= link_to 'Publicar Perro Perdido', new_perdido_path, class: "btn btn-primary" %>
+  <% end %>
+  
+  
+  
+ <% if @perdidos.empty?%>
+    <p> No hay Perros Perdidos</p>
+ <% else %>
+     <div class="perdidos-list">
+     <ul>
+     <% @perdidos.each do |perdido| %>
+      <li class="perdido-item">
+         <div class="perdido-info">
+         <h2><%= perdido.nombre %></h2>
+         <p>Tiene <%=perdido.edad%> años y se perdió en <%= perdido.ubicacion %> </p>
+           <p>Su altura es <%= perdido.tamano %> cm y de raza: <%= perdido.raza %> </p>
+                 <%= link_to "Contactar", perdido_path(perdido.id), class: "btn btn-primary" %>
+               </div>
+               <div class="perdido-avatar">
+                <%= image_tag perdido.photo, width: 150 if perdido.photo.attached? %>
+               </div>
+           </li>
+    <% end%>
+    </li>
+    </div>
+  <%end%>
+  </div>
+
+  <div class="bar">
+      <p>Derechos de autor © 2023 - Oh my Dog</p>
+  
+</div>
+
+
+ 
+
+
+
+ 
+
+
+
+  

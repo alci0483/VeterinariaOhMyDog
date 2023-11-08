@@ -24,11 +24,11 @@
               </div>
             <% end %>
           <% else %>
-            <%= link_to new_user_session_path, class: "btn bg-warning p-2 text-white bg-opacity-50" do %>
-              <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
-                <p1> Iniciar Sesión </p1>
-              </div>
-            <% end %>
+          <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+            <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+              <p1> Iniciar Sesión </p1>
+            </div>
+          <% end %>
           <% end %>
         </li>
       </ul>
@@ -94,20 +94,29 @@
           </div>
         </a>
       </div>
-      <div class="col-md-6 ">
-        <a class="nav-link" href="#">
-           <div class="card mb-3" style="background-color: #FFA500; color: white;">
-            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <div class="card-body">
-                <h5 class="card-title text-center text-dark">Perros Perdidos y encontrados</h5>
-                <p class="card-text text-center text-dark">Difundamos informacion para que nuetros amigos caninos
-                  no pasen tiempo lejos de sus familias</p>
-              </div>
-            <% end %>
+      <div class="row gx-5">
+<div class="col-md-6">
+  <a class="nav-link" href="#">
+    <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+
+        <%= link_to perdidos_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+          <div class="card-body">
+            <h5 class="card-title text-center">Perros Perdidos </h5>
+            <p class="card-text text-center">Encuentra personas también amantes de los perros que puedan ayudarte con tu mascota cuando tú no puedas</p>
           </div>
-        </a>
-      </div>
+        <% end %>
+        <%= link_to encontrados_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+          <div class="card-body">
+            <h5 class="card-title text-center">Encontrados</h5>
+            <p class="card-text text-center">Encuentra personas también amantes de los perros que puedan ayudarte con tu mascota cuando tú no puedas</p>
+          </div>
+        <% end %>
+
     </div>
+  </a>
+</div>
+</div>
+
 
     <div class="row gx-5">
       <div class="col-md-6 ">

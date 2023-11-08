@@ -1,0 +1,40 @@
+<div class="perdidos-list">
+
+<%= form_with model: @perdido do |form| %>
+    <% @perdido.errors.full_messages.each do |error| %>
+        <div>
+          <%= error %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+      <%= form.label           :nombre, 'Nombre'%>
+      <%= form.text_field      :nombre, class: "input-tamanocampo" %>
+      </div>
+  
+      <div class="form-group">
+        <%= form.label         :tamano, 'Tamaño'  %>
+        <%= form.number_field  :tamano, class: "input-tamanocampo"%>
+      </div>
+
+      <div class="form-group">
+        <%= form.label         :edad, 'Edad   '%>
+        <%= form.number_field  :edad  , class: "input-tamanocampo"%>
+      </div>
+
+      <div class="form-group">
+        <%= form.label         :ubicacion, 'Ubicación'%>
+        <%= form.text_field    :ubicacion, class: "input-tamanocampo" %>
+      </div> 
+
+      <div class="form-group">
+        <%= form.label         :raza, 'Raza',  class: "input-tamanotexto"%>
+        <%= form.text_field    :raza, class: "input-tamanocampo" %> 
+      </div>
+      <div class="form-group">
+        <%= form.label         :Cargar_Foto%>
+        <%= form.file_field    :photo %>
+      </div> 
+      <%= form.submit 'Publicar', class: "btn-publicar btn-primary" %>
+ <% end %>
+  

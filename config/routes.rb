@@ -24,7 +24,10 @@ Rails.application.routes.draw do
 
   resources :adopcions
   resources :campanas
+  resources :perdidos, only:  [:show,:index, :new, :create]
 
+  get 'main/home', to: 'main#home'
+  resources :encontrados, only:  [:show,:index, :new, :create]
   # Defines the root path route ("/")
   get '/home', to: 'application#home'
 

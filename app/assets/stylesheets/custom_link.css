@@ -1,5 +1,5 @@
 .custom-link {
-  color: green; /* Cambia el color del texto a verde */
+  color: rgb(117, 0, 128); /* Cambia el color del texto a verde */
   text-decoration: none; /* Quita el subrayado de los enlaces */
   /* Otros estilos que desees aplicar */
 }
