@@ -10,9 +10,9 @@
         </p>
 
 
-  <%= link_to "Volver a Inicio", new_user_session_path, class: "btn1 btn-primary" %>
+  <%= link_to "Volver a Inicio", new_user_session_path, class: "btn btn-primary" %>
   <% if user_signed_in? %> 
-  <%= link_to 'Publicar Perro Perdido', new_perdido_path, class: "btn1 btn-primary" %>
+  <%= link_to 'Publicar Perro Perdido', new_perdido_path, class: "btn btn-primary" %>
   <% end %>
   
   
@@ -28,7 +28,7 @@
          <h2><%= perdido.nombre %></h2>
          <p>Tiene <%=perdido.edad%> años y se perdió en <%= perdido.ubicacion %> </p>
            <p>Su altura es <%= perdido.tamano %> cm y de raza: <%= perdido.raza %> </p>
-                 <%= link_to "Contactar", perdido_path(perdido.id), class: "btn1 btn-primary" %>
+                 <%= link_to "Contactar", perdido_path(perdido.id), class: "btn btn-primary" %>
                </div>
                <div class="perdido-avatar">
                 <%= image_tag perdido.photo, width: 150 if perdido.photo.attached? %>

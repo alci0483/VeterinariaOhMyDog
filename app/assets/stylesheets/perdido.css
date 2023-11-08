@@ -24,7 +24,7 @@
 }
 
 /* Estilos para los botones */
-.btn1 {
+.btn {
   display: inline-block;
   padding: 10px 20px;
   background-color: #fc9700;
@@ -44,5 +44,5 @@
 }
 
 .btn:hover {
-  background-color: rgba(0, 255, 170, 0.467);
+  background-color: rgba(51, 189, 199, 0.467);
 }
