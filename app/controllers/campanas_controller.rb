@@ -23,16 +23,13 @@ class CampanasController < ApplicationController
   def create
     @campana = Campana.new(campana_params)
 
-    respond_to do |format|
-      if @campana.save
-        format.html { redirect_to campana_url(@campana), notice: "Campana was successfully created." }
-        format.json { render :show, status: :created, location: @campana }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @campana.errors, status: :unprocessable_entity }
-      end
+    if @campana.save
+      redirect_to campanas_path, notice: "La Nueva publicacion de Campaña fue Exitosa"
+    else
+      @error_message = "Ya Existe esta Publicacion de Campaña"
+      render :new, status: :unprocessable_entity
     end
-  end
+end
 
   # PATCH/PUT /campanas/1 or /campanas/1.json
   def update

@@ -56,7 +56,7 @@
 
       </div>
     </div>
-    <% end %>
+    <% end  %>
     <div class="row gx-5">
       <div class="col-md-6">
 
@@ -66,10 +66,12 @@
         <%else%>
         <div id="adopcions">
           <% @adopcions.each do |adopcion| %>
+          <li class="cuidador-item">
             <%= render adopcion %>
-            <p>
+          </li>
+            <!-- <p>
               <%= link_to "Ver esta Adopcion", adopcion %>
-            </p>
+            </p> -->
           <% end %>
         </div>
         <% end %>

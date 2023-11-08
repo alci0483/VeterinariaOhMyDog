@@ -23,15 +23,14 @@ class AdopcionsController < ApplicationController
   def create
     @adopcion = Adopcion.new(adopcion_params)
 
-    respond_to do |format|
-      if @adopcion.save
-        format.html { redirect_to adopcion_url(@adopcion), notice: "Adopcion was successfully created." }
-        format.json { render :show, status: :created, location: @adopcion }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @adopcion.errors, status: :unprocessable_entity }
-      end
+
+    if @adopcion.save
+      redirect_to adopcions_path, notice: "La Nueva publicacion de Adopcion fue Exitosa"
+    else
+      @error_message = "Ya Existe esta Publicacion de Adopcion"
+      render :new, status: :unprocessable_entity
     end
+
   end
 
   # PATCH/PUT /adopcions/1 or /adopcions/1.json
