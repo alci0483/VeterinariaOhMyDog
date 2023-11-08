@@ -44,5 +44,19 @@
 }
 
 .btn:hover {
-  background-color: rgba(51, 189, 199, 0.467);
+  background-color: rgba(45, 168, 177, 0.486);
 }
+
+.bar {
+  background-color: rgb(45, 168, 177); /* Cambia esto al color que desees */
+  color: #fff; /* Texto blanco */
+  text-align: center; /* Alineación de texto al centro */
+  padding: 30px 0px;
+  position: relative; /* Para permitir animaciones */
+  overflow: hidden; /* Oculta el desbordamiento del texto animado */
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+  

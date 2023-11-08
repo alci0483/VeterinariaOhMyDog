@@ -1,4 +1,5 @@
   
+<div class="contenedor">
         <h4 > Perros Encontrados </h4>
         <p>
         Bienvenido a Perros Encontrados
@@ -28,7 +29,7 @@ En Perros Encontrados, estamos comprometidos
       <li class="perdido-item">
          <div class="perdido-info">
          <h2><%= encontrado.nombre %></h2>
-         <p>se perdió en <%= encontrado.ubicacion %> </p>
+         <p>Se perdió en <%= encontrado.ubicacion %> </p>
            <p>Su altura es <%= encontrado.tamano %> cm y de raza: <%= encontrado.raza %> </p>
                  <%= link_to "Contactar", encontrado_path(encontrado.id), class: "btn btn-primary" %>
                </div>
@@ -40,8 +41,13 @@ En Perros Encontrados, estamos comprometidos
     </li>
     </div>
   <%end%>
+  
+  </div>
 
-
+  <div class="bar">
+      <p>Derechos de autor © 2023 - Oh my Dog</p>
+  
+</div>
  
 
 
