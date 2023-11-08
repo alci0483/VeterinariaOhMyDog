@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veterinaria Oh My Dog</title>
+  <title>Servicios Paseadores y Cuidadores</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light p-2 text-dark bg-opacity-50">
@@ -22,7 +22,7 @@
 
     <div class="container">
 
-      <a class="navbar-brand text-white" style="font-size: 35px;">Veterinaria Oh My Dog</a>
+      <a class="navbar-brand text-white" style="font-size: 35px;">Servicios Paseadores y Cuidadores</a>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <% if user_signed_in? %>
@@ -45,12 +45,13 @@
 
 
     <div class="container">
-        <h4 class="text-center text-orange"> ¿Quiénes Somos? </h4>
-        <p class="text-center text-orange">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
-        compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
-        convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
-        diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
-        perros y sus familias.
+        <h4 class="text-center text-orange">  </h4>
+        <p class="text-center text-orange">Encuentra a los cuidadores y paseadores ideales para tus mascotas en nuestra plataforma.
+           Conectamos a dueños de mascotas con amantes de los animales dispuestos a brindar atención y cariño a tus peludos.
+           Explora perfiles, descubre experiencias anteriores, y elige el cuidador o paseador perfecto
+           para satisfacer las necesidades únicas de tu mascota. Facilitamos la creación de vínculos entre personas apasionadas
+            por los animales y aquellos que buscan servicios confiables para garantizar que tus amigos peludos estén en las mejores manos mientras tú estás ocupado.
+             ¡Cuida y pasea con confianza!
         </p>
     </div>
   </div>
@@ -58,19 +59,7 @@
   <!-- Sección de opciones -->
   <div class="container-fluid my-5 ">
 
-    <div class="row gx-5">
-      <div class="col-md-6 ">
-        <a class="nav-link" href="#">
-             <div class="card mb-3" style="background-color: #FFA500; color: white;">
-            <%= link_to edit_user_registration_path , class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <div class="card-body">
-                <h5 class="card-title text-center">Editar Perfil</h5>
-                <p class="card-text text-center"> </p>
-              </div>
-            <% end %>
-          </div>
-        </a>
-      </div>
+
 
     <div class="row gx-5">
       <div class="col-md-6">
@@ -140,3 +129,4 @@
 
 </body>
 </html>
+    <a class="btn btn-secondary" href="<%= home_path %>">Volver</a>

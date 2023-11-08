@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag 'custom', media: 'all' %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "custom_link", media: "all" %>
     <%= javascript_importmap_tags %>
@@ -17,7 +17,7 @@
     <p class="navbar-text pull-right">
 
 
-
+   <%= image_tag("logo.jpeg", size: "100x50", class: "logo-image") %>
     <%= yield %>
   </body>
 </html>
