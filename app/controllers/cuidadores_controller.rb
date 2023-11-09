@@ -16,7 +16,7 @@ class CuidadoresController < ApplicationController
   if @cuidador.save
      redirect_to cuidadores_path, notice: "Cuidador publicado con éxito."
   else
-    @error_message = "Ya existe un cuidador con esta informacion"
+    @error_message = "Ya existe un cuidador con este email"
     render :new, status: :unprocessable_entity
   end
 end
@@ -50,6 +50,7 @@ end
 private
 
 def solicitud_params
+
   params.require(:solicitud).permit(:nombre, :email, :mensaje)
 end
 
@@ -59,6 +60,7 @@ end
   private
 
   def cuidador_params
-    params.require(:cuidador).permit(:nombre, :apellido, :horarios, :ubicacion, :contacto)
+
+    params.require(:cuidador).permit(:nombre, :apellido, :horarios, :ubicacion, :contacto, :email)
   end
 end

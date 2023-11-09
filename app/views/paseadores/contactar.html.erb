@@ -1,3 +1,6 @@
+
+
+
 <%= form_for @solicitud, url: enviar_contacto_paseadore_path(@paseador), method: :post do |f| %>
   <% if user_signed_in? %>
     <!-- Si el usuario está autenticado, no pedir el nombre y correo -->

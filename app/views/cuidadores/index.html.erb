@@ -67,9 +67,10 @@
             </div>
             <div class="cuidador-info">
               <h2><%= cuidador.nombre %> <%= cuidador.apellido %></h2>
-              <p><strong>Horarios:</strong> <%= cuidador.horarios %></p>
+              <p><strong>Horarios:</strong> <%= cuidador.horarios.to_s %></p>
               <p><strong>Ubicación:</strong> <%= cuidador.ubicacion %></p>
-                  <!--<a class="btn btn-primary" href="<%= contactar_cuidadore_path(cuidador) %>">Solicitar Contacto</a> -->
+              <button onclick="return confirm('acercate a la veterinaria para más información')">Contactar</button>
+              <!--<a class="btn btn-primary" href="<%= contactar_cuidadore_path(cuidador) %>"Contactar</a> -->
             </div>
           </li>
         <% end %>
