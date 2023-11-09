@@ -16,7 +16,7 @@ class CuidadoresController < ApplicationController
   if @cuidador.save
      redirect_to cuidadores_path, notice: "Cuidador publicado con éxito."
   else
-    @error_message = "Ya existe un cuidador con el mismo nombre y ubicación."
+    @error_message = "Ya existe un cuidador con esta informacion"
     render :new, status: :unprocessable_entity
   end
 end

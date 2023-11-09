@@ -1,10 +1,10 @@
 class PerdidosController < ApplicationController
    def index
-    @perdidos=Perdido.all
+    @perdidos=Perdido.all.order(created_at: :desc)
    end
    def show
     @perdido= Perdido.find(params[:id])
-    
+
    end
    def new
     @perdido= Perdido.new
@@ -19,8 +19,6 @@ class PerdidosController < ApplicationController
    end
    def perdido_params
       params.require(:perdido).permit(:nombre, :tamano, :edad, :ubicacion, :raza, :photo )
-     
+
    end
   end
-
- 

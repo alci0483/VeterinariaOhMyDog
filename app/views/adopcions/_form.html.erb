@@ -1,4 +1,5 @@
-<%= form_with(model: adopcion) do |form| %>
+<div class="perdidos-list">
+  <%= form_with(model: adopcion) do |form| %>
   <% if adopcion.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(adopcion.errors.count, "error") %> prohibited this adopcion from being saved:</h2>
@@ -11,32 +12,33 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="form-group">
     <%= form.label :nombre, style: "display: block" %>
-    <%= form.text_field :nombre %>
+    <%= form.text_field :nombre, class: "input-tamanocampo" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :tamanio, style: "display: block" %>
-    <%= form.number_field :tamanio %>
+    <%= form.number_field :tamanio, class: "input-tamanocampo" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :edad, style: "display: block" %>
-    <%= form.number_field :edad %>
+    <%= form.number_field :edad, class: "input-tamanocampo" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :ubicacion, style: "display: block" %>
-    <%= form.text_field :ubicacion %>
+    <%= form.text_field :ubicacion, class: "input-tamanocampo" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :raza, style: "display: block" %>
-    <%= form.text_field :raza %>
+    <%= form.text_field :raza, class: "input-tamanocampo" %>
   </div>
-
+  <br>
   <div>
-    <%= form.submit 'Publicar Adopcion'%>
+    <%= form.submit 'Publicar Adopcion', class: "btn-publicar btn-primary"%>
   </div>
 <% end %>
+</div>

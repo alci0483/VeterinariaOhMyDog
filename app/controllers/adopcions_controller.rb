@@ -3,7 +3,7 @@ class AdopcionsController < ApplicationController
 
   # GET /adopcions or /adopcions.json
   def index
-    @adopcions = Adopcion.all
+    @adopcions = Adopcion.all.order(created_at: :desc)
   end
 
   # GET /adopcions/1 or /adopcions/1.json

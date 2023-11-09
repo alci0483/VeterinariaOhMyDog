@@ -1,3 +1,5 @@
+<div class="perdidos-list">
+
 <%= form_with(model: campana) do |form| %>
   <% if campana.errors.any? %>
     <div style="color: red">
@@ -11,27 +13,38 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :nombre_campana, style: "display: block" %>
-    <%= form.text_field :nombre_campana %>
+  <div class="form-group">
+    <%= form.label :nombre_campana, "Nombre de Campaña", style: "display: block" %>
+    <%= form.text_field :nombre_campana, class: "input-tamanocampo"  %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :objetivo, style: "display: block" %>
-    <%= form.text_field :objetivo %>
+    <%= form.text_area :objetivo, class: "input-tamanocampo"  %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :monto, style: "display: block" %>
-    <%= form.number_field :monto %>
+    <%= form.number_field :monto, class: "input-tamanocampo"  %>
   </div>
 
-  <div>
+  <div class="form-group">
+    <%= form.label :fecha_fin %>
+    <%= form.date_field :fecha_fin, class: "input-tamanocampo"  %>
+  </div>
+
+  <div class="form-group">
     <%= form.label :dni_titular_responsable, style: "display: block" %>
-    <%= form.number_field :dni_titular_responsable %>
+    <%= form.number_field :dni_titular_responsable, class: "input-tamanocampo"  %>
   </div>
 
+  <div class="form-group">
+    <%= form.label :photo, "Foto de QR", style: "display: block" %>
+    <%= form.file_field :photo, class: "input-tamanocampo"  %>
+  </div>
+  <br>
   <div>
-    <%= form.submit 'Publicar Campaña'%>
+    <%= form.submit 'Publicar Campaña', class: "btn-publicar btn-primary"%>
   </div>
 <% end %>
+</div>

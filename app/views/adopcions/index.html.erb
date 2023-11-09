@@ -42,38 +42,34 @@
   <!-- Sección de Servicios -->
   <div class="container-fluid my-5 ">
 
-    <% if user_signed_in? && current_user.admin?  %>
-    <div class="row gx-5">
-      <div class="col-md-6">
-
+    <% if user_signed_in? %>
+      <div class="row gx-5">
+        <div class="col-md-6">
           <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
             <%= link_to new_adopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-            <div class="card-body">
-              <h5 class="text-center text-black"> Publicar Adopcion <h5>
-            </div>
+              <div class="card-body">
+                <h5 class="text-center text-black"> Publicar Adopcion <h5>
+              </div>
             <% end %>
           </div>
-
+        </div>
       </div>
-    </div>
     <% end  %>
+
     <div class="row gx-5">
       <div class="col-md-6">
 
         <!--Principio del Index de Adopciones -->
         <% if @adopcions.empty?%>
-          <h2 class="text-center"> No hay ninguna publicacion de Adopcion aun</h2>
+          <h2 class="text-center"> No hay publicaciones de Perros en Adopción</h2>
         <%else%>
-        <div id="adopcions">
-          <% @adopcions.each do |adopcion| %>
-          <li class="cuidador-item">
-            <%= render adopcion %>
-          </li>
-            <!-- <p>
-              <%= link_to "Ver esta Adopcion", adopcion %>
-            </p> -->
-          <% end %>
-        </div>
+          <div id="adopcions">
+            <% @adopcions.each do |adopcion| %>
+              <li class="cuidador-item">
+                <%= render adopcion %>
+              </li>
+            <% end %>
+          </div>
         <% end %>
         <!--Fin del Index de Adopciones -->
 

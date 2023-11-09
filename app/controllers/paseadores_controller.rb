@@ -6,7 +6,7 @@ class PaseadoresController < ApplicationController
   end
   def index
    # Aquí recuperas la lista de cuidadores de perros desde la base de datos.
-   @paseadores = Paseador.all
+   @paseadores = Paseador.all.order(created_at: :desc)
   end
   def new
     @paseador = Paseador.new
@@ -17,7 +17,7 @@ class PaseadoresController < ApplicationController
     if @paseador.save
       redirect_to paseadores_path, notice: "Paseador publicado con éxito."
     else
-      @error_message = "Ya existe un paseador con el mismo nombre y ubicación."
+      @error_message = "Ya existe un paseador con esta informacion."
       render :new, status: :unprocessable_entity
     end
   end

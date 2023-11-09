@@ -8,25 +8,17 @@
 </head>
 <body class="bg-light p-2 text-dark bg-opacity-50">
 
-
-
-
-
-
   <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
-
-
-
+  <nav class="navbar navbar-expand-lg navbar-light p-2 text-white" style="background-color: rgba(255, 214, 153, 0.5);">
 
 
     <div class="container">
 
-      <a class="navbar-brand text-white" style="font-size: 35px;">Servicios Paseadores y Cuidadores</a>
+      <a class="navbar-brand text-black" style="font-size: 35px;">Servicios Paseadores y Cuidadores</a>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <% if user_signed_in? %>
-            <%= link_to destroy_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+            <%= link_to destroy_user_session_path,  class: "btn bg-warning p-2 text-white bg-opacity-50" do %>
             <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
                 <p1> Cerrar Sesión </p1>
               </div>
@@ -39,14 +31,15 @@
 
   <!-- Sección "Quiénes Somos" -->
 
-  <div class="py-4" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+  <div class="py-4" style="background-color: rgba(255, 214, 153, 0.5); color: white; border: 0px solid #28a745; padding: 2px; margin-bottom: 2px;">
+
 
 <!-- Aquí se cambió a bg-success -->
 
 
     <div class="container">
-        <h4 class="text-center text-orange">  </h4>
-        <p class="text-center text-orange">Encuentra a los cuidadores y paseadores ideales para tus mascotas en nuestra plataforma.
+        <h4 class="text-center text-black">  </h4>
+        <p class="text-center text-black">Encuentra a los cuidadores y paseadores ideales para tus mascotas en nuestra plataforma.
            Conectamos a dueños de mascotas con amantes de los animales dispuestos a brindar atención y cariño a tus peludos.
            Explora perfiles, descubre experiencias anteriores, y elige el cuidador o paseador perfecto
            para satisfacer las necesidades únicas de tu mascota. Facilitamos la creación de vínculos entre personas apasionadas
@@ -57,76 +50,63 @@
   </div>
 
   <!-- Sección de opciones -->
-  <div class="container-fluid my-5 ">
+  <div class="container my-5">
 
+    <div class="row gx-5 justify-content-start align-items-center align-items-stretch">
 
-
-    <div class="row gx-5">
-      <div class="col-md-6">
+      <div class="col-md-6 col-xs-12 mb-3">
         <a class="nav-link" href="#">
-           <div class="card mb-3" style="background-color: #FFA500; color: white;">
-            <%= link_to  cuidadores_path , class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <div class="card-body">
-                <h5 class="card-title text-center">Ver lista de Cuidadores</h5>
-                <p class="card-text text-center">Encuentra cuidadores   para asegurarte de que tu peludo amigo reciba
-                  el amor y la supervisión que se merece cuando no puedes estar a su lado </p>
-                </div>
-            <% end %>
-          </div>
+          <%= link_to cuidadores_path, class: "btn bg-success p-2 text-white bg-opacity-50"  do %>
+            <div class="card-body">
+              <h5 class="card-title text-center">Ver lista de Cuidadores</h5>
+              <p class="card-text text-center">Encuentra cuidadores para asegurarte de que tu peludo amigo reciba
+                el amor y la supervisión que se merece cuando no puedes estar a su lado </p>
+            </div>
+          <% end %>
         </a>
       </div>
 
-
-
-      <div class="col-md-6">
+      <div class="col-md-6 col-xs-12 mb-3">
         <a class="nav-link" href="#">
-            <div class="card mb-3" style="background-color: #FFA500; color: white;">
-            <%= link_to  paseadores_path , class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+          <%= link_to paseadores_path, class: "btn bg-success p-2 text-white bg-opacity-50"  do %>
+            <div class="card-body">
+              <h5 class="card-title text-center">Ver lista de Paseadores</h5>
+              <p class="card-text text-center">Encuentra paseadores que garantizarán que tu leal amigo disfrute de la atención
+                y el ejercicio necesarios cuando no puedas acompañarlo.  </p>
+            </div>
+          <% end %>
+        </a>
+      </div>
+    </div>
+
+    <div class="row gx-7 justify-content-start align-items-center align-items-stretch">
+      <div class="col-md-6 col-xs-12 mb-3">
+        <a class="nav-link" href="#">
+          <% if user_signed_in? && current_user.admin? %>
+            <%= link_to new_cuidadore_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
               <div class="card-body">
-                <h5 class="card-title text-center">Ver lista de Paseadores</h5>
-                <p class="card-text text-center">Encuentra paseadores que garantizarán que tu leal amigo disfrute de la atención
-                  y el ejercicio necesarios cuando no puedas acompañarlo. Confía en estos apasionados amantes de los perros
-                  para brindarle a tu peludo compañero los paseos y cuidados que necesita </p>
-                </div>
+                <h5 class="card-title text-center">Publicar Cuidador</h5>
+                <p class="card-text text-center">. Promociona a personas apasionadas por los perros que se comprometen a brindarles el cuidado y atención que merecen. </p>
+              </div>
             <% end %>
-          </div>
+          <% end %>
         </a>
       </div>
 
+      <div class="col-md-6 col-xs-12 mb-3">
+        <a class="nav-link" href="#">
+          <% if user_signed_in? && current_user.admin?  %>
+            <%= link_to new_paseadore_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Publicar Paseador</h5>
+                <p class="card-text text-center">Promociona a personas apasionadas por los perros que se comprometen a brindarles el cuidado y atención que merecen</p>
+              </div>
+            <% end %>
+          <% end %>
+        </a>
+      </div>
+    </div>
 
-        <div class="col-md-6">
-          <a class="nav-link" href="#">
-              <div class="card mb-3" style="background-color: #FFA500; color: white;">
-              <% if user_signed_in? && current_user.admin?  %>
-                 <%= link_to  new_cuidadore_path , class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <% end %>
-                <div class="card-body">
-                  <h5 class="card-title text-center">Publicar Cuidador</h5>
-                  <p class="card-text text-center">Promociona estas personas para que cuide </p>
-                  </div>
-              <% end %>
-            </div>
-          </a>
-        </div>
+  </div>
 
-        <div class="col-md-6">
-          <a class="nav-link" href="#">
-               <div class="card mb-3" style="background-color: #FFA500; color: white;">
-              <% if user_signed_in? && current_user.admin?  %>
-                 <%= link_to   new_paseadore_path , class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <% end %>
-                <div class="card-body">
-                  <h5 class="card-title text-center">Publicar Paseador</h5>
-                  <p class="card-text text-center">Promociona estas personas para que paseen </p>
-                  </div>
-              <% end %>
-            </div>
-          </a>
-        </div>
-
-
-
-
-</body>
-</html>
-    <a class="btn btn-secondary" href="<%= home_path %>">Volver</a>
+  <%= link_to "volver", home_path %>

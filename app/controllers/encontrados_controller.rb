@@ -1,10 +1,10 @@
 class EncontradosController < ApplicationController
     def index
-     @encontrados=Encontrado.all
+     @encontrados=Encontrado.all.order(created_at: :desc)
     end
     def show
     @encontrado= Encontrado.find(params[:id])
-     
+
     end
     def new
      @encontrado= Encontrado.new
@@ -19,7 +19,6 @@ class EncontradosController < ApplicationController
     end
     def encontrado_params
       params.require(:encontrado).permit(:nombre, :tamano, :edad, :ubicacion, :raza, :photo )
-      
+
     end
    end
- 

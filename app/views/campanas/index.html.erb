@@ -40,39 +40,35 @@
 
   <!-- Sección de Servicios -->
   <div class="container-fluid my-5 ">
-
-    <div class="row gx-5">
-      <div class="col-md-6">
-
+    <% if user_signed_in? && current_user.admin?  %>
+      <div class="row gx-5">
+        <div class="col-md-6">
           <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
             <%= link_to new_campana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-            <div class="card-body">
-              <h5 class="text-center text-black"> Publicar Campaña <h5>
-            </div>
+              <div class="card-body">
+                <h5 class="text-center text-black"> Publicar Campaña <h5>
+              </div>
             <% end %>
           </div>
-
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <div class="row gx-5">
       <div class="col-md-6">
-
-        <div id="campanas">
-          <% @campanas.each do |campana| %>
-            <%= render campana %>
-            <p>
-              <%= link_to "Show this campana", campana %>
-            </p>
-          <% end %>
-        </div>
-
+        <% if @campanas.empty?%>
+          <h2 class="text-center"> No hay publicaciones de campañas</h2>
+        <%else%>
+          <div id="campanas">
+            <% @campanas.each do |campana| %>
+              <li class="cuidador-item">
+                <%= render campana %>
+              </li>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
 
 </body>
 </html>
-
-<!--
-<%= link_to "New campana", new_campana_path %>
--->
