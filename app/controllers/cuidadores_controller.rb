@@ -5,7 +5,7 @@ class CuidadoresController < ApplicationController
   end
   def index
    # Aquí recuperas la lista de cuidadores de perros desde la base de datos.
-   @cuidadores = Cuidador.all
+   @cuidadores = Cuidador.all.order(created_at: :desc)
   end
   def new
     @cuidador = Cuidador.new

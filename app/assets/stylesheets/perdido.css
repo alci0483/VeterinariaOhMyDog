@@ -15,7 +15,7 @@
 .perdido-avatar {
   flex: 1;
   margin-right: 30px;
-  
+
   /* Estilo para la imagen del paseador */
 }
 
@@ -51,7 +51,7 @@
   background-color: rgb(45, 168, 177); /* Cambia esto al color que desees */
   color: #fff; /* Texto blanco */
   text-align: center; /* Alineación de texto al centro */
-  padding: 30px 0px;
+  padding: 5px 0px;
   position: relative; /* Para permitir animaciones */
   overflow: hidden; /* Oculta el desbordamiento del texto animado */
   width: 100%;
@@ -59,4 +59,3 @@
   bottom: 0;
   left: 0;
 }
-  

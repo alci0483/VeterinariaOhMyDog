@@ -9,8 +9,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "custom_link", media: "all" %>
     <%= javascript_importmap_tags %>
-    
-    <%= image_tag("descarga.jpeg", size: "180x120", class: "logo-image") %>
+
+    <%= image_tag("logo.jpeg", size: "180x120", class: "logo-image") %>
   </head>
 
   <body>
@@ -18,8 +18,12 @@
     <p class="alert"><%= alert %></p>
     <p class="navbar-text pull-right">
 
-
-
     <%= yield %>
+
   </body>
+  <br>
+  <br>
+  <div class="bar">
+    <p>Derechos de autor © 2023 - Oh my Dog</p>
+  </div>
 </html>

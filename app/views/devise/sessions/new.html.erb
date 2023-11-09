@@ -1,30 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ... (tu código HTML anterior) ... -->
+</head>
+<body class="bg-light p-2 text-dark bg-opacity-50">
 
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+  <!-- Centrar el formulario de inicio de sesión -->
+  <div class="container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div class="card" style="width: 400px; padding: 20px; border: none; box-shadow: 0px 0px 10px #888888;">
+      <h2 class="text-center" style="color: #1877f2;"></h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field mb-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Correo electrónico" %>
+        </div>
+        <div class="field mb-3">
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Contraseña" %>
+        </div>
+        <div class="actions text-center">
+          <%= f.submit "Iniciar sesión", class: "btn btn-primary", style: "background-color: #1877f2; border: none;" %>
+        </div>
+      <% end %>
+      <% if user_signed_in? %>
+        <p class="text-center">Conectado como <%= current_user.email %> (Rol: <%= current_user.role %>)</p>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-  <!-- Enlaces relacionados con la autenticación   <% if devise_mapping.rememberable? %>
-  <div class="field">
-  <%= f.check_box :remember_me %>
-  <%= f.label :remember_me %>
-            </div>
-  <% end %>-->
-  <div class="actions">
-      <%= f.submit "Log in" %>
-  </div>
-  <% end %>
 
-  <!-- Mensaje para mostrar el rol -->
-  <% if user_signed_in? %>
-    <p>Conectado como <%= current_user.email %> (Rol: <%= current_user.role %>)</p>
-  <% end %>
+  <!-- Resto del contenido de la página -->
+  <!-- ... -->
+</body>
+</html>
 
-  <!-- Enlaces relacionados con la autenticación -->
-  <%= render "devise/shared/links" %>
+<% if flash[:alert].present? %>
+  <p class="alert alert-danger text-center"><%= flash[:alert] %></p>
+<% end %>
