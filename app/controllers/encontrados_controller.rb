@@ -18,7 +18,7 @@ class EncontradosController < ApplicationController
        end
     end
     def encontrado_params
-      params.require(:encontrado).permit(:nombre, :tamano, :edad, :ubicacion, :raza, :photo )
+      params.require(:encontrado).permit(:nombre, :tamano, :edad, :ubicacion, :raza, :photo, :user_id)
 
     end
    end

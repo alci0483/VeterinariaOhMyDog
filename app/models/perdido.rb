@@ -14,11 +14,13 @@ class Perdido < ApplicationRecord
   belongs_to :user
 
   private
+
   def validacion_perros_no_repetidos
-    if Perdido.exists?(nombre: nombre, tamano: tamano, edad: edad, raza: raza, ubicacion: ubicacion)
-      errors.add(:base, "Ya hiciste una publicacion de este perrito")
-    end
+  # Se asume que `autor_id` es un atributo en la instancia de `Perdido`
+  if User.find(user_id).perdidos.exists?(nombre: nombre)
+    errors.add(:base, "Ya hiciste una publicacion de este perrito")
   end
+end
 
 
 

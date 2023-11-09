@@ -30,7 +30,8 @@
          <h2><%= encontrado.nombre %></h2>
          <p>Se perdió en <%= encontrado.ubicacion %> </p>
            <p>Su altura es <%= encontrado.tamano %> cm y de raza: <%= encontrado.raza %> </p>
-                 <%= link_to "Contactar", encontrado_path(encontrado.id), class: "btn btn-primary" %>
+           <button onclick="return confirm('acercate a la veterinaria para más información')">Contactar</button>
+              <!--   <%= link_to "Contactar", encontrado_path(encontrado.id), class: "btn btn-primary" %> -->
                </div>
                <div class="perdido-avatar">
                 <%= image_tag encontrado.photo, width: 150 if encontrado.photo.attached? %>
@@ -46,5 +47,3 @@
   <br>
   <br>
   <br>
-
-  

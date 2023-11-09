@@ -18,7 +18,7 @@ class PerdidosController < ApplicationController
        end
    end
    def perdido_params
-      params.require(:perdido).permit(:nombre, :tamano, :edad, :ubicacion, :raza, :photo )
+      params.require(:perdido).permit(:nombre, :tamano, :edad, :ubicacion, :raza, :photo, :user_id )
 
    end
   end
