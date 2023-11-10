@@ -60,7 +60,6 @@ end
   private
 
   def cuidador_params
-
     params.require(:cuidador).permit(:nombre, :apellido, :horarios, :ubicacion, :contacto, :email)
   end
 end

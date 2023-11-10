@@ -35,12 +35,12 @@
 
     <div class="form-group">
       <%= form.label :nombre %>
-      <%= form.text_field :nombre, class: "input-tamanocampo", required: true %>
+      <%= form.text_field :nombre, class: "input-tamanocampo",required: true %>
     </div>
 
     <div class="form-group">
       <%= form.label :apellido %>
-      <%= form.text_field :apellido, class: "input-tamanocampo", required: true %>
+      <%= form.text_field :apellido, class: "input-tamanocampo",required: true %>
     </div>
     <br>
     <div class="form-group">
@@ -50,8 +50,13 @@
     <br>
     <div class="form-group">
       <%= form.label :ubicacion %>
-      <%= form.text_field :ubicacion, class: "input-tamanocampo", required: true %>
+      <%= form.text_field :ubicacion, class: "input-tamanocampo" ,required: true%>
     </div>
+    <div class="form-group">
+      <%= form.label :email %>
+      <%= form.text_field :email, class: "input-tamanocampo" ,required: true%>
+    </div>
+
 
     <div class="form-group">
       <%= form.label :email %>
