@@ -1,42 +1,38 @@
 <div class="perdidos-list">
+
+  <% @adopcion.errors.full_messages.each do |error| %>
+      <div>
+        <%= error %>
+      </div>
+    <% end %>
+
   <%= form_with(model: adopcion) do |form| %>
-  <% if adopcion.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(adopcion.errors.count, "error") %> prohibited this adopcion from being saved:</h2>
-
-      <ul>
-        <% adopcion.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="form-group">
     <%= form.label :nombre, style: "display: block" %>
-    <%= form.text_field :nombre, class: "input-tamanocampo" %>
+    <%= form.text_field :nombre, class: "input-tamanocampo", required: true %>
   </div>
 
   <div class="form-group">
-    <%= form.label :tamanio, style: "display: block" %>
-    <%= form.number_field :tamanio, class: "input-tamanocampo" %>
+    <%= form.label :tamanio, "Tamaño en centimetros", style: "display: block" %>
+    <%= form.number_field :tamanio, class: "input-tamanocampo", min: 10, required: true %>
   </div>
 
   <div class="form-group">
-    <%= form.label :edad, style: "display: block" %>
-    <%= form.number_field :edad, class: "input-tamanocampo" %>
+    <%= form.label :edad, "Edad en meses",style: "display: block" %>
+    <%= form.number_field :edad, class: "input-tamanocampo", required: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :ubicacion, style: "display: block" %>
-    <%= form.text_field :ubicacion, class: "input-tamanocampo" %>
+    <%= form.text_field :ubicacion, class: "input-tamanocampo", required: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :raza, style: "display: block" %>
-    <%= form.text_field :raza, class: "input-tamanocampo" %>
+    <%= form.text_field :raza, class: "input-tamanocampo", required: true %>
   </div>
   <br>
+  <%= form.hidden_field :user_id, value: current_user.id %>
   <div>
     <%= form.submit 'Publicar Adopcion', class: "btn-publicar btn-primary"%>
   </div>

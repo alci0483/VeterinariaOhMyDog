@@ -8,36 +8,7 @@
 <body class="bg-light p-2 text-dark bg-opacity-50">
 
 
-
-
-
-
-  <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-light p-2 text-white" style="background-color: rgba(255, 214, 153, 0.5);">
-
-
-
-
-
-    <div class="container">
-
-      <a class="navbar-brand text-black" style="font-size: 35px;">Paseadores</a>
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <% if user_signed_in? %>
-            <%= link_to destroy_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-            <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
-                <p1> Cerrar Sesión </p1>
-              </div>
-            <% end %>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
   <!-- Sección "Quiénes Somos" -->
-
 
     <div class="py-4" style="background-color: rgba(255, 214, 153, 0.5); color: white; border: 0px solid #28a745; padding: 2px; margin-bottom: 2px;">
 

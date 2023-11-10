@@ -15,8 +15,8 @@ class Encontrado < ApplicationRecord
 
     def validacion_perros_no_repetidos
     # Se asume que `autor_id` es un atributo en la instancia de `Perdido`
-    if User.find(user_id).encontrados.exists?(nombre: nombre)
-      errors.add(:base, "Ya hiciste una publicacion de este perrito")
+      if User.find(user_id).encontrados.exists?(nombre: nombre)
+        errors.add(:base, "Ya hiciste una publicacion de este perrito")
+      end
     end
-  end
  end

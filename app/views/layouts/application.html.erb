@@ -10,13 +10,55 @@
     <%= stylesheet_link_tag "custom_link", media: "all" %>
     <%= javascript_importmap_tags %>
 
-    <%= image_tag("logo.jpeg", size: "180x120", class: "logo-image") %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <p class="navbar-text pull-right">
+
+
+
+      <!-- Barra de navegación -->
+      <nav class="navbar navbar-expand-lg navbar-light p-2 text-white" style="background-color: rgba(255, 214, 153, 0.5);">
+
+        <%= image_tag("logo.jpeg", size: "180x120", class: "logo-image") %>
+
+        <!--
+        <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+          <h4> Veterinaria Oh My Dog  </h4>
+        </div>
+        -->
+
+          <%= link_to home_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+            <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+              <p1> HOME </p1>
+            </div>
+          <% end %>
+
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <% if user_signed_in? %>
+                <%= link_to destroy_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+                  <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+                    <p1> Cerrar Sesión </p1>
+                  </div>
+                <% end %>
+              <% else %>
+                <%= link_to new_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+                  <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+                    <p1> Iniciar Sesión </p1>
+                  </div>
+                <% end %>
+              <% end %>
+            </li>
+          </ul>
+
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <p class="navbar-text pull-right">
+          <% if user_signed_in?%>
+            <p class="text-black"> Perfil: <%= User.find(current_user.id).email %></p>
+          <% end %>
+      </nav>
+
 
     <%= yield %>
 

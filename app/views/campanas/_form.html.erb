@@ -1,46 +1,38 @@
 <div class="perdidos-list">
 
+  <% if @campana.errors.any? %>
+      <p>Ya existe una Campaña con el mismo nombre y DNI de titular responsable.</p>      
+    <% end %>
 <%= form_with(model: campana) do |form| %>
-  <% if campana.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(campana.errors.count, "error") %> prohibited this campana from being saved:</h2>
-
-      <ul>
-        <% campana.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="form-group">
     <%= form.label :nombre_campana, "Nombre de Campaña", style: "display: block" %>
-    <%= form.text_field :nombre_campana, class: "input-tamanocampo"  %>
+    <%= form.text_field :nombre_campana, class: "input-tamanocampo", required: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :objetivo, style: "display: block" %>
-    <%= form.text_area :objetivo, class: "input-tamanocampo"  %>
+    <%= form.text_area :objetivo, class: "input-tamanocampo", required: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :monto, style: "display: block" %>
-    <%= form.number_field :monto, class: "input-tamanocampo"  %>
+    <%= form.number_field :monto, class: "input-tamanocampo", min: 10, required: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :fecha_fin %>
-    <%= form.date_field :fecha_fin, class: "input-tamanocampo"  %>
+    <%= form.date_field :fecha_fin, class: "input-tamanocampo",min: Date.today.to_s, required: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :dni_titular_responsable, style: "display: block" %>
-    <%= form.number_field :dni_titular_responsable, class: "input-tamanocampo"  %>
+    <%= form.number_field :dni_titular_responsable, class: "input-tamanocampo", required: true %>
   </div>
 
   <div class="form-group">
     <%= form.label :photo, "Foto de QR", style: "display: block" %>
-    <%= form.file_field :photo, class: "input-tamanocampo"  %>
+    <%= form.file_field :photo, class: "input-tamanocampo", required: true  %>
   </div>
   <br>
   <div>

@@ -64,6 +64,6 @@ class AdopcionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def adopcion_params
-      params.require(:adopcion).permit(:nombre, :tamanio, :edad, :ubicacion, :raza)
+      params.require(:adopcion).permit(:nombre, :tamanio, :edad, :ubicacion, :raza, :user_id)
     end
 end
