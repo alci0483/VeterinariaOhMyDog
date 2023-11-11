@@ -13,7 +13,7 @@
 
 
   <%= link_to "Volver a Inicio", new_user_session_path, class: "btn btn-primary" %>
-  <% if user_signed_in? %>
+  <%if user_signed_in? && !current_user.admin?%>
   <%= link_to 'Publicar Perro Encontrado', new_encontrado_path, class: "btn btn-primary" %>
   <% end %>
 

@@ -51,14 +51,14 @@
             </li>
           </ul>
 
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-          <p class="navbar-text pull-right">
           <% if user_signed_in?%>
             <p class="text-black"> Perfil: <%= User.find(current_user.id).email %></p>
           <% end %>
       </nav>
 
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <p class="navbar-text pull-right">
 
     <%= yield %>
 
