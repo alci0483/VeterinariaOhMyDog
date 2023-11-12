@@ -1,22 +1,22 @@
-<div id="<%= dom_id campana %>">
-  <p>
+<div class="container-fluid card border-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header text-center">
     <strong>Nombre campana:</strong>
     <%= campana.nombre_campana %>
-  </p>
-
-  <p>
-    <strong>Objetivo:</strong>
-    <%= campana.objetivo %>
-  </p>
-
-  <p>
-    <strong>Monto:</strong>
-    <%= campana.monto %>
-  </p>
-
-  <p>
-    <strong>Dni titular responsable:</strong>
-    <%= campana.dni_titular_responsable %>
-  </p>
-
+  </div>
+  <div class="card-body text-secondary">
+    <h6 class="card-text text-center">
+      <strong>Objetivo:</strong>
+      <%= campana.objetivo %>
+    </h6>
+    <h6 class="card-text text-center">
+      <strong>Monto:</strong>
+      <%= campana.monto %>
+    </h6>
+    <h6 class="card-text text-center">
+      <strong>Dni titular responsable:</strong>
+      <%= campana.dni_titular_responsable %>
+    </h6>
+  </div>
+  <%= image_tag campana.photo, width: 210%>
+  
 </div>

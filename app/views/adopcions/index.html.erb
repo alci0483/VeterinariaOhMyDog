@@ -1,14 +1,77 @@
-<p style="color: green"><%= notice %></p>
-<h1>Adopcions</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adopcion de Perros</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-success p-2 text-dark bg-opacity-50 " >
 
-<div id="adopcions">
-  <% @adopcions.each do |adopcion| %>
-    <%= render adopcion %>
-    <p>
-      <%= link_to "Ver esta Adopcion", adopcion %>
-    </p>
-  <% end %>
-</div>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success p-2 text-white bg-opacity-25 border border-success p-2 mb-2" >
+    <div class="container">
+
+      <a class="navbar-brand" style="font-size: 35px;"> Adopcion de Perros </a>
+      
+    </div>
+  </nav>
+
+  <!-- Sección "Quiénes Somos" -->
+  <div class="bg-light py-4 border border-success p-2 mb-2 bg-success p-2 text-white bg-opacity-25">
+    <div class="container">
+        <p class="text-center text-black"> Facilitar el encuentro entre perros en busca de un hogar amoroso y
+          personas que desean brindarles un lugar seguro y cariñoso para vivir. A través de nuestra plataforma,
+          los usuarios podrán descubrir perros disponibles para adopción, conocer sus historias, personalidades
+          y necesidades, y así encontrar la mascota perfecta que se ajuste a sus preferencias y estilo de vida.
+          Ayudamos a conectar a perros sin hogar con personas dispuestas a brindarles un amoroso y permanente
+          refugio, fomentando la adopción responsable y la creación de lazos duraderos entre las familias y sus
+          nuevas mascotas."
+        </p>
+    </div>
+  </div>
+
+  <!-- Sección de Servicios -->
+  <div class="container-fluid my-5 ">
+
+    <% if user_signed_in? %>
+      <div class="row gx-5">
+        <div class="col-md-6">
+          <div class="card mb-3 bg-success p-2 text-white bg-opacity-50">
+            <%= link_to new_adopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="text-center text-black"> Publicar Adopcion <h5>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end  %>
+
+    <div class="row gx-5">
+      <div class="col-md-6">
+
+        <!--Principio del Index de Adopciones -->
+        <% if @adopcions.empty?%>
+          <h2 class="text-center"> No hay publicaciones de Perros en Adopción</h2>
+        <%else%>
+          <div id="adopcions">
+            <% @adopcions.each do |adopcion| %>
+              <li class="cuidador-item">
+                <%= render adopcion %>
+              </li>
+            <% end %>
+          </div>
+        <% end %>
+        <!--Fin del Index de Adopciones -->
+
+      </div>
+    </div>
+
+
+</body>
+</html>
+
 
 <!--
 <%= link_to "Nueva Adopcion", new_adopcion_path %>

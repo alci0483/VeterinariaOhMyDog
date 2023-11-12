@@ -1,192 +1,39 @@
-<!DOCTYPE html>7
- <img src="assets/logo.jpeg" alt="Imagen de inicio de sesión"> 
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veterinaria Oh My Dog</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ... (tu código HTML anterior) ... -->
 </head>
 <body class="bg-light p-2 text-dark bg-opacity-50">
 
-  <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white; color: #28a745; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
-    <div class="container">
-      <a class="navbar-brand" style="font-size: 35px; color: #28a745;">
-        <p>  </p>
 
-      </a>
-      <div class="float-right"> <!-- Agregar esta clase para alinear a la derecha -->
-        <!-- Formulario de inicio de sesión -->
-        <h2>Log in</h2>
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-          </div>
-          <div class="field">
-            <%= f.label :password %><br />
-            <%= f.password_field :password, autocomplete: "current-password" %>
-          </div>
-        <!-- Enlaces relacionados con la autenticación   <% if devise_mapping.rememberable? %>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-          <% end %>-->
-          <div class="actions">
-            <%= f.submit "Log in" %>
-          </div>
-        <% end %>
-
-        <!-- Mensaje para mostrar el rol -->
-        <% if user_signed_in? %>
-          <p>Conectado como <%= current_user.email %> (Rol: <%= current_user.role %>)</p>
-        <% end %>
-
-        <!-- Enlaces relacionados con la autenticación -->
-        <%= render "devise/shared/links" %>
-      </div>
+  <!-- Centrar el formulario de inicio de sesión -->
+  <div class="container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div class="card" style="width: 400px; padding: 20px; border: none; box-shadow: 0px 0px 10px #888888;">
+      <h2 class="text-center" style="color: #1877f2;"></h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field mb-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Correo electrónico" %>
+        </div>
+        <div class="field mb-3">
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Contraseña" %>
+        </div>
+        <div class="actions text-center">
+          <%= f.submit "Iniciar sesión", class: "btn btn-primary", style: "background-color: #1877f2; border: none;" %>
+        </div>
+      <% end %>
+      <% if user_signed_in? %>
+        <p class="text-center">Conectado como <%= current_user.email %> (Rol: <%= current_user.role %>)</p>
+      <% end %>
+      <%= render "devise/shared/links" %>
     </div>
-  </nav>
+  </div>
 
   <!-- Resto del contenido de la página -->
   <!-- ... -->
 </body>
 </html>
 
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veterinaria Oh My Dog</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light p-2 text-dark bg-opacity-50">
-  <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
-    <div class="container">
-      <div class="row">
-        <!-- Columna para el formulario de inicio de sesión -->
-        <div class="col-md-6">
-          <a class="navbar-brand text-white" style="font-size: 35px;">Veterinaria Oh My Dog</a>
-        </div>
-        <!-- Columna para la sección "Quiénes Somos" -->
-        <div class="col-md-6">
-          <!-- Aquí se cambió a bg-success -->
-          <div class="py-4" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
-            <div class="container">
-              <h4 class="text-center text-orange"> ¿Quiénes Somos? </h4>
-              <p class="text-center text-orange">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los perros y sus familias.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- Sección de Servicios -->
-  <div class="container-fluid my-5 ">
-
-    <div class="row gx-5">
-      <div class="col-md-6 ">
-        <a class="nav-link" href="#">
-          <div class="card mb-3" style="background-color: #FFA500; color: white;">
-            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <div class="card-body">
-                <h5 class="card-title text-center">Gestion de Veterinaria general</h5>
-                <p class="card-text text-center">Aca podras sacar turnos para que tu perrito tenga
-                la mejor atencion sobre su salud</p>
-              </div>
-            <% end %>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6">
-              <div class="card mb-3" style="background-color: #FFA500; color: white;">
-            <%= link_to homeAdopcion_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <div class="card-body">
-                <h5 class="card-title text-center">Adopcion de Perros</h5>
-                <p class="card-text text-center">Ayada y recibe ayuda para poder encontrarle un hogar a nuestros
-                queridos amigos de cuatro paras</p>
-              </div>
-            <% end %>
-          </div>
-      </div>
-    </div>
-
-    <div class="row gx-5">
-  <div class="col-md-6">
-    <a class="nav-link" href="#">
-          <div class="card mb-3" style="background-color: #FFA500; color: white;">
-        <% if user_signed_in? %>
-          <%= link_to main_home_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-            <div class="card-body">
-              <h5 class="card-title text-center">Paseadores y Cuidadores</h5>
-              <p class="card-text text-center">Encuentra personas también amantes de los perros que puedan ayudarte con tu mascota cuando tú no puedas</p>
-            </div>
-          <% end %>
-        <% else %>
-          <%= link_to cuidadores_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-            <div class="card-body">
-              <h5 class="card-title text-center">Cuidadores </h5>
-              <p class="card-text text-center">Encuentra personas también amantes de los perros que puedan ayudarte con tu mascota cuando tú no puedas</p>
-            </div>
-          <% end %>
-          <%= link_to paseadores_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-            <div class="card-body">
-              <h5 class="card-title text-center">Paseadores</h5>
-              <p class="card-text text-center">Encuentra personas también amantes de los perros que puedan ayudarte con tu mascota cuando tú no puedas</p>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </a>
-  </div>
-</div>
-
-
-      <div class="col-md-6 ">
-        <a class="nav-link" href="#">
-               <div class="card mb-3" style="background-color: #FFA500; color: white;">
-            <%= link_to "#", class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <div class="card-body">
-                <h5 class="card-title text-center">Perros Perdidos y encontrados</h5>
-                <p class="card-text text-center">Difundamos informacion para que nuetros amigos caninos
-                  no pasen tiempo lejos de sus familias</p>
-              </div>
-            <% end %>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="row gx-5">
-      <div class="col-md-6 ">
-        <a class="nav-link" href="#">
-              <div class="card mb-3" style="background-color: #FFA500; color: white;">
-            <%= link_to homeCampana_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-              <div class="card-body">
-                <h5 class="card-title text-center">Campañas</h5>
-                <p class="card-text text-center">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
-              </div>
-            <% end %>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-
-</body>
-</html>
-
 <% if flash[:alert].present? %>
-  <p class="alert alert-danger"><%= flash[:alert] %></p>
+  <p class="alert alert-danger text-center"><%= flash[:alert] %></p>
 <% end %>

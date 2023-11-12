@@ -36,3 +36,20 @@
 .btn:hover {
   background-color: #0056b3;
 }
+
+
+body {
+  background-image: url('plantilla.png'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen al tamaño de la ventana del navegador */
+  background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
+  background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el desplazamiento de la página */
+}
+=======
+.logo-image {
+  max-width: 100px; /* Establece el ancho máximo de la imagen */
+  height: auto; /* La altura se ajustará proporcionalmente al ancho */
+  display: block; /* Elimina el espacio adicional debajo de la imagen */
+  position: absolute; /* Posiciona la imagen de forma absoluta */
+  top: 10px; /* Alinea la parte superior de la imagen a 10px desde la parte superior del contenedor */
+  left: 10px; /* Alinea la parte izquierda de la imagen a 10px desde la izquierda del contenedor */
+}

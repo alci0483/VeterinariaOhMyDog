@@ -1,4 +1,5 @@
 class Cuidador < ApplicationRecord
-  validates_uniqueness_of :nombre, scope: :ubicacion, message: "Ya existe un cuidador con el mismo nombre y ubicación."
+
+  validates_uniqueness_of :email, message: "Ya existe un cuidador con este email."
 
 end

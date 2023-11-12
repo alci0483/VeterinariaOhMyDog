@@ -1,27 +1,28 @@
-<div id="<%= dom_id adopcion %>">
-  <p>
+<div class="container-fluid card border-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header text-center">
     <strong>Nombre:</strong>
     <%= adopcion.nombre %>
-  </p>
-
-  <p>
-    <strong>Tamanio:</strong>
-    <%= adopcion.tamanio %>
-  </p>
-
-  <p>
-    <strong>Edad:</strong>
-    <%= adopcion.edad %>
-  </p>
-
-  <p>
-    <strong>Ubicacion:</strong>
-    <%= adopcion.ubicacion %>
-  </p>
-
-  <p>
-    <strong>Raza:</strong>
-    <%= adopcion.raza %>
-  </p>
-
+  </div>
+  <div class="card-body text-secondary">
+    <h6 class="card-text text-center">
+      <strong>Tamanio:</strong>
+      <%= adopcion.tamanio %>
+    </h6>
+    <h6 class="card-text text-center">
+      <strong>Edad:</strong>
+      <%= adopcion.edad %>
+    </h6>
+    <h6 class="card-text text-center">
+      <strong>Ubicacion:</strong>
+      <%= adopcion.ubicacion %>
+    </h6>
+    <h6 class="card-text text-center">
+      <strong>Raza:</strong>
+      <%= adopcion.raza %>
+    </h6>
+    <% if adopcion.user_id != current_user.id %>
+      <button onclick="return confirm('acercate a la veterinaria para más información')">Contactar</button>
+    <% end %>
+    
+  </div>
 </div>

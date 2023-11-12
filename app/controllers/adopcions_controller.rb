@@ -3,7 +3,7 @@ class AdopcionsController < ApplicationController
 
   # GET /adopcions or /adopcions.json
   def index
-    @adopcions = Adopcion.all
+    @adopcions = Adopcion.all.order(created_at: :desc)
   end
 
   # GET /adopcions/1 or /adopcions/1.json
@@ -23,15 +23,14 @@ class AdopcionsController < ApplicationController
   def create
     @adopcion = Adopcion.new(adopcion_params)
 
-    respond_to do |format|
-      if @adopcion.save
-        format.html { redirect_to adopcion_url(@adopcion), notice: "Adopcion was successfully created." }
-        format.json { render :show, status: :created, location: @adopcion }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @adopcion.errors, status: :unprocessable_entity }
-      end
+
+    if @adopcion.save
+      redirect_to adopcions_path, notice: "La Nueva publicacion de Adopcion fue Exitosa"
+    else
+      @error_message = "Ya Existe esta Publicacion de Adopcion"
+      render :new, status: :unprocessable_entity
     end
+
   end
 
   # PATCH/PUT /adopcions/1 or /adopcions/1.json
@@ -65,6 +64,6 @@ class AdopcionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def adopcion_params
-      params.require(:adopcion).permit(:nombre, :tamanio, :edad, :ubicacion, :raza)
+      params.require(:adopcion).permit(:nombre, :tamanio, :edad, :ubicacion, :raza, :user_id)
     end
 end

@@ -1,0 +1,52 @@
+<div class="contenedor">
+        <h4 > Perros Encontrados </h4>
+        <p>
+        Bienvenido a Perros Encontrados
+
+  En Perros Encontrados, estamos comprometidos
+  a ayudar a los perros perdidos a reunirse con sus familias.
+  Nuestra plataforma es un lugar donde la comunidad puede compartir
+  información sobre perros que han sido encontrados. Aquí, encontrarás
+  recursos útiles para hacer que la reunión de perros y propietarios sea
+  lo más fácil y rápido posible.
+        </p>
+
+
+  <%= link_to "Volver a Inicio", new_user_session_path, class: "btn btn-primary" %>
+  <%if user_signed_in? && !current_user.admin?%>
+  <%= link_to 'Publicar Perro Encontrado', new_encontrado_path, class: "btn btn-primary" %>
+  <% end %>
+
+
+
+ <% if @encontrados.empty?%>
+    <p> No hay Perros Encontrados</p>
+ <% else %>
+     <div class="perdidos-list">
+     <ul>
+     <% @encontrados.each do |encontrado| %>
+      <li class="perdido-item">
+         <div class="perdido-info">
+         <h2><%= encontrado.nombre %></h2>
+         <p>Se perdió en <%= encontrado.ubicacion %> </p>
+           <p>Su altura es <%= encontrado.tamano %> cm y de raza: <%= encontrado.raza %> </p>
+
+           <% if encontrado.user_id != current_user.id %>
+             <button onclick="return confirm('acercate a la veterinaria para más información')">Contactar</button>
+           <% end %>
+              <!--   <%= link_to "Contactar", encontrado_path(encontrado.id), class: "btn btn-primary" %> -->
+               </div>
+               <div class="perdido-avatar">
+                <%= image_tag encontrado.photo, width: 150 if encontrado.photo.attached? %>
+               </div>
+           </li>
+    <% end%>
+    </li>
+    </div>
+  <%end%>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>

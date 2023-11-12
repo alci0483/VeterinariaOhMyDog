@@ -3,7 +3,7 @@ class CampanasController < ApplicationController
 
   # GET /campanas or /campanas.json
   def index
-    @campanas = Campana.all
+    @campanas = Campana.all.order(created_at: :desc)
   end
 
   # GET /campanas/1 or /campanas/1.json
@@ -22,17 +22,13 @@ class CampanasController < ApplicationController
   # POST /campanas or /campanas.json
   def create
     @campana = Campana.new(campana_params)
-
-    respond_to do |format|
-      if @campana.save
-        format.html { redirect_to campana_url(@campana), notice: "Campana was successfully created." }
-        format.json { render :show, status: :created, location: @campana }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @campana.errors, status: :unprocessable_entity }
-      end
+    if @campana.save
+      redirect_to campanas_path, notice: "La Nueva publicacion de Campaña fue Exitosa"
+    else
+      @error_message = "Ya Existe esta Publicacion de Campaña"
+      render :new, status: :unprocessable_entity
     end
-  end
+end
 
   # PATCH/PUT /campanas/1 or /campanas/1.json
   def update
@@ -65,6 +61,6 @@ class CampanasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def campana_params
-      params.require(:campana).permit(:nombre_campana, :objetivo, :monto, :dni_titular_responsable)
+      params.require(:campana).permit(:nombre_campana, :objetivo, :monto, :dni_titular_responsable, :photo)
     end
 end

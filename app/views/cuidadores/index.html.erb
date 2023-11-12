@@ -3,54 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veterinaria Oh My Dog</title>
+  <title></title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light p-2 text-dark bg-opacity-50">
 
 
-
-
-
-
-  <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
-
-
-
-
-
-    <div class="container">
-
-      <a class="navbar-brand text-white" style="font-size: 35px;">Veterinaria Oh My Dog</a>
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <% if user_signed_in? %>
-            <%= link_to destroy_user_session_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-            <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
-                <p1> Cerrar Sesión </p1>
-              </div>
-            <% end %>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
   <!-- Sección "Quiénes Somos" -->
 
-  <div class="py-4" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+  <div class="py-4" style="background-color: rgba(255, 214, 153, 0.5); color: white; border: 0px solid #28a745; padding: 2px; margin-bottom: 2px;">
 
 <!-- Aquí se cambió a bg-success -->
 
 
     <div class="container">
-        <h4 class="text-center text-orange"> ¿Quiénes Somos? </h4>
-        <p class="text-center text-orange">En Veterinaria Oh My Dog, nos apasiona brindar un cuidado integral a tus adorados
-        compañeros de cuatro patas. Nuestro compromiso va más allá de la atención veterinaria
-        convencional. Somos un equipo dedicado a proporcionar una gama completa de servicios
-        diseñados para atender las necesidades de tus mascotas y fortalecer el vínculo entre los
-        perros y sus familias.
+        <h4 class="text-center text-black">  </h4>
+        <p class="text-center text-black">Encuentra a los cuidadores  ideales para tus mascotas en nuestra plataforma.
+           Conectamos a dueños de mascotas con amantes de los animales dispuestos a brindar atención y cariño a tus peludos.
+           Explora perfiles, descubre experiencias anteriores, y elige el cuidador  perfecto
+           para satisfacer las necesidades únicas de tu mascota. Facilitamos la creación de vínculos entre personas apasionadas
+            por los animales y aquellos que buscan servicios confiables para garantizar que tus amigos peludos estén en las mejores manos mientras tú estás ocupado.
+             ¡Cuida y pasea con confianza!
         </p>
     </div>
   </div>
@@ -66,9 +39,10 @@
             </div>
             <div class="cuidador-info">
               <h2><%= cuidador.nombre %> <%= cuidador.apellido %></h2>
-              <p><strong>Horarios:</strong> <%= cuidador.horarios %></p>
+              <p><strong>Horarios:</strong> <%= cuidador.horarios.to_s %></p>
               <p><strong>Ubicación:</strong> <%= cuidador.ubicacion %></p>
-                  <!--<a class="btn btn-primary" href="<%= contactar_cuidadore_path(cuidador) %>">Solicitar Contacto</a> -->
+              <button onclick="return confirm('acercate a la veterinaria para más información')">Contactar</button>
+              <!--<a class="btn btn-primary" href="<%= contactar_cuidadore_path(cuidador) %>"Contactar</a> -->
             </div>
           </li>
         <% end %>
@@ -76,9 +50,7 @@
         <p>No hay publicaciones de cuidadores para mostrar en este momento.</p>
       <% end %>
     </ul>
-    <% if user_signed_in? %>
+
       <a class="btn btn-secondary" href="<%= main_home_path %>">Volver</a>
-    <% else %>
-      <a class="btn btn-secondary" href="<%= new_user_session_path %>">Volver</a>
-    <% end %>
+
   </div>

@@ -14,6 +14,7 @@
  *= require_self
  */
  /* application.css */
+
  nav {
    background-color: #333; /* Color de fondo de la barra de navegación */
    color: #fff; /* Color del texto */
@@ -35,5 +36,3 @@
    text-decoration: none; /* Elimina la subrayado de los enlaces */
    color: #fff; /* Color del texto de los enlaces */
  }
-
- 
