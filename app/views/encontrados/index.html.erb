@@ -31,7 +31,7 @@
          <p>Se perdió en <%= encontrado.ubicacion %> </p>
            <p>Su altura es <%= encontrado.tamano %> cm y de raza: <%= encontrado.raza %> </p>
 
-           <% if encontrado.user_id != current_user.id %>
+           <% if user_signed_in? && encontrado.user_id != current_user.id %>
              <button onclick="return confirm('acercate a la veterinaria para más información')">Contactar</button>
            <% end %>
               <!--   <%= link_to "Contactar", encontrado_path(encontrado.id), class: "btn btn-primary" %> -->
