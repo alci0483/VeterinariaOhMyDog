@@ -1,0 +1,47 @@
+<%= form_with(model: perro) do |form| %>
+  <% if perro.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(perro.errors.count, "error") %> prohibited this perro from being saved:</h2>
+
+      <ul>
+        <% perro.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div>
+    <%= form.label :edad, style: "display: block" %>
+    <%= form.number_field :edad %>
+  </div>
+
+  <div>
+    <%= form.label :raza, style: "display: block" %>
+    <%= form.text_field :raza %>
+  </div>
+
+  <div>
+    <%= form.label :sexo, style: "display: block" %>
+    <%= form.text_field :sexo %>
+  </div>
+
+  <div>
+    <%= form.label :estado_salud, style: "display: block" %>
+    <%= form.text_field :estado_salud %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

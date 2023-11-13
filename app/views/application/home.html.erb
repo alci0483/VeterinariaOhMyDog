@@ -16,7 +16,7 @@
       <a class="navbar-brand" style="font-size: 35px;">Veterinaria Oh My Dog </a>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-        
+
         </li>
       </ul>
     </div>
@@ -98,6 +98,7 @@
     </a>
   </div>
 
+
   <div class="col-md-6">
     <a class="nav-link" href="#">
       <%= link_to campanas_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
@@ -108,7 +109,19 @@
       <% end %>
     </a>
   </div>
+  <%if user_signed_in? && current_user.admin?%>
+  <div class="col-md-6">
+    <a class="nav-link" href="#">
+      <%= link_to usuarios_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+        <div class="card-body">
+          <h5 class="card-title text-center">Ver lista de Usuarios</h5>
+        </div>
+      <% end %>
+    </a>
+  </div>
+  <% end %>
 </div>
+
 
 
 

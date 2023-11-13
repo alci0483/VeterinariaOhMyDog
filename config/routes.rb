@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :perros
   devise_for :users
   # config/routes.rb
   # config/routes.rb
@@ -18,7 +19,7 @@ resources :admin, only: [:index] do
   post 'create_user', on: :collection
 end
 
-
+resources :usuarios, only: [:index, :show]
 
 
 

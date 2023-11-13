@@ -13,7 +13,7 @@ class Admin::RegistrationsController < Devise::RegistrationsController
 
     if @user.save
       # Manejar el éxito, redirección, etc.
-      redirect_to root_path, notice: 'Usuario registrado exitosamente.'
+      redirect_to usuarios_path, notice: 'Usuario registrado exitosamente.'
     else
       # Manejar el error, renderizar el formulario, etc.
       @error_message = "Ya existe un usuario con este email"
