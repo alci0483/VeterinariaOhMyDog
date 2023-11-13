@@ -1,0 +1,23 @@
+<div class="paseadores-list container">
+  <h1>Listado de Usuarios</h1>
+
+  <% if @usuarios.any? %>
+    <ul>
+      <% @usuarios.each do |usuario| %>
+        <% unless usuario.admin? %> <!-- Excluye usuarios con rol "admin" -->
+          <li class="paseador-item">
+            <div class="paseador-info">
+              <h2><%= usuario.name %></h2>
+              <p><strong>Email:</strong> <%= usuario.email %></p>
+              <p><strong>Dirección:</strong> <%= usuario.address %></p>
+              <p><strong>Número de Teléfono:</strong> <%= usuario.phone_number %></p>
+              <!-- Agrega más campos según sea necesario -->
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No hay usuarios para mostrar en este momento.</p>
+  <% end %>
+</div>
