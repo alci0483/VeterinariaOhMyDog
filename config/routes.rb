@@ -1,5 +1,29 @@
 Rails.application.routes.draw do
   devise_for :users
+  # config/routes.rb
+  # config/routes.rb
+  # config/routes.rb
+  # config/routes.rb
+  # config/routes.rb
+  # config/routes.rb
+  # config/routes.rb
+  # config/routes.rb
+devise_for :admins, controllers: {
+  registrations: 'admin/registrations'
+}
+
+resources :admin, only: [:index] do
+  # Otras rutas específicas para administrar usuarios
+  get 'new_user_registration', on: :collection
+  post 'create_user', on: :collection
+end
+
+
+
+
+
+
+
 
   #root 'main#home'
   root "application#home"
