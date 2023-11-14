@@ -13,6 +13,7 @@ class PerrosController < ApplicationController
   # GET /perros/new
   def new
     @perro = Perro.new
+    @id_usuario = params[:usuario_id]
   end
 
   # GET /perros/1/edit
@@ -23,15 +24,15 @@ class PerrosController < ApplicationController
   def create
     @perro = Perro.new(perro_params)
 
-    respond_to do |format|
-      if @perro.save
-        format.html { redirect_to perro_url(@perro), notice: "Perro was successfully created." }
-        format.json { render :show, status: :created, location: @perro }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @perro.errors, status: :unprocessable_entity }
+    if @perro.save
+      redirect_to usuario_path(@perro.user_id), notice: "Se agrego el perro exitosamente"
+    else
+      if @perro.errors[:base].include?("Ya tienes registrado este perro")
+      flash.now[:alert] = "Ya tienes registrado este perro"
       end
+      render :new, status: :unprocessable_entity
     end
+
   end
 
   # PATCH/PUT /perros/1 or /perros/1.json

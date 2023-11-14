@@ -1,5 +1,10 @@
 <%= form_with(model: perro) do |form| %>
-  <% if perro.errors.any? %>
+<% if flash[:alert] %>
+ <div style="color: red;">
+   <%= flash[:alert] %>
+ </div>
+<% end %>
+  <!--<% if perro.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(perro.errors.count, "error") %> prohibited this perro from being saved:</h2>
 
@@ -9,37 +14,34 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> -->
 
   <div>
     <%= form.label :nombre, style: "display: block" %>
-    <%= form.text_field :nombre %>
+    <%= form.text_field :nombre, required: true %>
   </div>
 
   <div>
     <%= form.label :edad, style: "display: block" %>
-    <%= form.number_field :edad %>
+    <%= form.number_field :edad, required: true %>
   </div>
 
   <div>
     <%= form.label :raza, style: "display: block" %>
-    <%= form.text_field :raza %>
+    <%= form.text_field :raza, required: true %>
   </div>
 
   <div>
     <%= form.label :sexo, style: "display: block" %>
-    <%= form.text_field :sexo %>
+    <%= form.text_field :sexo, required: true %>
   </div>
 
   <div>
     <%= form.label :estado_salud, style: "display: block" %>
-    <%= form.text_field :estado_salud %>
+    <%= form.text_area :estado_salud, required: true %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
-  </div>
+  <%= form.hidden_field :user_id, value: @id_usuario %>
 
   <div>
     <%= form.submit %>

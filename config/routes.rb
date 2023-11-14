@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :perros
+  resources :perros, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   devise_for :users
   # config/routes.rb
   # config/routes.rb

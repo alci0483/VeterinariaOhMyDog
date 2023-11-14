@@ -1,9 +1,39 @@
 <!-- app/views/usuarios/show.html.erb -->
+<div class="paseadores-list container">
+  <h1>Perfil de Usuario</h1>
+  <div class="paseador-info">
+    <p><strong>Nombre:</strong> <%= @usuario.name %></p>
+    <p><strong>Email:</strong> <%= @usuario.email %></p>
+  </div>
+  <!-- Muestra la lista de perros -->
+  <br>
+  <h1>Lista de Perros</h1>
+  <% if @perros.any? %>
+    <ul>
+      <% @perros.each do |perro| %>
+        <li>
+          <%= render perro %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No hay perros para mostrar en este momento.</p>
+  <% end %>
+  <!-- Agrega más atributos según tus necesidades -->
 
-<h1>Perfil de Usuario</h1>
-
-<p><strong>Nombre:</strong> <%= @usuario.nombre %></p>
-<p><strong>Email:</strong> <%= @usuario.email %></p>
-<!-- Agrega más atributos según tus necesidades -->
-
-<%= link_to 'Volver al listado', usuarios_path %>
+  <div class="btn-container">
+    <%= link_to new_perro_path(:usuario_id => @usuario), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+      <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+        <p1>Registrar Perro</p1>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <div class="btn-container">
+    <%= link_to usuarios_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+      <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+        <p1>Volver al listado</p1>
+      </div>
+    <% end %>
+  </div>
+</div>
