@@ -11,7 +11,9 @@
               <p><strong>Email:</strong> <%= usuario.email %></p>
               <p><strong>Dirección:</strong> <%= usuario.address %></p>
               <p><strong>Número de Teléfono:</strong> <%= usuario.phone_number %></p>
-              <!-- Agrega más campos según sea necesario -->
+              <%= link_to usuario_path(usuario), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+                <p>Ver Perfil</p>
+              <% end %>
             </div>
           </li>
         <% end %>

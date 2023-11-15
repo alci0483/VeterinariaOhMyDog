@@ -8,5 +8,6 @@ class UsuariosController < ApplicationController
   def show
     # Lógica para mostrar un usuario específico
     @usuario = User.find(params[:id])
+    @perros = @usuario.perros
   end
 end

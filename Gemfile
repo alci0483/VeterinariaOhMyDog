@@ -76,5 +76,9 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  group :development, :test do
+    # ... otras gemas ...
+    gem 'rack-cors'
+  end
 
 end

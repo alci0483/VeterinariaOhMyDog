@@ -6,4 +6,12 @@
 <p><strong>Email:</strong> <%= @usuario.email %></p>
 <!-- Agrega más atributos según tus necesidades -->
 
-<%= link_to 'Volver al listado', usuarios_path %>
+<%= link_to new_perro_path(:usuario_id => @usuario), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+  <p>Registrar Nuevo Perro</p>
+<% end %>
+
+<% @perros.each do |perro| %>
+  <%= render perro %>
+<% end %>
+
+<!-- <%= link_to 'Volver al listado', usuarios_path %> -->
