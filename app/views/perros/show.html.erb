@@ -2,9 +2,17 @@
 
 <%= render @perro %>
 
-<div>
+<%= link_to new_vacunacion_path(:perro_id => @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+  <p>Registrar una Vacunacio</p>
+<% end %>
+
+<% @perro.vacunacions.each do |vacunacion| %>
+  <%= render vacunacion %>
+<% end %>
+
+<!-- <div>
   <%= link_to "Edit this perro", edit_perro_path(@perro) %> |
   <%= link_to "Back to perros", perros_path %>
 
   <%= button_to "Destroy this perro", @perro, method: :delete %>
-</div>
+</div> -->

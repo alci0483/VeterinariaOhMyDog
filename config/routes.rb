@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :vacunacions
   resources :perros
   devise_for :users
   # config/routes.rb

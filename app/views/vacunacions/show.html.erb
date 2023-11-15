@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @vacunacion %>
+
+<div>
+  <%= link_to "Edit this vacunacion", edit_vacunacion_path(@vacunacion) %> |
+  <%= link_to "Back to vacunacions", vacunacions_path %>
+
+  <%= button_to "Destroy this vacunacion", @vacunacion, method: :delete %>
+</div>
