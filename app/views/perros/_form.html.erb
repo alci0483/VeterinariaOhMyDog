@@ -1,8 +1,6 @@
 <%= form_with(model: perro) do |form| %>
-<% if flash[:alert] %>
- <div style="color: red;">
-   <%= flash[:alert] %>
- </div>
+<% if @perro.errors[:base].any? %>
+ <p style="color: red;"><%= @perro.errors.full_messages_for(:base).join(', ') %></p>
 <% end %>
   <!--<% if perro.errors.any? %>
     <div style="color: red">
