@@ -1,10 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<div class="paseadores-list container">
+  <h1>Perfil del Perro</h1>
 
-<%= render @perro %>
+  <div class="paseador-info">
+    <%= render @perro %>
+  </div>
 
-<div>
+  <div class="vacunaciones">
+    <div class="paseador-info">
+      <h2>Lista de Vacunaciones</h2>
+
+      <% @perro.vacunacions.each do |vacunacion| %>
+        <%= render vacunacion %>
+      <% end %>
+
+      <%= link_to new_vacunacion_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+        <p>Registrar una Vacunación</p>
+      <% end %>
+    </div>
+  </div>
+
+<!-- <div>
   <%= link_to "Edit this perro", edit_perro_path(@perro) %> |
   <%= link_to "Back to perros", perros_path %>
 
   <%= button_to "Destroy this perro", @perro, method: :delete %>
-</div>
+</div> -->

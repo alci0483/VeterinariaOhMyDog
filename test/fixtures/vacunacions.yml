@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo_vacuna: MyString
+  marca_vacuna: MyString
+  dosis: 1
+  numero_lote: 1
+
+two:
+  tipo_vacuna: MyString
+  marca_vacuna: MyString
+  dosis: 1
+  numero_lote: 1

@@ -1,6 +1,8 @@
 class Perro < ApplicationRecord
   belongs_to :user
   validate :validacion_perros_no_repetidos
+  # en el modelo Perro
+  has_many :vacunacions
 
   def validacion_perros_no_repetidos
   # Verifica si el usuario actual está presente y ya tiene un perro con el mismo nombre
