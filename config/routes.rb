@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :consulta_generals
+  resources :desparasitacions
+  resources :castracions
   resources :vacunacions
   resources :perros, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   devise_for :users

@@ -26,7 +26,7 @@ class VacunacionsController < ApplicationController
 
 
     if @vacunacion.save
-      redirect_to perro_path(@vacunacion.perro_id), notice: "Cuidador publicado con éxito."
+      redirect_to perro_path(@vacunacion.perro_id), notice: "Vacunación publicado con éxito."
     else
       @error_message = "Ya existe este Registro"
       render :new, status: :unprocessable_entity

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_15_233935) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_16_192346) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -75,6 +75,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_15_233935) do
     t.date "fecha_fin"
   end
 
+  create_table "castracions", force: :cascade do |t|
+    t.text "descripcion"
+    t.text "medicamentos"
+    t.string "fecha"
+    t.integer "perro_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "consulta_generals", force: :cascade do |t|
+    t.text "descripcion"
+    t.date "fecha"
+    t.integer "perro_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cuidadors", force: :cascade do |t|
     t.string "nombre"
     t.string "apellido"
@@ -85,6 +102,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_15_233935) do
     t.datetime "updated_at", null: false
     t.string "email"
     t.index ["nombre", "ubicacion"], name: "index_cuidadors_on_nombre_and_ubicacion", unique: true
+  end
+
+  create_table "desparasitacions", force: :cascade do |t|
+    t.string "nombre_medicamento"
+    t.string "tipo_medicamento"
+    t.integer "dosis"
+    t.integer "perro_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "encontrados", force: :cascade do |t|

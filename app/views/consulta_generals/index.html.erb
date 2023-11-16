@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Consulta generals</h1>
+
+<div id="consulta_generals">
+  <% @consulta_generals.each do |consulta_general| %>
+    <%= render consulta_general %>
+    <p>
+      <%= link_to "Show this consulta general", consulta_general %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New consulta general", new_consulta_general_path %>

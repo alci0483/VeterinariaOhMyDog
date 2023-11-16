@@ -1,0 +1,34 @@
+<%= form_with(model: castracion) do |form| %>
+  <% if castracion.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(castracion.errors.count, "error") %> prohibited this castracion from being saved:</h2>
+
+      <ul>
+        <% castracion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :descripcion, style: "display: block" %>
+    <%= form.text_area :descripcion,required: true %>
+  </div>
+
+  <div>
+    <%= form.label :medicamentos, style: "display: block" %>
+    <%= form.text_area :medicamentos ,required: true%>
+  </div>
+
+  <div>
+    <%= form.label :fecha, style: "display: block" %>
+    <%= form.text_area:fecha ,required: true%>
+  </div>
+
+
+  <%= form.hidden_field :perro_id, value: @perro_id %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
