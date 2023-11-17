@@ -26,7 +26,21 @@ class VacunacionsController < ApplicationController
 
 
     if @vacunacion.save
-      redirect_to perro_path(@vacunacion.perro_id), notice: "Cuidador publicado con éxito."
+      redirect_to perro_path(@vacunacion.perro_id), notice: "Registro de Vacunacion Exitoso."
+
+      @edad_perro = Perro.find(@vacunacion.perro_id).edad
+      if @edad_perro < 4 && @vacunacion.tipo_vacuna == "antirrabica"
+        flash[:notice] = "Ya se aplico la vacuna antirrabica, debes generarle un turno a los 21 dias"
+      else
+        if @vacunacion.tipo_vacuna == "antirrabica"
+          flash[:notice] = "Ya se aplico la vacuna antirrabica, debes generar un tuno para el año que viene a la misma fecha"
+        end
+      end
+
+      if @vacunacion.tipo_vacuna == "parvovirus"
+        flash[:notice] = "Ya se aplico la vacuna parvovirus, debes generar un tuno para el año que viene a la misma fecha"
+      end
+
     else
       @error_message = "Ya existe este Registro"
       render :new, status: :unprocessable_entity
