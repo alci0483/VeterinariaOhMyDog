@@ -1,0 +1,48 @@
+<p "Perfil del Perro""</p>
+<%= form_with(model: perro) do |form| %>
+<% if @perro.errors[:base].any? %>
+ <p style="color: red;"><%= @perro.errors.full_messages_for(:base).join(', ') %></p>
+<% end %>
+  <!--<% if perro.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(perro.errors.count, "error") %> prohibited this perro from being saved:</h2>
+
+      <ul>
+        <% perro.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %> -->
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :nombre, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :edad, style: "display: block" %>
+    <%= form.number_field :edad, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :raza, style: "display: block" %>
+    <%= form.text_field :raza, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :sexo, style: "display: block" %>
+    <%= form.text_field :sexo, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :estado_salud, style: "display: block" %>
+    <%= form.text_area :estado_salud, required: true %>
+  </div>
+
+  <%= form.hidden_field :user_id, value: @id_usuario %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

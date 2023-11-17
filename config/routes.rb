@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :consulta_generals
+  resources :desparasitacions
+  resources :castracions
+  resources :vacunacions
+  resources :perros, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   devise_for :users
   # config/routes.rb
   # config/routes.rb
@@ -18,7 +23,7 @@ resources :admin, only: [:index] do
   post 'create_user', on: :collection
 end
 
-
+resources :usuarios, only: [:index, :show]
 
 
 

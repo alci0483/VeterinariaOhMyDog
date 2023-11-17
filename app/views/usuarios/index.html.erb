@@ -1,0 +1,33 @@
+<!-- app/views/usuarios/index.html.erb -->
+<div class="paseadores-list container">
+  <h1>Listado de Usuarios</h1>
+
+  <% if @usuarios.any? %> <!-- Verifica si hay usuarios -->
+    <% admin_users = @usuarios.reject { |usuario| usuario.admin? } %>
+    <% if admin_users.any? %> <!-- Verifica si hay usuarios que no son admins -->
+      <ul>
+        <% admin_users.each do |usuario| %>
+          <li class="paseador-item">
+            <div class="paseador-info">
+              <h2><%= usuario.name %></h2>
+              <p><strong>Email:</strong> <%= usuario.email %></p>
+              <p><strong>Dirección:</strong> <%= usuario.address %></p>
+              <p><strong>Número de Teléfono:</strong> <%= usuario.phone_number %></p>
+              <!-- Agrega más campos según sea necesario -->
+
+              <%= link_to usuario_path(usuario), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+                <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+                  <p1> ver perfil</p1>
+                </div>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No hay usuarios para mostrar en este momento.</p>
+    <% end %>
+  <% else %>
+    <p>No hay usuarios para mostrar en este momento.</p>
+  <% end %>
+</div>

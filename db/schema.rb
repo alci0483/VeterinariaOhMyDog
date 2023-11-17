@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_13_184744) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_16_192346) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -75,6 +75,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_184744) do
     t.date "fecha_fin"
   end
 
+  create_table "castracions", force: :cascade do |t|
+    t.text "descripcion"
+    t.text "medicamentos"
+    t.string "fecha"
+    t.integer "perro_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "consulta_generals", force: :cascade do |t|
+    t.text "descripcion"
+    t.date "fecha"
+    t.integer "perro_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cuidadors", force: :cascade do |t|
     t.string "nombre"
     t.string "apellido"
@@ -85,6 +102,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_184744) do
     t.datetime "updated_at", null: false
     t.string "email"
     t.index ["nombre", "ubicacion"], name: "index_cuidadors_on_nombre_and_ubicacion", unique: true
+  end
+
+  create_table "desparasitacions", force: :cascade do |t|
+    t.string "nombre_medicamento"
+    t.string "tipo_medicamento"
+    t.integer "dosis"
+    t.integer "perro_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "encontrados", force: :cascade do |t|
@@ -120,6 +146,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_184744) do
     t.string "observacion"
   end
 
+  create_table "perros", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "edad"
+    t.string "raza"
+    t.string "sexo"
+    t.string "estado_salud"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "solicituds", force: :cascade do |t|
     t.string "nombre"
     t.string "email"
@@ -149,6 +186,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_184744) do
     t.string "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vacunacions", force: :cascade do |t|
+    t.string "tipo_vacuna"
+    t.string "marca_vacuna"
+    t.integer "dosis"
+    t.integer "numero_lote"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "perro_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

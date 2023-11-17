@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @consulta_general %>
+
+<div>
+  <%= link_to "Edit this consulta general", edit_consulta_general_path(@consulta_general) %> |
+  <%= link_to "Back to consulta generals", consulta_generals_path %>
+
+  <%= button_to "Destroy this consulta general", @consulta_general, method: :delete %>
+</div>
