@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :name,presence: true
   validates:address,presence: true
    validates:phone_number, presence: true
+  has_many :perros
   has_many :perdidos
   has_many :encontrados
   has_many :adopcions

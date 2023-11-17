@@ -1,0 +1,29 @@
+<%= form_with(model: consulta_general) do |form| %>
+  <% if consulta_general.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(consulta_general.errors.count, "error") %> prohibited this consulta_general from being saved:</h2>
+
+      <ul>
+        <% consulta_general.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :descripcion, style: "display: block" %>
+    <%= form.text_area :descripcion %>
+  </div>
+
+  <div>
+    <%= form.label :fecha, style: "display: block" %>
+    <%= form.date_field :fecha %>
+  </div>
+
+    <%= form.hidden_field :perro_id, value: @perro_id %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

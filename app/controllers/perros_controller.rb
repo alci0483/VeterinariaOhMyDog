@@ -8,6 +8,8 @@ class PerrosController < ApplicationController
 
   # GET /perros/1 or /perros/1.json
   def show
+    @perro = Perro.find(params[:id])
+    @castracion = @perro.castracions
   end
 
   # GET /perros/new
@@ -23,11 +25,12 @@ class PerrosController < ApplicationController
   # POST /perros or /perros.json
   def create
     @perro = Perro.new(perro_params)
-
+    if !current_user.admin?
+     @perro.user_id = current_user.id
+    end
     if @perro.save
       redirect_to usuario_path(@perro.user_id), notice: "Se agrego el perro exitosamente"
     else
-      @error_message = "ya tienes registrado este perro"
       render :new, status: :unprocessable_entity
     end
 

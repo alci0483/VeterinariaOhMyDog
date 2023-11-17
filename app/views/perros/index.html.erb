@@ -5,6 +5,9 @@
 <div id="perros">
   <% @perros.each do |perro| %>
     <%= render perro %>
+    <p>
+      <%= link_to "Ver Perro", perro %>
+    </p>
   <% end %>
 </div>
 

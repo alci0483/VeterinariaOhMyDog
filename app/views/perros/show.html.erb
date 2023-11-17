@@ -1,14 +1,70 @@
-<p style="color: green"><%= notice %></p>
+<div class="paseadores-list container">
+  <h1>Perfil del Perro</h1>
 
-<%= render @perro %>
+  <div class="paseador-info">
+    <%= render @perro %>
+  </div>
 
-<%= link_to new_vacunacion_path(:perro_id => @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-  <p>Registrar una Vacunacio</p>
-<% end %>
+  <div class="vacunaciones">
+    <div class="paseador-info">
+      <h2>Lista de Vacunaciones</h2>
 
-<% @perro.vacunacions.each do |vacunacion| %>
-  <%= render vacunacion %>
-<% end %>
+      <% if @perro.vacunacions.any? %>
+        <% @perro.vacunacions.each do |vacunacion| %>
+          <%= render vacunacion %>
+        <% end %>
+      <% else %>
+        <p>No hay vacunaciones registradas para este perro.</p>
+      <% end %>
+
+      <%= link_to new_vacunacion_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+        <p>Registrar una Vacunación</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="castracion">
+    <div class="paseador-info">
+      <h2>Ver Castración</h2>
+         <%= render @castracion %>
+      <%= link_to new_castracion_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+        <p>Registrar una Castración</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="desparasitacion">
+    <div class="paseador-info">
+      <h2>Lista de desparasitaciones</h2>
+      <% if @perro.desparasitacions.any? %>
+        <% @perro.desparasitacions.each do |desparasitacion| %>
+          <%= render desparasitacion %>
+        <% end %>
+      <% else %>
+        <p>No hay desparasitaciones registradas para este perro.</p>
+      <% end %>
+      <%= link_to new_desparasitacion_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+        <p>Registrar una desparasitacion</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="consulta general">
+    <div class="paseador-info">
+      <h2>Lista de Consultas generales</h2>
+      <% if @perro.consulta_generals.any? %>
+        <% @perro.consulta_generals.each do |consulta_general| %>
+          <%= render consulta_general  %>
+        <% end %>
+      <% else %>
+        <p>No hay consulta general registradas para este perro.</p>
+      <% end %>
+      <%= link_to new_consulta_general_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+        <p>Registrar una consulta general</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
 
 <!-- <div>
   <%= link_to "Edit this perro", edit_perro_path(@perro) %> |

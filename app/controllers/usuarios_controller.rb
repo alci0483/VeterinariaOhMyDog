@@ -1,5 +1,6 @@
 class UsuariosController < ApplicationController
      #before_action :authenticate_admin!, only: [:index]
+
   def index
     # Lógica para mostrar una lista de usuarios
     @usuarios = User.all
