@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :perdidos
   has_many :encontrados
   has_many :adopcions
-  has_many :perros
+  has_many :turnos
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
   enum role: [:user,:admin ]

@@ -1,0 +1,47 @@
+
+<h1>Sacar Turno</h1>
+<div class="perdidos-list">
+<%= form_with model: @turno do |f| %>
+  <% @turno.errors.full_messages.each do |error| %>
+    <div>
+      <%= error %>   
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+    <%= f.label :nombre_perro, "Nombre del Perro" %>
+    <%= f.text_field :nombre_perro, class: "input-tamanocampo", placeholder: "Escribe el nombre de tu Perro"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :primera_visita, "Tu perrito ha visitado antes nuestra Veterinaria?" %>
+    <%= f.check_box :primera_visita %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :tipo_servicio, "Escoje el tipo de servicio"%>
+    <%= f.select :tipo_servicio, ["Castración", "Vacunación", "Consulta General", "Desparasitación"], class: "form-group select" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :banda_horaria, "En que horario piensas llevar a tu perrito?" %>
+    <%= f.select :banda_horaria, ["Turno 1 - 8 a 13 hs", "Turno 2 - 16 a 22 hs"] %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :fecha, "Fecha de atención" %>
+    <%= f.date_field :fecha, min: Date.today.to_s, max: (Date.today + 1.month).to_s, class: "input-tamanocampo", required: true %>
+  </div>
+  
+
+  <div class="form-group">
+    <%= f.label :descripcion, " Descripcion" %>
+    <%= f.text_area :descripcion, class: "input-tamanocampo",placeholder: "Cuantos perros llevaras, tamaño y raza", required: true %>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  
+
+    <%= f.submit "Confirmar Turno", class: "btn-publicar btn-primary"  %>
+  
+<% end %>
+</div>

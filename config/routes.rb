@@ -50,6 +50,7 @@ resources :usuarios, only: [:index, :show]
   resources :adopcions
   resources :campanas
   resources :perdidos, only:  [:show,:index, :new, :create]
+  resources :turnos, only: [:index, :new, :create]
 
   get 'main/home', to: 'main#home'
   resources :encontrados, only:  [:show,:index, :new, :create]

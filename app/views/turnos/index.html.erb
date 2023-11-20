@@ -1,0 +1,51 @@
+<h1>Lista de Turnos</h1>
+
+<% if user_signed_in? && !current_user.admin? %>
+  <%= link_to "Nuevo Turno", new_turno_path, class: "btn btn-primary" %>
+<% end %>
+<% if @turnos.empty? %>
+    <p> No hay Turnos</p>
+ <% else %>
+<center>
+  <% current_day = nil %>
+
+  <ul>
+    <div class="perdidos-list">
+
+      <% @turnos.group_by { |turno| [turno.fecha, turno.banda_horaria] }.each do |(day, band), turnos_for_band| %>
+        <% if current_day != day.strftime("%A, %d de %B de %Y") %>
+          <% current_day = day.strftime("%A, %d de %B de %Y") %>
+          <h2><%= l(day, format: "%A, %d de %B de %Y") %></h2>
+        <% end %>
+
+        <h3>Banda Horaria: <%= band %></h3>
+
+        <% turnos_for_band.each do |turno| %>
+          <li class="perdido-item">
+            <div class="perdido-info">
+              <!-- Displaying appointment details -->
+              <p> Fecha de atención: <b> <%= turno.fecha %></b></p> 
+              <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
+              <p> Visito la Veterinaria Antes?:
+                <b>
+                  <% if turno.primera_visita %>
+                    Si 
+                  <% else %>
+                    No         
+                  <% end %>
+                </b> 
+              </p> 
+              <p> Horario de atención: <b><%= turno.banda_horaria %> </b> </p>
+              <p>Tipo de Servicio: <b> <%= turno.tipo_servicio %></b></p>
+              <p>Descripción: <b><%= turno.descripcion %></b></p>
+              
+                <p>Estado: <b><%= turno.estado_turno %></b></p>
+              
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </div>
+  </ul>
+</center>
+<% end %>

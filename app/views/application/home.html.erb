@@ -60,6 +60,7 @@
           </div>
         <% end %>
       </div>
+
     </div>
 
     <div class="row gx-5">
@@ -84,46 +85,61 @@
           <% end %>
         </a>
       </div>
+
     </div>
 
     <div class="row gx-5">
-  <div class="col-md-6">
-    <a class="nav-link" href="#">
-      <%= link_to perdidos_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-        <div class="card-body">
-          <h5 class="card-title text-center">Perros Perdidos</h5>
-          <p class="card-text text-center">Encuentra personas también amantes de los perros que puedan ayudarte con tu mascota cuando tú no puedas</p>
+      <div class="col-md-6">
+        <a class="nav-link" href="#">
+          <%= link_to perdidos_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+            <div class="card-body">
+              <h5 class="card-title text-center">Perros Perdidos</h5>
+              <p class="card-text text-center">Encuentra personas también amantes de los perros que puedan ayudarte con tu mascota cuando tú no puedas</p>
+            </div>
+          <% end %>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a class="nav-link" href="#">
+          <%= link_to campanas_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+            <div class="card-body">
+              <h5 class="card-title text-center">Campañas</h5>
+              <p class="card-text text-center">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
+            </div>
+          <% end %>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="row gx-5">
+      <%if user_signed_in?%>
+        <div class="col-md-6">
+          <a class="nav-link" href="#">
+            <%= link_to turnos_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Turnos</h5>
+                <p class="card-text text-center">Aca podras sacar turnos para que tu perrito tenga la mejor atencion sobre su salud</p>
+              </div>
+            <% end %>
+          </a>
         </div>
       <% end %>
-    </a>
-  </div>
 
-
-  <div class="col-md-6">
-    <a class="nav-link" href="#">
-      <%= link_to campanas_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-        <div class="card-body">
-          <h5 class="card-title text-center">Campañas</h5>
-          <p class="card-text text-center">Ayudemos a refugios para que esos perros tengan la misma felicidad que tu perrito</p>
+      <%if user_signed_in? && current_user.admin?%>
+        <div class="col-md-6">
+          <a class="nav-link" href="#">
+            <%= link_to usuarios_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+              <div class="card-body">
+                <h5 class="card-title text-center">Ver lista de Usuarios</h5>
+              </div>
+            <% end %>
+          </a>
         </div>
       <% end %>
-    </a>
-  </div>
-  <%if user_signed_in? && current_user.admin?%>
-  <div class="col-md-6">
-    <a class="nav-link" href="#">
-      <%= link_to usuarios_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-        <div class="card-body">
-          <h5 class="card-title text-center">Ver lista de Usuarios</h5>
-        </div>
-      <% end %>
-    </a>
-  </div>
-  <% end %>
-</div>
 
-
-
+    </div>
 
 </body>
 </html>
