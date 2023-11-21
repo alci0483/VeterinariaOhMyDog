@@ -15,5 +15,5 @@ class Turno < ApplicationRecord
         errors.add(:base, "No se puede sacar turno para esa Banda Horaria ")
       end
     end
-  
+
 end

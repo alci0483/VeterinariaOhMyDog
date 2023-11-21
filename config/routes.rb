@@ -25,7 +25,6 @@ end
 
 resources :usuarios, only: [:index, :show]
 
-
   #root 'main#home'
   root "application#home"
 
@@ -51,6 +50,7 @@ resources :usuarios, only: [:index, :show]
   resources :campanas
   resources :perdidos, only:  [:show,:index, :new, :create]
   resources :turnos, only: [:index, :new, :create]
+  resources :mensajes, only: [:index]
 
   get 'main/home', to: 'main#home'
   resources :encontrados, only:  [:show,:index, :new, :create]

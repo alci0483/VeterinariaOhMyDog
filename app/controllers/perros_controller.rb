@@ -67,6 +67,6 @@ class PerrosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def perro_params
-      params.require(:perro).permit(:nombre, :edad, :raza, :sexo, :estado_salud, :user_id)
+      params.require(:perro).permit(:nombre, :edad, :raza, :sexo, :estado_salud, :user_id, :generar_turno)
     end
 end

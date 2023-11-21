@@ -1,3 +1,4 @@
+<div class="perdidos-list">
 <%= form_with(model: vacunacion) do |form| %>
   <% if vacunacion.errors.any? %>
     <div style="color: red">
@@ -11,29 +12,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :tipo_vacuna, style: "display: block" %>
-    <%= form.text_field :tipo_vacuna, required: true %>
+  <div class="form-group">
+    <%= form.label "Tipo de Vacuna", style: "display: block" %>
+    <%= form.text_field :tipo_vacuna, class: "input-tamanocampo", required: true %>
   </div>
 
-  <div>
-    <%= form.label :marca_vacuna, style: "display: block" %>
-    <%= form.text_field :marca_vacuna, required: true %>
+  <div class="form-group">
+    <%= form.label "Marca de Vacuna", style: "display: block" %>
+    <%= form.text_field :marca_vacuna, class: "input-tamanocampo", required: true %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :dosis, style: "display: block" %>
-    <%= form.number_field :dosis, required: true %>
+    <%= form.number_field :dosis, class: "input-tamanocampo", required: true %>
   </div>
 
-  <div>
-    <%= form.label :numero_lote, style: "display: block" %>
-    <%= form.number_field :numero_lote, required: true %>
+  <div class="form-group">
+    <%= form.label "Numero de Lote", style: "display: block" %>
+    <%= form.number_field :numero_lote, class: "input-tamanocampo", required: true %>
   </div>
 
   <%= form.hidden_field :perro_id, value: @perro_id %>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <br>
+  <%= form.submit 'Publicar', class: "btn-publicar btn-primary" %>
 <% end %>

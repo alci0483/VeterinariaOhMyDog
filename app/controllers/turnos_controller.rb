@@ -14,17 +14,25 @@ end
   end
 
   def create
-    @turno = Turno.new(turno_params.merge(estado_turno: "pendiente"))
-    if hora_en_banda_horaria(@turno) && @turno.save
-      redirect_to turnos_path, notice: 'Turno creado exitosamente.'
+    @turno = Turno.new(turno_params.merge(estado_turno: "pendiente", nombre_perro: params[:turno][:nombre_perro].join("  ")))
+
+    if @turno.save && hora_en_banda_horaria(@turno) && !params[:turno][:nombre_perro].join("  ").blank? && !params[:turno][:primera_visita]
+            redirect_to turnos_path, notice: 'Turno creado exitosamente.'
     else
-      redirect_to new_turno_path, notice: 'No se puede sacar turno para esa Banda Horaria'
+      if params[:turno][:nombre_perro].join(", ").blank? && params[:turno][:primera_visita]
+        redirect_to new_turno_path, notice: 'Debe seleccionar al menos un perro.'
+      elsif params[:turno][:nombre_perro].join("  ").blank? && !params[:turno][:primera_visita] && params[:turno][:perro_no_registrado].blank?
+        redirect_to new_turno_path, notice: 'Debes ingresar el nombre del perro no registrado.'
+      else
+        redirect_to new_turno_path, notice: 'No se puede sacar turno para esa Banda Horaria.'
+      end
     end
   end
 
-    private
+
+  private
   def turno_params
-    params.require(:turno).permit(:nombre_perro, :primera_visita, :tipo_servicio, :banda_horaria, :fecha, :descripcion, :user_id, :estado_turno)
+    params.require(:turno).permit(:nombre_perro, :primera_visita, :tipo_servicio, :banda_horaria, :fecha, :descripcion, :user_id, :estado_turno, :perro_no_registrado)
   end
   def hora_en_banda_horaria(turno)
     #si es cualquier otro dia, puede agregar libremente el el turno.

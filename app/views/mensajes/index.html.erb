@@ -1,0 +1,8 @@
+<!-- app/views/mensajes/index.html.erb -->
+<h1>Tus Mensajes</h1>
+
+<% current_user.mensajes.each do |mensaje| %>
+  <p><%= mensaje.contenido %></p>
+  <p><%= mensaje.created_at %></p>
+  <br>
+<% end %>

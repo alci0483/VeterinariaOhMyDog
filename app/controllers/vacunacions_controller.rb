@@ -24,21 +24,39 @@ class VacunacionsController < ApplicationController
   def create
     @vacunacion = Vacunacion.new(vacunacion_params)
 
-
     if @vacunacion.save
       redirect_to perro_path(@vacunacion.perro_id), notice: "Registro de Vacunacion Exitoso."
 
-      @edad_perro = Perro.find(@vacunacion.perro_id).edad
+      @perro = Perro.find(@vacunacion.perro_id)
+      @edad_perro = @perro.edad
+      @usuario = User.find(@perro.user_id)
+
       if @edad_perro < 4 && @vacunacion.tipo_vacuna == "antirrabica"
-        flash[:notice] = "Ya se aplico la vacuna antirrabica, debes generarle un turno a los 21 dias"
+        flash[:notice] = "Ya se aplico la vacuna antirrabica, se le genero al usuario de este perro un turno a los 21 dias"
+
+        turno_nuevo = Turno.new(nombre_perro: @perro.nombre, tipo_servicio: "Vacunación",banda_horaria: "Turno 1 - 8 a 13 hs",fecha: Date.today + 21, descripcion: "Vacuna de refuerzo", user_id: @usuario.id, estado_turno: "pendiente")
+        turno_nuevo.save
+
+        mensaje = Mensaje.new(contenido: "Se te genero un turno de refuerzo para tu perro, ve a tus turno para mas informacion", user_id: @usuario.id)
+        mensaje.save
       else
         if @vacunacion.tipo_vacuna == "antirrabica"
-          flash[:notice] = "Ya se aplico la vacuna antirrabica, debes generar un tuno para el año que viene a la misma fecha"
+          flash[:notice] = "Ya se aplico la vacuna antirrabica, se le genero al usuario de este perro un turno dentro de un año"
+          turno_nuevo = Turno.new(nombre_perro: @perro.nombre, tipo_servicio: "Vacunación",banda_horaria: "Turno 1 - 8 a 13 hs",fecha: Date.today + 365, descripcion: "Vacuna de refuerzo", user_id: @usuario.id, estado_turno: "pendiente")
+          turno_nuevo.save
+
+          mensaje = Mensaje.new(contenido: "Se te genero un turno de refuerzo para tu perro, ve a tus turno para mas informacion", user_id: @usuario.id)
+          mensaje.save
         end
       end
 
       if @vacunacion.tipo_vacuna == "parvovirus"
-        flash[:notice] = "Ya se aplico la vacuna parvovirus, debes generar un tuno para el año que viene a la misma fecha"
+        flash[:notice] = "Ya se aplico la vacuna parvovirus, se le genero al usuario de este perro un turno dentro de un año"
+        turno_nuevo = Turno.new(nombre_perro: @perro.nombre, tipo_servicio: "Vacunación",banda_horaria: "Turno 1 - 8 a 13 hs",fecha: Date.today + 365, descripcion: "Vacuna de refuerzo", user_id: @usuario.id, estado_turno: "pendiente")
+        turno_nuevo.save
+
+        mensaje = Mensaje.new(contenido: "Se te genero un turno de refuerzo para tu perro, ve a tus turno para mas informacion", user_id: @usuario.id)
+        mensaje.save
       end
 
     else

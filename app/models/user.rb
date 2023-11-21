@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :encontrados
   has_many :adopcions
   has_many :turnos
+  has_many :mensajes
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
   enum role: [:user,:admin ]

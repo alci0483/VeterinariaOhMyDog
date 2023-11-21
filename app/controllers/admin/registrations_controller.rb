@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+  # frozen_string_literal: true
 
 # app/controllers/admin/registrations_controller.rb
 class Admin::RegistrationsController < Devise::RegistrationsController
@@ -16,7 +16,7 @@ class Admin::RegistrationsController < Devise::RegistrationsController
       redirect_to usuarios_path, notice: 'Usuario registrado exitosamente.'
     else
       # Manejar el error, renderizar el formulario, etc.
-    
+
       render :new, status: :unprocessable_entity
     end
   end

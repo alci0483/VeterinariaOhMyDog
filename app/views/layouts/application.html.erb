@@ -55,14 +55,20 @@
                 </div>
                 <% end %>
               <% end %>
-              
 
+              <% if user_signed_in?  && !current_user.admin?%>
+                <%= link_to  mensajes_path,class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+                <div class="p-3" style="background-color: #FFA500; color: white; border: 1px solid #28a745; padding: 2px; margin-bottom: 2px;">
+                  <p1> Ver mis mensajes </p1>
+                </div>
+                <% end %>
+              <% end %>
 
             </li>
           </ul>
 
           <% if user_signed_in?%>
-            <p class="text-black"> Perfil: <%= User.find(current_user.id).email %></p>
+            <p class="text-black"> Perfil: <%= link_to User.find(current_user.id).email, usuario_path(current_user) %></p>
           <% end %>
       </nav>
 
