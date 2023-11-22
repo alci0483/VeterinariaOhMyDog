@@ -3,7 +3,7 @@ class UsuariosController < ApplicationController
 
   def index
     # Lógica para mostrar una lista de usuarios
-    @usuarios = User.all
+    @usuarios = User.all.order(created_at: :desc)
   end
 
   def show

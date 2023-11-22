@@ -1,4 +1,4 @@
-  # frozen_string_literal: true
+# frozen_string_literal: true
 
 # app/controllers/admin/registrations_controller.rb
 class Admin::RegistrationsController < Devise::RegistrationsController
@@ -24,10 +24,17 @@ class Admin::RegistrationsController < Devise::RegistrationsController
   private
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :password_confirmation, :name, :address, :phone_number])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [
+      :email, :password, :password_confirmation,
+      :name, :address, :phone_number,
+      perros_attributes: [:nombre, :raza, :edad, :sexo, :estado_salud]
+    ])
   end
-
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :name, :address, :phone_number)
+    params.require(:user).permit(
+      :email, :password, :password_confirmation,
+      :name, :address, :phone_number,
+      perros_attributes: [:nombre, :raza, :edad, :sexo, :estado_salud] # Añadir los atributos necesarios para el perro
+    )
   end
 end

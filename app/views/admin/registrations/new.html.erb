@@ -2,44 +2,64 @@
 <% if @user.errors.any? %>
   <p>"Ya existe un usuario con este email"</p>
 <% end %>
-
-
-<h2>Registrar nuevo usuario</h2>
-
-
-
 <div class="perdidos-list">
+<h2>Registrar nuevo  de Usuario</h2>
+
 <%= form_for(@user, url: admin_registration_path) do |f| %>
-  <%= render "devise/shared/error_messages", resource: @user %>
+  
+
+  <h2>Datos del usuario</h2>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Nombre" %><br />
     <%= f.text_field :name, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email , "E-mail"%><br />
     <%= f.email_field :email, autofocus: true, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password, "Contraseña" %><br />
     <%= f.password_field :password, required: true %>
   </div>
 
-
-
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :address, "Direccion" %><br />
     <%= f.text_field :address, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :phone_number %><br />
+    <%= f.label :phone_number, "Numero de Telefono" %><br />
     <%= f.text_field :phone_number, required: true %>
   </div>
+
+  <h2>Datos del Perro</h2>
+
+  <div class="field">
+  <%= f.fields_for :perros, @user.perros.build do |perro_fields| %>
+    <%= perro_fields.label :nombre %>
+    <%= perro_fields.text_field :nombre, required: true %>
+    <br />
+    <%= perro_fields.label :edad %>
+    <%= perro_fields.number_field :edad, required: true %>
+    <br />
+    <%= perro_fields.label :raza %>
+    <%= perro_fields.text_field :raza, required: true %>
+    <br />
+    <%= perro_fields.label :sexo %>
+    <%= perro_fields.text_field :sexo, required: true %>
+    <br />
+    <%= perro_fields.label :estado_salud %>
+    <%= perro_fields.text_field :estado_salud, required: true %>
+  <% end %> <!-- Cierra el bloque fields_for aquí -->
+</div>
+
+  <!-- Fin de campos para el perro -->
 
   <div class="actions">
     <%= f.submit "Confirmar" %>
   </div>
 <% end %>
+</div>

@@ -15,10 +15,9 @@
     <%= form.label :descripcion, style: "display: block" %>
     <%= form.text_area :descripcion %>
   </div>
-
-  <div>
-    <%= form.label :fecha, style: "display: block" %>
-    <%= form.date_field :fecha %>
+  <div >
+    <%= form.label :fecha %>
+    <%= form.date_field :fecha,min: Date.today.to_s, required: true %>
   </div>
 
     <%= form.hidden_field :perro_id, value: @perro_id %>

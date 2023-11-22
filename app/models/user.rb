@@ -3,10 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   validates :email, uniqueness: true
 
+   has_many :turnos
+   has_many :mensajes
   validates :name,presence: true
   validates:address,presence: true
    validates:phone_number, presence: true
   has_many :perros
+  accepts_nested_attributes_for :perros
   has_many :perdidos
   has_many :encontrados
   has_many :adopcions

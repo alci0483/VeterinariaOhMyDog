@@ -12,9 +12,10 @@ class VacunacionsController < ApplicationController
 
   # GET /vacunacions/new
   def new
-    @vacunacion = Vacunacion.new
-    @perro_id = params[:perro_id]
-  end
+  @vacunacion = Vacunacion.new
+  @perro_id = params[:perro_id]
+end
+
 
   # GET /vacunacions/1/edit
   def edit
