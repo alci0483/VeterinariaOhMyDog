@@ -5,6 +5,7 @@
   <div class="paseador-info">
     <%= render @perro %>
   </div>
+  <%= link_to "Volver al Perfil del Usuario", usuario_path(@perro.user), class: "btn bg-success p-2 text-white bg-opacity-50" %>
 
   <div class="vacunaciones">
     <div class="paseador-info">
@@ -25,8 +26,15 @@
   </div>
   <div class="castracion">
     <div class="paseador-info">
+
       <h2>Ver Castración</h2>
+      <% if @perro.castracions.any? %>
+        <% @perro.castracions.each do |castracion| %>
          <%= render @castracion %>
+         <% end %>
+       <% else %>
+         <p>No hay castración registrada para este perro.</p>
+       <% end %>
       <%= link_to new_castracion_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
         <p>Registrar una Castración</p>
       <% end %>

@@ -1,24 +1,43 @@
 <!-- app/views/usuarios/show.html.erb -->
-
 <h1>Perfil de Usuario</h1>
-
 <p><strong>Nombre:</strong> <%= @usuario.name %></p>
 <p><strong>Email:</strong> <%= @usuario.email %></p>
 <!-- Agrega más atributos según tus necesidades -->
 
-<%= link_to new_perro_path(:usuario_id => @usuario), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-  <p>Registrar Nuevo Perro</p>
-<% end %>
-
-<h1>Lista de Perros</h1>
-<br>
-<% @perros.each do |perro| %>
-  <li class= "container-fluid">
-    <%= render perro %>
-    <%= link_to perro_path(perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-      <p>Ver Perro</p>
+<% if user_signed_in? %>
+  <% if current_user.admin? && current_user.id != @usuario.id%>
+    <%= link_to new_perro_path(:usuario_id => @usuario), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+      <p>Agregar Nuevo Perro</p>
     <% end %>
-  </li>
-<% end %>
+    <br>
+    <br>
+    <%= link_to usuarios_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+      <p>Volver al listado</p>
+    <% end %>
 
-<%= link_to 'Volver al listado', usuarios_path %>
+    <% if current_user.id != @usuario.id %>
+    <h1>Lista de Perros</h1>
+    <br>
+    <% @perros.each do |perro| %>
+      <li class="container-fluid">
+        <%= render perro %>
+        <%= link_to perro_path(perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+          <p>Ver Historia Clinica</p>
+        <% end %>
+      </li>
+    <% end %>
+    <% end %>
+
+  <% elsif !current_user.admin? %>
+    <h1>Lista de Perros</h1>
+    <br>
+    <% @perros.each do |perro| %>
+      <li class="container-fluid">
+        <%= render perro %>
+        <%= link_to perro_path(perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+          <p>Ver Historia Clinica</p>
+        <% end %>
+      </li>
+    <% end %>
+  <% end %>
+<% end %>

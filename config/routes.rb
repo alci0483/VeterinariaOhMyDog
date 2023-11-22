@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  # config/routes.rb
+   resources :mensajes, only: [:index]
+   resources :perros do
+  get 'generar_turno', on: :member
+   end
+  resources :turnos, only: [:index, :new, :create]
   resources :consulta_generals
   resources :desparasitacions
   resources :castracions
@@ -50,7 +56,10 @@ resources :usuarios, only: [:index, :show]
   resources :campanas
   resources :perdidos, only:  [:show,:index, :new, :create]
   resources :turnos, only: [:index, :new, :create]
-  resources :mensajes, only: [:index]
+  delete 'turnos/:id', to: 'turnos#destroy', as: 'destroy_turno'
+  post 'turnos/:id/cancelar', to: 'turnos#cancelar', as: 'cancelar_turno'
+  post 'turnos/:id/confirmar', to: 'turnos#confirmar', as: 'confirmar_turno'
+  post 'turnos/:id/rechazar', to: 'turnos#rechazar', as: 'rechazar_turno'
 
   get 'main/home', to: 'main#home'
   resources :encontrados, only:  [:show,:index, :new, :create]

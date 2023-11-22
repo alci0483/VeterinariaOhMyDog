@@ -1,51 +1,69 @@
-<h1>Lista de Turnos</h1>
-
 <% if user_signed_in? && !current_user.admin? %>
   <%= link_to "Nuevo Turno", new_turno_path, class: "btn btn-primary" %>
 <% end %>
-<% if @turnos.empty? %>
-    <p> No hay Turnos</p>
- <% else %>
-<center>
+<% if user_signed_in? && %>
+
+  <!-- Sección de Turnos Pendientes para usuarios no administradores -->
+  <h2>Turnos Pendientes</h2>
   <% current_day = nil %>
-
   <ul>
-    <div class="perdidos-list">
+    <% @turnos.select { |turno| turno.estado_turno == 'pendiente' }.group_by { |turno| [turno.fecha, turno.banda_horaria] }.each do |(day, band), turnos_for_band| %>
+      <% if current_day != day.strftime("%A, %d de %B de %Y") %>
+        <% current_day = day.strftime("%A, %d de %B de %Y") %>
+        <h3>Banda Horaria: <%= band %></h3>
+      <% end %>
 
-      <% @turnos.group_by { |turno| [turno.fecha, turno.banda_horaria] }.each do |(day, band), turnos_for_band| %>
+      <% turnos_for_band.each do |turno| %>
+        <li class="perdido-item">
+          <div class="perdido-info">
+            <!-- Mostrar detalles del turno pendiente -->
+            <p> Fecha de atención: <b> <%= turno.fecha %></b></p>
+            <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
+            <p> Fecha de atención: <b> <%= turno.fecha %></b></p>
+            <p> Tipo de servicio:   <b> <%= turno.tipo_servicio %> </b></p>
+            <!-- Agrega aquí más detalles según sea necesario -->
+            <p>Estado: <b><%= turno.estado_turno %></b></p>
+            <% if user_signed_in? && !current_user.admin? %>
+              <%= button_to "Cancelar Turno", cancelar_turno_path(turno), method: :post, class: 'btn btn-success' %>
+            <% end %>
+            <% if user_signed_in? && current_user.admin? %>
+            <%= button_to "Confirmar Turno", confirmar_turno_path(turnos_for_band.first), method: :post, class: 'btn btn-success' %>
+            <%= button_to "Rechazar Turno", rechazar_turno_path(turnos_for_band.first), method: :post, class: 'btn btn-success' %>
+            <% end %>
+
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if user_signed_in? %>
+  <!-- Sección de Historial de Turnos para usuarios administradores -->
+  <% current_day = nil %>
+  <h2>Historial de Turnos</h2>
+  <ul>
+    <% @turnos.reject { |turno| turno.estado_turno == 'pendiente' }.group_by { |turno| [turno.fecha, turno.banda_horaria] }.each do |(day, band), turnos_for_band| %>
+      <h3>Banda Horaria: <%= band %></h3>
+      <% turnos_for_band.each do |turno| %>
         <% if current_day != day.strftime("%A, %d de %B de %Y") %>
           <% current_day = day.strftime("%A, %d de %B de %Y") %>
-          <h2><%= l(day, format: "%A, %d de %B de %Y") %></h2>
+          <h4><%= l(day, format: "%A, %d de %B de %Y") %></h4>
         <% end %>
 
-        <h3>Banda Horaria: <%= band %></h3>
-
-        <% turnos_for_band.each do |turno| %>
-          <li class="perdido-item">
-            <div class="perdido-info">
-              <!-- Displaying appointment details -->
-              <p> Fecha de atención: <b> <%= turno.fecha %></b></p> 
-              <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
-              <p> Visito la Veterinaria Antes?:
-                <b>
-                  <% if turno.primera_visita %>
-                    Si 
-                  <% else %>
-                    No         
-                  <% end %>
-                </b> 
-              </p> 
-              <p> Horario de atención: <b><%= turno.banda_horaria %> </b> </p>
-              <p>Tipo de Servicio: <b> <%= turno.tipo_servicio %></b></p>
-              <p>Descripción: <b><%= turno.descripcion %></b></p>
-              
-                <p>Estado: <b><%= turno.estado_turno %></b></p>
-              
-            </div>
-          </li>
-        <% end %>
+        <li class="perdido-item">
+          <div class="perdido-info">
+            <!-- Mostrar detalles del historial de turno (rechazado, cancelado, confirmado) -->
+            <p> Fecha de atención: <b> <%= turno.fecha %></b></p>
+            <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
+              <p> Tipo de servicio:   <b> <%= turno.tipo_servicio %> </b></p>
+            <!-- Agrega aquí más detalles según sea necesario -->
+            <p>Estado: <b><%= turno.estado_turno %></b></p>
+          </div>
+        </li>
       <% end %>
-    </div>
+
+
+    <% end %>
   </ul>
-</center>
 <% end %>

@@ -11,13 +11,12 @@
   <div class="form-group">
     <%= f.label :nombre_perro, "Nombre del Perro" %>
     <%= f.collection_check_boxes :nombre_perro, current_user.perros.all,:nombre, :nombre do |b| %>
-      <br>
+      <li>
       <%= b.check_box %>
       <%= b.label %>
+      </li>
     <% end %>
   </div>
-
-
 
 
   <div class="form-group">
@@ -26,9 +25,19 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :tipo_servicio, "Escoje el tipo de servicio"%>
-    <%= f.select :tipo_servicio, ["Castración", "Vacunación", "Consulta General", "Desparasitación"], class: "form-group select" %>
-  </div>
+  <%= f.label :tipo_servicio, "Tipo de Servicio" %>
+  <ul>
+    <% [['Castración', 'castracion'], ['Vacunación', 'vacunacion'], ['Consulta General', 'consulta general'], ['Desparasitación', 'desparasitación']].each do |service| %>
+      <li>
+        <%= f.check_box :tipo_servicio, { multiple: true }, service.last, nil %>
+        <%= f.label service.last, service.first %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+
 
   <div class="form-group">
     <%= f.label :banda_horaria, "En que horario piensas llevar a tu perrito?" %>

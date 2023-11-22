@@ -2,7 +2,7 @@
 class MensajesController < ApplicationController
   def index
     @usuario = User.find(current_user.id)
-    @mensajes = @usuario.mensajes
+    @mensajes = @usuario.mensajes.order(created_at: :desc)
   end
 
   def create
