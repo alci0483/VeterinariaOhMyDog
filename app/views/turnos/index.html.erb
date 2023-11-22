@@ -1,7 +1,7 @@
 <% if user_signed_in? && !current_user.admin? %>
   <%= link_to "Nuevo Turno", new_turno_path, class: "btn btn-primary" %>
 <% end %>
-<% if user_signed_in? && %>
+<% if user_signed_in? %>
 
   <!-- Sección de Turnos Pendientes para usuarios no administradores -->
   <h2>Turnos Pendientes</h2>
@@ -11,13 +11,14 @@
       <% if current_day != day.strftime("%A, %d de %B de %Y") %>
         <% current_day = day.strftime("%A, %d de %B de %Y") %>
         <h3>Banda Horaria: <%= band %></h3>
+        <h4><%= l(day, format: "%A, %d de %B de %Y") %></h4>
       <% end %>
 
       <% turnos_for_band.each do |turno| %>
         <li class="perdido-item">
           <div class="perdido-info">
             <!-- Mostrar detalles del turno pendiente -->
-            <p> Fecha de atención: <b> <%= turno.fecha %></b></p>
+          
             <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
             <p> Fecha de atención: <b> <%= turno.fecha %></b></p>
             <p> Tipo de servicio:   <b> <%= turno.tipo_servicio %> </b></p>
@@ -39,7 +40,7 @@
 <% end %>
 
 <% if user_signed_in? %>
-  <!-- Sección de Historial de Turnos para usuarios administradores -->
+
   <% current_day = nil %>
   <h2>Historial de Turnos</h2>
   <ul>
@@ -54,7 +55,7 @@
         <li class="perdido-item">
           <div class="perdido-info">
             <!-- Mostrar detalles del historial de turno (rechazado, cancelado, confirmado) -->
-            <p> Fecha de atención: <b> <%= turno.fecha %></b></p>
+           
             <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
               <p> Tipo de servicio:   <b> <%= turno.tipo_servicio %> </b></p>
             <!-- Agrega aquí más detalles según sea necesario -->
