@@ -10,19 +10,19 @@
       </ul>
     </div>
   <% end %>
-
   <div>
-    <%= form.label :descripcion, style: "display: block" %>
-    <%= form.text_area :descripcion %>
+    <%= form.label :descripcion,"Descripcion del Diagnostico" ,style: "display: block" %>
+    <%= form.text_area :descripcion,placeholder: "Diagnostico realizado",required: true %>
   </div>
+
   <div >
-    <%= form.label :fecha %>
+    <%= form.label :fecha ,"Fecha realizacion  de consulta"%>
     <%= form.date_field :fecha,min: Date.today.to_s, required: true %>
   </div>
 
     <%= form.hidden_field :perro_id, value: @perro_id %>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Confirmar" %>
   </div>
 <% end %>

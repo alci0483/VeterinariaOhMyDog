@@ -31,6 +31,7 @@ class PerrosController < ApplicationController
     if @perro.save
       redirect_to usuario_path(@perro.user_id), notice: "Se agrego el perro exitosamente"
     else
+      flash[:notice] = "Ya tienes un perro con este nombre"
       render :new, status: :unprocessable_entity
     end
 

@@ -12,12 +12,12 @@
   <% end %>
 
   <div>
-    <%= form.label :nombre_medicamento, style: "display: block" %>
+    <%= form.label :nombre_medicamento,"Nombre del medicamento", style: "display: block" %>
     <%= form.text_field :nombre_medicamento %>
   </div>
 
   <div>
-    <%= form.label :tipo_medicamento, style: "display: block" %>
+    <%= form.label :tipo_medicamento,"Tipo de desparasitacion", style: "display: block" %>
     <%= form.text_field :tipo_medicamento %>
   </div>
 
@@ -25,8 +25,13 @@
     <%= form.label :dosis, style: "display: block" %>
     <%= form.number_field :dosis %>
   </div>
+  <div>
+    <%= form.label :fecha, "Fecha de Seguimiento", style: "display: block" %>
+    <%= form.date_field :fecha  ,min: Date.today.to_s, required: true %>
+  </div>
+
   <%= form.hidden_field :perro_id, value: @perro_id %>
   <div>
-    <%= form.submit %>
+    <%= form.submit "Confirmar" %>
   </div>
 <% end %>

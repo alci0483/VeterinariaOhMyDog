@@ -5,14 +5,18 @@
     <%= render @perro %>
   </div>
   <%= link_to "Volver al Perfil del Usuario", usuario_path(@perro.user), class: "btn bg-success p-2 text-white bg-opacity-50" %>
-
+  <h2>-------------------------------------------------------------------------------------------</h2>
+  <h2>HISTORIAL CLINICO</h2>
+  <br>
   <div class="vacunaciones">
     <div class="paseador-info">
-      <h2>Lista de Vacunaciones</h2>
+      <h2> * Lista de Vacunaciones</h2>
 
       <% if @perro.vacunacions.any? %>
         <% @perro.vacunacions.each do |vacunacion| %>
+        <li class="paseador-item">
           <%= render vacunacion %>
+        </li>
         <% end %>
       <% else %>
         <p>No hay vacunaciones registradas para este perro.</p>
@@ -23,28 +27,37 @@
       <% end %>
     </div>
   </div>
+  <br>
   <div class="castracion">
     <div class="paseador-info">
+      <h2> * Ver Castración</h2>
 
-      <h2>Ver Castración</h2>
-      <% if @perro.castracions.any? %>
+      <% if !@perro.castracions.empty? %>
         <% @perro.castracions.each do |castracion| %>
-         <%= render @castracion %>
-         <% end %>
-       <% else %>
-         <p>No hay castración registrada para este perro.</p>
-       <% end %>
-      <%= link_to new_castracion_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-        <p>Registrar una Castración</p>
+        <li class="paseador-item">
+          <%= render castracion %>
+        </li>
+        <% end %>
+      <% else %>
+        <p>No hay castración registrada para este perro.</p>
+      <% end %>
+
+      <% unless @perro.castracions.any? %>
+        <%= link_to new_castracion_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+          <p>Registrar una Castración</p>
+        <% end %>
       <% end %>
     </div>
   </div>
+  <br>
   <div class="desparasitacion">
     <div class="paseador-info">
-      <h2>Lista de desparasitaciones</h2>
+      <h2> * Lista de desparasitaciones</h2>
       <% if @perro.desparasitacions.any? %>
         <% @perro.desparasitacions.each do |desparasitacion| %>
+        <li class="paseador-item">
           <%= render desparasitacion %>
+        </li>
         <% end %>
       <% else %>
         <p>No hay desparasitaciones registradas para este perro.</p>
@@ -54,12 +67,15 @@
       <% end %>
     </div>
   </div>
+  <br>
   <div class="consulta general">
     <div class="paseador-info">
-      <h2>Lista de Consultas generales</h2>
+      <h2> * Lista de Consultas generales</h2>
       <% if @perro.consulta_generals.any? %>
         <% @perro.consulta_generals.each do |consulta_general| %>
+        <li class="paseador-item">
           <%= render consulta_general  %>
+        </li>
         <% end %>
       <% else %>
         <p>No hay consulta general registradas para este perro.</p>
@@ -69,11 +85,9 @@
       <% end %>
     </div>
   </div>
+  <br>
+  <h2>-------------------------------------------------------------------------------------------</h2>
 </div>
-
-
-
-
 
 <!-- <div>
   <%= link_to "Edit this perro", edit_perro_path(@perro) %> |

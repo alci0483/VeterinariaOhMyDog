@@ -36,7 +36,7 @@ class DesparasitacionsController < ApplicationController
   def update
     respond_to do |format|
       if @desparasitacion.update(desparasitacion_params)
-        format.html { redirect_to desparasitacion_url(@desparasitacion), notice: "Desparasitacion was successfully updated." }
+        format.html { redirect_to desparasitacion_url(@desparasitacion), notice: "Registro de desparasitación exitoso" }
         format.json { render :show, status: :ok, location: @desparasitacion }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -63,6 +63,6 @@ class DesparasitacionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def desparasitacion_params
-      params.require(:desparasitacion).permit(:nombre_medicamento, :tipo_medicamento, :dosis, :perro_id)
+      params.require(:desparasitacion).permit(:nombre_medicamento, :tipo_medicamento, :dosis, :perro_id,:fecha)
     end
 end

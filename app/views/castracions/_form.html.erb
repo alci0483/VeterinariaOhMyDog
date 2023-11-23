@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :descripcion, style: "display: block" %>
-    <%= form.text_area :descripcion,required: true %>
+    <%= form.text_area :descripcion,placeholder: "procedimiento postoperatorio, etc ",required: true %>
   </div>
 
   <div>
@@ -22,13 +22,13 @@
   </div>
 
   <div>
-    <%= form.label :fecha, style: "display: block" %>
-    <%= form.text_area:fecha ,required: true%>
+    <%= form.label :fecha, "Fecha de Seguimiento", style: "display: block" %>
+    <%= form.date_field :fecha  ,min: Date.today.to_s, required: true %>
   </div>
 
 
   <%= form.hidden_field :perro_id, value: @perro_id %>
   <div>
-    <%= form.submit %>
+    <%= form.submit "Confirmar" %>
   </div>
 <% end %>

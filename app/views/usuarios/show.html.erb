@@ -1,4 +1,5 @@
 <!-- app/views/usuarios/show.html.erb -->
+<div class="paseador-info">
 <h1>Perfil de Usuario</h1>
 <p><strong>Nombre:</strong> <%= @usuario.name %></p>
 <p><strong>Email:</strong> <%= @usuario.email %></p>
@@ -18,26 +19,55 @@
     <% if current_user.id != @usuario.id %>
     <h1>Lista de Perros</h1>
     <br>
+
+    <div class="perdidos-list">
+    <ul>
     <% @perros.each do |perro| %>
-      <li class="container-fluid">
-        <%= render perro %>
-        <%= link_to perro_path(perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-          <p>Ver Historia Clinica</p>
-        <% end %>
+      <li class="cuidador-item">
+        <div class="row gx-5">
+          <div class="col-md-6">
+          <%= render perro %>
+          </div>
+        </div>
+
+        <div class="row gx-5">
+          <div class="col-md-6">
+          <%= link_to perro_path(perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+            <p>Ver Historia Clinica</p>
+          <% end %>
+          </div>
+        </div>
       </li>
     <% end %>
+    <div">
+    </ul>
     <% end %>
 
   <% elsif !current_user.admin? %>
     <h1>Lista de Perros</h1>
     <br>
+
+    <div class="perdidos-list">
+    <ul>
     <% @perros.each do |perro| %>
-      <li class="container-fluid">
-        <%= render perro %>
-        <%= link_to perro_path(perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-          <p>Ver Historia Clinica</p>
-        <% end %>
+      <li class="cuidador-item">
+        <div class="row gx-5">
+          <div class="col-md-6">
+          <%= render perro %>
+          </div>
+        </div>
+
+        <div class="row gx-5">
+          <div class="col-md-6">
+          <%= link_to perro_path(perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+            <p>Ver Historia Clinica</p>
+          <% end %>
+          </div>
+        </div>
       </li>
     <% end %>
+    <div">
+    </ul>
   <% end %>
 <% end %>
+</div>

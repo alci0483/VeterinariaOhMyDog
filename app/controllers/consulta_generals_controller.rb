@@ -24,7 +24,7 @@ class ConsultaGeneralsController < ApplicationController
   def create
     @consulta_general = ConsultaGeneral.new(consulta_general_params)
     if @consulta_general.save
-      redirect_to perro_path(@consulta_general.perro_id), notice: "Desparasitacion publicado con éxito."
+      redirect_to perro_path(@consulta_general.perro_id), notice: "Registro de Consulta General exitoso."
     else
       @error_message = "Ya existe este Registro"
       render :new, status: :unprocessable_entity
