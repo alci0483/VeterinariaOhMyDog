@@ -14,14 +14,28 @@ end
   end
 
   def create
-    @turno = Turno.new(turno_params.merge(estado_turno: "pendiente", nombre_perro: params[:turno][:nombre_perro].join("  "), tipo_servicio: params[:turno][:tipo_servicio].join("  ")))
+  # Verifica la presencia de los parámetros antes de llamar a join
+  nombre_perro = params.dig(:turno, :nombre_perro)&.join("  ")
+  tipo_servicio = params.dig(:turno, :tipo_servicio)&.join("  ")
+  nuevo_perro = params.dig(:turno, :primera_visita)
 
-    if hora_en_banda_horaria(@turno) && @turno.save
-      redirect_to turnos_path, notice: 'Turno creado exitosamente.'
-    else
-      redirect_to new_turno_path, notice: 'No se puede sacar turno para esa Banda Horaria'
-    end
+  if nombre_perro.blank? &&  nuevo_perro == '0'
+    redirect_to new_turno_path, notice: 'Por favor escoge los  perros que llevaras o si tienes un perro nuevo '
+  return
   end
+  if tipo_servicio.blank?
+    redirect_to new_turno_path, notice: 'Por favor selecciona los servicios que planeas utilizar. '
+  return
+  end
+
+  @turno = Turno.new(turno_params.merge(estado_turno: "pendiente", nombre_perro: nombre_perro, tipo_servicio: tipo_servicio))
+  if hora_en_banda_horaria(@turno) && @turno.save
+    redirect_to turnos_path, notice: 'Turno creado exitosamente.'
+  else
+    redirect_to new_turno_path, notice: 'No se puede sacar turno para esa Banda Horaria'
+  end
+end
+
   def destroy
     @turno = Turno.find(params[:id])
     @turno.destroy
@@ -31,8 +45,6 @@ end
     @turno = Turno.find(params[:id])
     @turno.update_column(:estado_turno, 'cancelado')
     @usuario = User.find(@turno.user_id)
-    #@turno.update(estado_turno: 'confirmado')
-    #render :indexstatus: :unprocessable_entity  no funciona
     redirect_to turnos_path, notice: 'Turno cancelado exitosamente.'
 
     User.all.each do |u|
@@ -63,8 +75,7 @@ end
     @turno = Turno.find(params[:id])
     @turno.update_column(:estado_turno, 'rechazado')
       @usuario = User.find(@turno.user_id)
-    #@turno.update(estado_turno: 'confirmado')
-    #render :indexstatus: :unprocessable_entity  no funciona
+
     redirect_to turnos_path, notice: 'Turno rechazado exitosamente.'
     mensaje = Mensaje.new(
       contenido: @usuario.name + " te acaban de rechazar un turno para: " + @turno.tipo_servicio,
