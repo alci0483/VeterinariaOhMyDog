@@ -17,7 +17,7 @@ class PaseadoresController < ApplicationController
     if @paseador.save
       redirect_to paseadores_path, notice: "Paseador publicado con éxito."
     else
-      @error_message = "Ya existe un paseador con este  email."
+      
       render :new, status: :unprocessable_entity
     end
   end

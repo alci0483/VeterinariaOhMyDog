@@ -1,7 +1,6 @@
-
 class Turno < ApplicationRecord
     validate :validacion_turnos_no_repetidos
-    validates :nombre_perro, presence: true, presence: { message: "no puede estar en blanco" }
+    attribute :primera_visita, :boolean
     validates :banda_horaria, inclusion: { in: ["Turno 1 - 8 a 13 hs", "Turno 2 - 16 a 22 hs"] }
     validates :fecha, presence: true
     validates :descripcion, presence: true
