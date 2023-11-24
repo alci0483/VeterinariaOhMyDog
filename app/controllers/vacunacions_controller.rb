@@ -13,51 +13,33 @@ class VacunacionsController < ApplicationController
   # GET /vacunacions/new
   def new
   @vacunacion = Vacunacion.new
-  @perro_id = params[:perro_id]
+  perro=Perro.find(params[:perro_id])
+  @perro_id = perro.id
+  @edad_perro = perro.edad
 end
 
 
   # GET /vacunacions/1/edit
-  def edit
-  end
+def edit
+end
 
   # POST /vacunacions or /vacunacions.json
   def create
+    puts "dentro a accion create del controlador vacunacion"
     @vacunacion = Vacunacion.new(vacunacion_params)
 
     if @vacunacion.save
-      redirect_to perro_path(@vacunacion.perro_id), notice: "Registro de Vacunacion Exitoso."
-
-      @perro = Perro.find(@vacunacion.perro_id)
-      @edad_perro = @perro.edad
-      @usuario = User.find(@perro.user_id)
-
+      @edad_perro = Perro.find(@vacunacion.perro_id).edad
       if @edad_perro < 4 && @vacunacion.tipo_vacuna == "antirrabica"
-        flash[:notice] = "Ya se aplico la vacuna antirrabica, se le genero al usuario de este perro un turno a los 21 dias"
-
-        turno_nuevo = Turno.new(nombre_perro: @perro.nombre, tipo_servicio: "Vacunación",banda_horaria: "Turno 1 - 8 a 13 hs",fecha: Date.today + 21, descripcion: "Vacuna de refuerzo", user_id: @usuario.id, estado_turno: "pendiente")
-        turno_nuevo.save
-
-        mensaje = Mensaje.new(contenido: "Se te genero un turno de refuerzo para tu perro, ve a tus turno para mas informacion", user_id: @usuario.id)
-        mensaje.save
+        redirect_to new_turno_generado_path(id_perro: @vacunacion.perro_id, dias_refuerzo: 21, tipo_vacuna: @vacunacion.tipo_vacuna)
       else
         if @vacunacion.tipo_vacuna == "antirrabica"
-          flash[:notice] = "Ya se aplico la vacuna antirrabica, se le genero al usuario de este perro un turno dentro de un año"
-          turno_nuevo = Turno.new(nombre_perro: @perro.nombre, tipo_servicio: "Vacunación",banda_horaria: "Turno 1 - 8 a 13 hs",fecha: Date.today + 365, descripcion: "Vacuna de refuerzo", user_id: @usuario.id, estado_turno: "pendiente")
-          turno_nuevo.save
-
-          mensaje = Mensaje.new(contenido: "Se te genero un turno de refuerzo para tu perro, ve a tus turno para mas informacion", user_id: @usuario.id)
-          mensaje.save
+          redirect_to new_turno_generado_path(id_perro: @vacunacion.perro_id, dias_refuerzo: 365, tipo_vacuna: @vacunacion.tipo_vacuna)
         end
       end
 
       if @vacunacion.tipo_vacuna == "parvovirus"
-        flash[:notice] = "Ya se aplico la vacuna parvovirus, se le genero al usuario de este perro un turno dentro de un año"
-        turno_nuevo = Turno.new(nombre_perro: @perro.nombre, tipo_servicio: "Vacunación",banda_horaria: "Turno 1 - 8 a 13 hs",fecha: Date.today + 365, descripcion: "Vacuna de refuerzo", user_id: @usuario.id, estado_turno: "pendiente")
-        turno_nuevo.save
-
-        mensaje = Mensaje.new(contenido: "Se te genero un turno de refuerzo para tu perro, ve a tus turno para mas informacion", user_id: @usuario.id)
-        mensaje.save
+        redirect_to new_turno_generado_path(id_perro: @vacunacion.perro_id, dias_refuerzo: 365, tipo_vacuna: @vacunacion.tipo_vacuna)
       end
 
     else

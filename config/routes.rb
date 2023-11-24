@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # config/routes.rb
    resources :mensajes, only: [:index]
+   resources :turno_generado, only: [:new, :create]
    resources :perros do
   get 'generar_turno', on: :member
    end

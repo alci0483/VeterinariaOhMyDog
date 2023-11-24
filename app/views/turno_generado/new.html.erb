@@ -1,0 +1,25 @@
+<%if @dias_refuerzo.to_i == 21 %>
+  <h>Debes generarle un turno para el tipo de vacuna <%=@tipo_vacuna%> para los proximos <%=@dias_refuerzo%> (+3/-3) dias </h>
+<%else%>
+  <h>Debes generarle un turno para el tipo de vacuna <%=@tipo_vacuna%> para el proximo año (+3/-3) dias </h>
+<%end%>
+
+<%= form_with model: @turno, url: turno_generado_index_path do |f| %>
+  <%= f.hidden_field :nombre_perro, value: @perro.nombre %>
+  <%= f.hidden_field :primera_visita, value: '1' %>
+  <%= f.hidden_field :tipo_servicio, value: "Vacunación" %>
+
+  <div class="form-group">
+    <%= f.label :banda_horaria, "En que horario piensas llevar a tu perrito?" %>
+    <%= f.select :banda_horaria, ["Turno 1 - 8 a 13 hs", "Turno 2 - 16 a 22 hs"] %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :fecha, "Fecha de atención" %>
+    <%= f.date_field :fecha, min: Date.today + (@dias_refuerzo.to_i - 3), max: Date.today + (@dias_refuerzo.to_i + 3), required: true %>
+  </div>
+
+  <%= f.hidden_field :descripcion, value: "se debe aplicar nuevamente la vacuna antirrábica" %>
+  <%= f.hidden_field :user_id, value: @perro.user_id %>
+  <%= f.submit "Confirmar" %>
+<% end %>
