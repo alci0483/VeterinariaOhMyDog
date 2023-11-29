@@ -73,16 +73,10 @@ end
 
   def rechazar
     @turno = Turno.find(params[:id])
-    @turno.update_column(:estado_turno, 'rechazado')
-      @usuario = User.find(@turno.user_id)
-
-    redirect_to turnos_path, notice: 'Turno rechazado exitosamente.'
-    mensaje = Mensaje.new(
-      contenido: @usuario.name + " te acaban de rechazar un turno para: " + @turno.tipo_servicio,
-      user_id: @usuario.id
-    )
-    mensaje.save
+    redirect_to edit_generador_motivo_path(id_turno: @turno)
   end
+
+
     private
   def turno_params
     params.require(:turno).permit(:nombre_perro, :primera_visita, :tipo_servicio, :banda_horaria, :fecha, :descripcion, :user_id, :estado_turno, :perro_no_registrado)

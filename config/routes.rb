@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
+
   # config/routes.rb
    resources :mensajes, only: [:index]
+
    resources :turno_generado, only: [:new, :create]
+
+   # config/routes.rb
+   resources :generador_motivo, only: [:edit, :update]
+
+
+   #get 'agregar_descripcion', to: 'turno_generado#agregar_descripcion'
+   #post 'crear_descripcion', to: 'turno_generado#crear_descripcion'
    resources :perros do
   get 'generar_turno', on: :member
    end
