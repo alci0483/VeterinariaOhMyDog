@@ -1,5 +1,5 @@
 
-<%= form_with model: @turno, url: generador_motivo_path	 do |f| %>
+<%= form_with(model: @turno, url: generador_motivo_path(@turno), method: :patch) do |f| %>
 
 
   <div class="form-group">

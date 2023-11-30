@@ -29,11 +29,15 @@ end
   end
 
   @turno = Turno.new(turno_params.merge(estado_turno: "pendiente", nombre_perro: nombre_perro, tipo_servicio: tipo_servicio))
-  if hora_en_banda_horaria(@turno) && @turno.save
+    @user=User.find(@turno.user_id)
+    if  @turno.save
+      puts "se  pudo crear turno"
     redirect_to turnos_path, notice: 'Turno creado exitosamente.'
   else
+    puts "entro acaaaaaa"
     redirect_to new_turno_path, notice: 'No se puede sacar turno para esa Banda Horaria'
   end
+
 end
 
   def destroy
@@ -78,9 +82,9 @@ end
 
 
     private
-  def turno_params
+    def turno_params
     params.require(:turno).permit(:nombre_perro, :primera_visita, :tipo_servicio, :banda_horaria, :fecha, :descripcion, :user_id, :estado_turno, :perro_no_registrado)
-  end
+    end
   def hora_en_banda_horaria(turno)
     #si es cualquier otro dia, puede agregar libremente el el turno.
     if !turno.fecha.today?

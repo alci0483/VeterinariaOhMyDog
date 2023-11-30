@@ -23,8 +23,9 @@
 
   <div>
     <%= form.label :fecha, "Fecha de Seguimiento", style: "display: block" %>
-    <%= form.date_field :fecha  ,min: Date.today.to_s, required: true %>
+    <%= form.date_field :fecha, max: Date.today.to_s, required: true %>
   </div>
+
 
 
   <%= form.hidden_field :perro_id, value: @perro_id %>

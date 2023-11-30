@@ -12,11 +12,21 @@ class VacunacionsController < ApplicationController
 
   # GET /vacunacions/new
   def new
-  @vacunacion = Vacunacion.new
-  perro=Perro.find(params[:perro_id])
-  @perro_id = perro.id
-  @edad_perro = perro.edad
-end
+    @vacunacion = Vacunacion.new
+
+    if params.key?(:nombre) && params.key?(:user_id)
+      # Si tienes tanto el nombre como el user_id, busca el perro por nombre dentro de los perros del usuario.
+      usuario = User.find(params[:user_id])
+      perro = usuario.perros.find_by(nombre: params[:nombre].strip)
+    else
+      # Si no tienes el nombre, busca el perro por su ID.
+      perro = Perro.find(params[:perro_id])
+    end
+
+    @perro_id = perro.id
+    @edad_perro = perro.edad
+  end
+
 
 
   # GET /vacunacions/1/edit
