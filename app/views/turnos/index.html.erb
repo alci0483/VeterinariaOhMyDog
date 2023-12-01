@@ -106,15 +106,15 @@
                     <!-- Agrega botones para otros tipos de servicios si es necesario -->
            <% end %>
            <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='castracion'%>
-                <%= link_to "Registrar Castracion", new_castracion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id)), class: "btn btn-success" %>
+                <%= link_to "Registrar Castracion", new_castracion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id), class: "btn btn-success" %>
                    <!-- Agrega botones para otros tipos de servicios si es necesario -->
           <% end %>
           <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='desparasitación'%>
-               <%= link_to "Registrar Desparasitacion", new_desparasitacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id)), class: "btn btn-success" %>
+               <%= link_to "Registrar Desparasitacion", new_desparasitacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id), class: "btn btn-success" %>
                   <!-- Agrega botones para otros tipos de servicios si es necesario -->
          <% end %>
          <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='consulta general'%>
-              <%= link_to "Registrar Consulta General", new_consulta_general_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id)), class: "btn btn-success" %>
+              <%= link_to "Registrar Consulta General", new_consulta_general_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id), class: "btn btn-success" %>
                  <!-- Agrega botones para otros tipos de servicios si es necesario -->
         <% end %>
           </div>

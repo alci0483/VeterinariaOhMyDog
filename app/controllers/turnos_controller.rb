@@ -75,6 +75,7 @@ end
   mensaje.save
 end
 
+
   def rechazar
     @turno = Turno.find(params[:id])
     redirect_to edit_generador_motivo_path(id_turno: @turno)
