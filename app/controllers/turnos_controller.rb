@@ -20,7 +20,7 @@ end
   nuevo_perro = params.dig(:turno, :primera_visita)
 
   if nombre_perro.blank? &&  nuevo_perro == '0'
-    redirect_to new_turno_path, notice: 'Por favor escoge los  perros que llevaras o si tienes un perro nuevo '
+    redirect_to new_turno_nuevo_path, notice: 'Por favor escoge los  perros que llevaras o si tienes un perro nuevo '
   return
   end
   if tipo_servicio.blank?

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :turno_nuevo, only: [:new, :create]
+
   # config/routes.rb
    resources :mensajes, only: [:index]
    resources :turno_generado, only: [:new, :create]

@@ -18,7 +18,7 @@ class TurnoGeneradoController < ApplicationController
       @usuario = User.find(@turno.user_id)
       redirect_to perro_path(@usuario.perros.find_by(nombre: @turno.nombre_perro).id), notice: 'Turno creado exitosamente.'
     else
-      redirect_to new_turno_path, notice: 'No se puede sacar turno para esa Banda Horaria'
+      redirect_to new_turno_generado_path, notice: @turno.errors[:base]
     end
   end
 

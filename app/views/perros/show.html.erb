@@ -4,7 +4,12 @@
   <div class="paseador-info">
     <%= render @perro %>
   </div>
+
+  <%= link_to "Mis Turnos ", turnos_path, class: "btn bg-success p-2 text-white bg-opacity-50" %>
+  <br>
+  <br>
   <%= link_to "Volver al Perfil del Usuario", usuario_path(@perro.user), class: "btn bg-success p-2 text-white bg-opacity-50" %>
+
   <h2>-------------------------------------------------------------------------------------------</h2>
   <h2>HISTORIAL CLINICO</h2>
   <br>
