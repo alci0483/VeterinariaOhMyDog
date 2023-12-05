@@ -11,6 +11,10 @@ Rails.application.routes.draw do
    resources :generador_motivo, only: [:edit, :update]
 
 
+   post 'turnos/:id/insistir', to: 'turnos#inasistir', as: 'inasistir_turno'
+   post 'adopcions/:id/adoptar', to: 'adopcions#adoptar', as: 'adoptar_adopcion'
+   post 'perdidos/:id/encontrar', to: 'perdidos#encontrar', as: 'encontrar_perdido'
+
    #get 'agregar_descripcion', to: 'turno_generado#agregar_descripcion'
    #post 'crear_descripcion', to: 'turno_generado#crear_descripcion'
    resources :perros do
@@ -74,7 +78,7 @@ resources :usuarios, only: [:index, :show]
   post 'turnos/:id/rechazar', to: 'turnos#rechazar', as: 'rechazar_turno'
 
   get 'main/home', to: 'main#home'
-  resources :encontrados, only:  [:show,:index, :new, :create]
+resources :encontrados, only: [:show, :index, :new, :create, :edit, :update]
   # Defines the root path route ("/")
   get '/home', to: 'application#home'
 

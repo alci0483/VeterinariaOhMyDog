@@ -102,6 +102,9 @@
               <%= button_to "Cancelar Turno", cancelar_turno_path(turno), method: :post, class: 'btn btn-success' %>
             <% end %>
 
+            <% if user_signed_in? && current_user.admin? && turno.estado_turno == 'confirmado'%>
+              <%= button_to "No asistio al Turno", inasistir_turno_path(turno), method: :post, class: 'btn btn-success' %>
+            <% end %>
 
             <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=="antirrabica"%>
                  <%= link_to "Registrar Vacunación Antirrabica", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "antirrabica"), class: "btn btn-success" %>

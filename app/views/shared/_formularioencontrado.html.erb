@@ -27,11 +27,31 @@
         <%= form.label         :raza, 'Raza',  class: "input-tamanotexto"%>
         <%= form.text_field    :raza, class: "input-tamanocampo", required: true%>
       </div>
-      <div class="form-group">
-        <%= form.label         :Cargar_Foto%>
-        <%= form.file_field    :photo, required: true %>
-      </div>
-      <%= form.hidden_field :user_id, value: current_user.id %>
 
+
+     <!-- Este codigo es nuevo -->
+
+          <% if !user_signed_in? %>
+          <div class="form-group">
+            <%= form.label :email, 'Correo Electrónico' %>
+            <%= form.email_field :email, class: "input-tamanocampo", required: true %>
+          </div>
+         <% else %>
+           <%= form.hidden_field :email, value: current_user.email %>
+         <% end %>
+
+         <% if !user_signed_in? %>
+           <%= form.hidden_field :user_id, value: 3 %>
+         <% else %>
+           <%= form.hidden_field :user_id, value: current_user.id %>
+           <% end %>
+           
+         <!-- Este codigo es nuevo -->
+ 
+
+      <div class="form-group">
+      <%= form.label         :Cargar_Foto%>
+      <%= form.file_field    :photo, required: true %>
       <%= form.submit 'Publicar', class: "btn-publicar btn-primary" %>
+      </div>
  <% end %>

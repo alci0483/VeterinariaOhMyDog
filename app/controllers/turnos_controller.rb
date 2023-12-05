@@ -53,10 +53,7 @@ end
 
     User.all.each do |u|
       if u.role == "admin"
-        mensaje = Mensaje.new(
-         contenido: @usuario.name + " acaba de cancelar un turno para: " + @turno.tipo_servicio,
-         user_id: u.id
-        )
+        mensaje = Mensaje.new(contenido: @usuario.name + " acaba de cancelar un turno para: " + @turno.tipo_servicio, user_id: u.id)
         mensaje.save
       end
      end
@@ -68,10 +65,7 @@ end
 
   redirect_to turnos_path, notice: 'Turno confirmado exitosamente.'
 
-  mensaje = Mensaje.new(
-    contenido: @usuario.name + " te acaban de confirmar un turno para: " + @turno.tipo_servicio,
-    user_id: @usuario.id
-  )
+  mensaje = Mensaje.new( contenido: @usuario.name + " te acaban de confirmar un turno para: " + @turno.tipo_servicio, user_id: @usuario.id)
   mensaje.save
 end
 
@@ -81,8 +75,13 @@ end
     redirect_to edit_generador_motivo_path(id_turno: @turno)
   end
 
+  def inasistir
+    @turno = Turno.find(params[:id])
+    @turno.update_column(:estado_turno, 'No asistio')
+    redirect_to turnos_path, notice: 'Turno actualizado exitosamente.'
+  end
 
-    private
+  private
     def turno_params
     params.require(:turno).permit(:nombre_perro, :primera_visita, :tipo_servicio, :banda_horaria, :fecha, :descripcion, :user_id, :estado_turno, :perro_no_registrado)
     end
