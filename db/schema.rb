@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_29_191821) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "estado"
   end
 
   create_table "campanas", force: :cascade do |t|
@@ -122,6 +123,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_29_191821) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "email"
+    t.string "codigo"
   end
 
   create_table "mensajes", force: :cascade do |t|
@@ -152,6 +155,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_29_191821) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "observacion"
+    t.string "estado"
   end
 
   create_table "perros", force: :cascade do |t|

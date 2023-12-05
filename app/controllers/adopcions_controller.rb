@@ -13,6 +13,7 @@ class AdopcionsController < ApplicationController
   # GET /adopcions/new
   def new
     @adopcion = Adopcion.new
+    
   end
 
   # GET /adopcions/1/edit
@@ -21,7 +22,8 @@ class AdopcionsController < ApplicationController
 
   # POST /adopcions or /adopcions.json
   def create
-    @adopcion = Adopcion.new(adopcion_params)
+    @adopcion = Adopcion.new(adopcion_params.merge(estado: "en adopcion"))
+   
 
 
     if @adopcion.save
@@ -32,7 +34,11 @@ class AdopcionsController < ApplicationController
     end
 
   end
-
+  def adoptar
+   @adopcion = Adopcion.find(params[:id])
+  @adopcion.update_column(:estado, 'Adoptado')  
+  redirect_to adopcions_path, notice: 'Se actualizó como perro adoptado exitosamente.'
+  end
   # PATCH/PUT /adopcions/1 or /adopcions/1.json
   def update
     respond_to do |format|
@@ -64,6 +70,6 @@ class AdopcionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def adopcion_params
-      params.require(:adopcion).permit(:nombre, :tamanio, :edad, :ubicacion, :raza, :user_id)
+      params.require(:adopcion).permit(:nombre, :tamanio, :edad, :ubicacion, :raza, :user_id, :estado) # Agregamos :estado aquí
     end
 end

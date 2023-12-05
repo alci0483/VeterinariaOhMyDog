@@ -1,0 +1,28 @@
+
+
+<h1>Modificar Ubicación</h1>
+
+<%= form_for @encontrado, url: encontrado_path(@encontrado), method: :patch do |f| %>
+  <% if @encontrado.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@encontrado.errors.count, "error") %> prohibieron que este Encontrado sea guardado:</h2>
+
+    <ul>
+      <% @encontrado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if !user_signed_in? %>
+  <%= label_tag :codigo_ingresado, "Ingresar Código para poder Modificar:" %>
+  <%= text_field_tag :codigo_ingresado %>
+<% end %>
+  <div>
+  
+    <%= f.label :Descripcion_y_Ubicacion %>
+    <%= f.text_field :ubicacion %>
+  </div>
+
+  <%= f.submit "Guardar Cambios" %>
+<% end %>
