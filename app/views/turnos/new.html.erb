@@ -17,13 +17,13 @@
       </li>
     <% end %>
   </div>
-
+<br>
 
   <div class="form-group">
-    <%= f.label :primera_visita, "Tu perrito ha visitado antes nuestra Veterinaria?" %>
+    <%= f.label :primera_visita, "Voy a llevar un nuevo perro a la veterinaria." %>
     <%= f.check_box :primera_visita %>
   </div>
-
+  <br>
   <div class="form-group">
   <%= f.label :tipo_servicio, "Tipo de Servicio" %>
   <ul>
@@ -40,24 +40,19 @@
 
 
   <div class="form-group">
-    <%= f.label :banda_horaria, "En que horario piensas llevar a tu perrito?" %>
+  <b>  <%= f.label :banda_horaria, "En que horario piensas llevar a tu perrito?" %></b>
     <%= f.select :banda_horaria, ["Turno 1 - 8 a 13 hs", "Turno 2 - 16 a 22 hs"] %>
   </div>
-
+  <br>
   <div class="form-group">
-    <%= f.label :fecha, "Fecha de atención" %>
+  <b><%= f.label :fecha, "Fecha de atención" %></b>
     <%= f.date_field :fecha, min: Date.today.to_s, max: (Date.today + 1.month).to_s, class: "input-tamanocampo", required: true %>
   </div>
 
-
+  <br>
   <div class="form-group">
-    <%= f.label :descripcion, " Descripcion" %>
-    <%= f.text_area :descripcion, class: "input-tamanocampo",placeholder: "Cuantos perros llevaras, agrega el nombre de el/los perro/s nuevo/s, tamaño y raza", required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :perro_noregistrado, "Nombre de perro no registrado" %>
-    <%= f.text_field :perro_noregistrado, class: "input-tamanocampo", placeholder: "Escribe el nombre del perro no registrado" %>
+  <b> <%= f.label :descripcion, " Descripción" %> </b>
+    <%= f.text_area :descripcion, class: "input-tamanocampo",placeholder: "Escribe si llevas un nuevo Perro a la veterinaria y danos una descripción acerca del/los perrito/s", required: true %>
   </div>
 
   <%= f.hidden_field :user_id, value: current_user.id %>

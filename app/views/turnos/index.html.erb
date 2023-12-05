@@ -1,9 +1,13 @@
 <% if user_signed_in? && !current_user.admin? %>
   <%= link_to "Nuevo Turno", new_turno_path, class: "btn btn-primary" %>
 <% end %>
+
 <% if user_signed_in? %>
 
-  <!-- Sección de Turnos Pendientes para usuarios no administradores -->
+<% if @turnos.select { |turno| turno.estado_turno == 'pendiente' }.empty? %>
+<p>No hay Turnos en el Pendientes</p>
+<% else %>
+<!-- Sección de Turnos Pendientes para usuarios no administradores -->
   <h2>Turnos Pendientes</h2>
   <% current_day = nil %>
   <ul>
@@ -18,15 +22,27 @@
         <li class="perdido-item">
           <div class="perdido-info">
             <!-- Mostrar detalles del turno pendiente -->
-          
+            <% if user_signed_in? && current_user.admin?%>
+            <p> Nombre del Usuario:   <b> <%= User.find(turno.user_id).name %> </b></p>
+            <% end %>
+            <% if !turno.nombre_perro.blank? %>
             <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
-            <p> Fecha de atención: <b> <%= turno.fecha %></b></p>
+            <% end %>
+            <p> Se llevará un nuevo perro a la Veterinaria?: 
+            <b>  
+            <% if turno.primera_visita %> 
+            Si 
+               <% else  %>
+               No
+               <% end %>
+              
+              </b>
+                               </p>
+            
             <p> Tipo de servicio:   <b> <%= turno.tipo_servicio %> </b></p>
             <!-- Agrega aquí más detalles según sea necesario -->
             <p>Estado: <b><%= turno.estado_turno %></b></p>
-            <% if user_signed_in? && !current_user.admin? %>
-              <%= button_to "Cancelar Turno", cancelar_turno_path(turno), method: :post, class: 'btn btn-success' %>
-            <% end %>
+            
             <% if user_signed_in? && current_user.admin? %>
             <%= button_to "Confirmar Turno", confirmar_turno_path(turnos_for_band.first), method: :post, class: 'btn btn-success' %>
             <%= button_to "Rechazar Turno", rechazar_turno_path(turnos_for_band.first), method: :post, class: 'btn btn-success' %>
@@ -38,9 +54,11 @@
     <% end %>
   </ul>
 <% end %>
-
+<% end %>
 <% if user_signed_in? %>
-
+<% if @turnos.reject { |turno| turno.estado_turno == 'pendiente' }.empty? %>
+  <p>No hay Turnos en el  Historial </p>
+<% else %>
   <% current_day = nil %>
   <h2>Historial de Turnos</h2>
   <ul>
@@ -55,11 +73,30 @@
         <li class="perdido-item">
           <div class="perdido-info">
             <!-- Mostrar detalles del historial de turno (rechazado, cancelado, confirmado) -->
-           
+            <% if user_signed_in? && current_user.admin?%>
+            <p> Nombre del Usuario:   <b> <%= User.find(turno.user_id).name %> </b></p>
+            <% end %>
+            <% if !turno.nombre_perro.blank? %>
             <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
+            <% end %>
+            <p> Llevaras a un nuevo perro a la Veterinaria: 
+               <% if turno.primera_visita %> 
+               <b>si
+               <% else  %>
+               No
+               <% end %>
+              
+              </b>
+                               </p>
               <p> Tipo de servicio:   <b> <%= turno.tipo_servicio %> </b></p>
             <!-- Agrega aquí más detalles según sea necesario -->
             <p>Estado: <b><%= turno.estado_turno %></b></p>
+            <% if user_signed_in? && !current_user.admin? && turno.estado_turno == 'confirmado' && turno.user_id == current_user.id%>
+              <%= button_to "Cancelar Turno", cancelar_turno_path(turno), method: :post, class: 'btn btn-success' %>
+            <% end %>
+            <% if user_signed_in? && current_user.admin? && turno.estado_turno == 'confirmado'%>
+            <%= button_to "No asistio al Turno", inasistir_turno_path(turno), method: :post, class: 'btn btn-success' %>
+          <% end %>
           </div>
         </li>
       <% end %>
@@ -67,4 +104,5 @@
 
     <% end %>
   </ul>
+<% end %>
 <% end %>

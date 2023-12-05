@@ -1,3 +1,5 @@
+
+
 <div class="contenedor">
         <h4 > Perros Encontrados </h4>
         <p>
@@ -13,10 +15,13 @@
 
 
   <%= link_to "Volver a Inicio", new_user_session_path, class: "btn btn-primary" %>
-  <%if user_signed_in? && !current_user.admin?%>
+  
+  <!-- Este codigo es nuevo -->
+  
+  <!-- agregar condicional que si  es veterinario no deje agregar un perro encontrado. -->
   <%= link_to 'Publicar Perro Encontrado', new_encontrado_path, class: "btn btn-primary" %>
-  <% end %>
-
+ 
+  <!-- Este codigo es nuevo -->
 
 
  <% if @encontrados.empty?%>
@@ -27,10 +32,19 @@
      <% @encontrados.each do |encontrado| %>
       <li class="perdido-item">
          <div class="perdido-info">
+       
          <h2><%= encontrado.nombre %></h2>
-         <p>Se perdió en <%= encontrado.ubicacion %> </p>
+         <p>Descripcion y Ubicacion  :<%= encontrado.ubicacion %> </p>
            <p>Su altura es <%= encontrado.tamano %> cm y de raza: <%= encontrado.raza %> </p>
+           <% if user_signed_in? && encontrado.user_id == current_user.id %>
+             <%= link_to "Modificar Descripcion y Ubicación", edit_encontrado_path(encontrado), class: "btn btn-primary" %>
+           <% else %>
+             <% if !user_signed_in? && encontrado.user_id == 3 %>
+               <%= link_to "Modificar Descripcion y Ubicación", edit_encontrado_path(encontrado), class: "btn btn-primary" %>
+             <% end %>
+           <% end %>
 
+           
            <% if user_signed_in? && encontrado.user_id != current_user.id %>
              <button onclick="return confirm('acercate a la veterinaria para más información')">Contactar</button>
            <% end %>
@@ -39,6 +53,7 @@
                <div class="perdido-avatar">
                 <%= image_tag encontrado.photo, width: 150 if encontrado.photo.attached? %>
                </div>
+               
            </li>
     <% end%>
     </li>

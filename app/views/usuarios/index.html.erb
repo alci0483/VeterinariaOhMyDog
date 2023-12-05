@@ -9,14 +9,18 @@
         <% admin_users.each do |usuario| %>
           <li class="paseador-item">
             <div class="paseador-info">
+            <% if usuario.id > 3 %> 
               <h2><%= usuario.name %></h2>
               <p><strong>Email:</strong> <%= usuario.email %></p>
               <p><strong>Dirección:</strong> <%= usuario.address %></p>
               <p><strong>Número de Teléfono:</strong> <%= usuario.phone_number %></p>
               <%= link_to usuario_path(usuario), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-                <p>Ver Perfil</p>
+                
+                <p>Ver Perfil </p>
               <% end %>
+              
             </div>
+            <% end %> 
           </li>
         <% end %>
       </ul>
