@@ -9,7 +9,7 @@ class TurnoGeneradoController < ApplicationController
 
   def create
     puts "entro a accion create del controlador turno generado"
-    @turno = Turno.new(turno_params.merge(estado_turno: 'confirmado'))
+    @turno = Turno.new(turno_params.merge(estado_turno: "confirmado"))
 
     if @turno.save
       mensaje = Mensaje.new(contenido:"hola "+User.find(@turno.user_id).name+"! Se te genero un turno de refuerzo para tu perro: "+@turno.nombre_perro+", ve a tus turno para mas informacion", user_id: @turno.user_id)
