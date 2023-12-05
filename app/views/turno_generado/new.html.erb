@@ -7,7 +7,7 @@
 <%= form_with model: @turno, url: turno_generado_index_path do |f| %>
   <%= f.hidden_field :nombre_perro, value: @perro.nombre %>
   <%= f.hidden_field :primera_visita, value: '1' %>
-  <%= f.hidden_field :tipo_servicio, value: "Vacunación" %>
+  <%= f.hidden_field :tipo_servicio, value: @tipo_vacuna %>
 
   <div class="form-group">
     <%= f.label :banda_horaria, "En que horario piensas llevar a tu perrito?" %>

@@ -4,7 +4,9 @@
 <p><strong>Nombre:</strong> <%= @usuario.name %></p>
 <p><strong>Email:</strong> <%= @usuario.email %></p>
 <!-- Agrega más atributos según tus necesidades -->
-
+<%= link_to "Mis Turnos ", turnos_path, class: "btn bg-success p-2 text-white bg-opacity-50" %>
+<br>
+<br>
 <% if user_signed_in? %>
   <% if current_user.admin? && current_user.id != @usuario.id%>
     <%= link_to new_perro_path(:usuario_id => @usuario), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
@@ -12,6 +14,7 @@
     <% end %>
     <br>
     <br>
+
     <%= link_to usuarios_path, class: "btn bg-success p-2 text-white bg-opacity-50" do %>
       <p>Volver al listado</p>
     <% end %>

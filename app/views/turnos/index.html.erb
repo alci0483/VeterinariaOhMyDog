@@ -28,6 +28,14 @@
             <% if !turno.nombre_perro.blank? %>
             <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
             <% end %>
+            <% # Obtén el objeto Perro asociado al turno %>
+         <% perro = Perro.find_by(nombre: turno.nombre_perro, user_id: turno.user_id) %>
+
+         <% if perro.present? %>
+           <p>Edad del Perro: <b><%= perro.edad %></b></p>
+       <% else %>
+            <p>Edad del Perro: <b>No disponible</b></p>
+        <% end %>
             <p> Se llevará un nuevo perro a la Veterinaria?:
             <b>
             <% if turno.primera_visita %>
@@ -108,12 +116,12 @@
 
             <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=="antirrabica"%>
 
-                 <%= link_to "Registrar Vacunación Antirrabica", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "antirrabica"), class: "btn btn-success" %>
+                 <%= link_to "Aplicar Vacunación Antirrabica", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "antirrabica"), class: "btn btn-success" %>
                     <!-- Agrega botones para otros tipos de servicios si es necesario -->
            <% end %>
 
            <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=="parvovirus"%>
-                <%= link_to "Registrar Vacunación Parvovirus", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "parvovirus"), class: "btn btn-success" %>
+                <%= link_to "Aplicar Vacunación Parvovirus", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "parvovirus"), class: "btn btn-success" %>
                    <!-- Agrega botones para otros tipos de servicios si es necesario -->
           <% end %>
 
