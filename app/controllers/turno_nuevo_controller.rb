@@ -1,10 +1,20 @@
 class TurnoNuevoController < ApplicationController
   def new
     @turno = Turno.new
+    @perro = Perro.find(params[:perro_id])
   end
 
   def create
+
     @turno = Turno.new(turno_params.merge(estado_turno: "pendiente"))
+
+    if params[:turno][:tipo_servicio] == "aplicacion vacuna antirrabica"
+      @turno.tipo_servicio="antirrabica"
+    end
+
+    if params[:turno][:tipo_servicio] == "aplicacion vacuna parvovirus"
+      @turno.tipo_servicio="parvovirus"
+    end
 
     if hora_en_banda_horaria(@turno) && @turno.save
       redirect_to turnos_path, notice: 'Turno creado exitosamente.'

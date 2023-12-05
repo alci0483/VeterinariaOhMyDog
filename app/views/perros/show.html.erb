@@ -5,6 +5,12 @@
     <%= render @perro %>
   </div>
 
+  <% if user_signed_in? && !current_user.admin? %>
+    <%= link_to "Nuevo turno", new_turno_nuevo_path(perro_id:@perro), class: "btn bg-success p-2 text-white bg-opacity-50" %>
+    <br>
+    <br>
+  <% end %>
+
   <%= link_to "Mis Turnos ", turnos_path, class: "btn bg-success p-2 text-white bg-opacity-50" %>
   <br>
   <br>
@@ -27,9 +33,20 @@
         <p>No hay vacunaciones registradas para este perro.</p>
       <% end %>
 
-      <%= link_to new_vacunacion_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
-        <p>Registrar una Vacunación</p>
-      <% end %>
+
+
+      <%if @mostrar_antirrabica%>
+        <%= link_to new_vacunacion_path(perro_id: @perro, tipo_s: "antirrabica"), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+          <p>Aplicar Vacuna Antirrabica</p>
+        <% end %>
+      <%end%>
+      <br>
+      <br>
+      <%if @mostrar_parvovirus%>
+        <%= link_to new_vacunacion_path(perro_id: @perro, tipo_s: "parvovirus"), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+          <p>Aplicar Vacuna Parvovirus</p>
+          <% end %>
+      <%end%>
     </div>
   </div>
   <br>
@@ -93,10 +110,3 @@
   <br>
   <h2>-------------------------------------------------------------------------------------------</h2>
 </div>
-
-<!-- <div>
-  <%= link_to "Edit this perro", edit_perro_path(@perro) %> |
-  <%= link_to "Back to perros", perros_path %>
-
-  <%= button_to "Destroy this perro", @perro, method: :delete %>
-</div> -->

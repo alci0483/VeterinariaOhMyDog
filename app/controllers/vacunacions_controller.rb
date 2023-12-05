@@ -12,16 +12,16 @@ class VacunacionsController < ApplicationController
 
   # GET /vacunacions/new
   def new
-  @vacunacion = Vacunacion.new
-  perro=Perro.find(params[:perro_id])
-  @perro_id = perro.id
-  @edad_perro = perro.edad
-end
+    @vacunacion = Vacunacion.new
+    @perro=Perro.find(params[:perro_id])
+    @servicio=params[:tipo_s]
+  end
 
 
   # GET /vacunacions/1/edit
-def edit
-end
+  def edit
+
+  end
 
   # POST /vacunacions or /vacunacions.json
   def create
@@ -43,8 +43,7 @@ end
       end
 
     else
-      @error_message = "Ya existe este Registro"
-      render :new, status: :unprocessable_entity
+      redirect_to new_turno_generado_path, notice: @vacunacion.errors[:base]
     end
 
   end

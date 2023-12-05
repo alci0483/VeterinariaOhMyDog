@@ -1,21 +1,11 @@
 <div class="perdidos-list">
 <%= form_with(model: vacunacion) do |form| %>
-  <% if vacunacion.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(vacunacion.errors.count, "error") %> prohibited this vacunacion from being saved:</h2>
-
-      <ul>
-        <% vacunacion.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="form-group">
-    <%= form.label "Tipo de Vacuna", style: "display: block" %>
-    <%= form.text_field :tipo_vacuna, class: "input-tamanocampo", required: true %>
-  </div>
+  <%= form.label "Tipo de Vacuna", style: "display: block" %>
+  <%= form.text_field :tipo_vacuna, class: "input-tamanocampo", required: true, readonly: true, value: @servicio %>
+</div>
+
 
   <div class="form-group">
     <%= form.label "Marca de Vacuna", style: "display: block" %>
@@ -32,7 +22,7 @@
     <%= form.number_field :numero_lote, class: "input-tamanocampo", required: true %>
   </div>
 
-  <%= form.hidden_field :perro_id, value: @perro_id %>
+  <%= form.hidden_field :perro_id, value: @perro.id %>
   <br>
   <%= form.submit 'Publicar', class: "btn-publicar btn-primary" %>
 <% end %>

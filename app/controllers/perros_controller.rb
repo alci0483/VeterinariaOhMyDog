@@ -10,6 +10,26 @@ class PerrosController < ApplicationController
   def show
     @perro = Perro.find(params[:id])
     @castracion = @perro.castracions
+
+    @mostrar_antirrabica = true
+    @mostrar_parvovirus = true
+
+    if @perro.edad > 1 && @perro.edad <4 && !@perro.vacunacions.where(tipo_vacuna: 'antirrabica').empty?
+      if Date.today.to_time.to_i - @perro.vacunacions.where(tipo_vacuna: 'antirrabica').last.created_at.to_time.to_i < 1814400
+        @mostrar_antirrabica = false
+      end
+    elsif @perro.edad > 3 && !@perro.vacunacions.where(tipo_vacuna: 'antirrabica').empty?
+      if Date.today.to_time.to_i - @perro.vacunacions.where(tipo_vacuna: 'antirrabica').last.created_at.to_time.to_i < 31536000
+        @mostrar_antirrabica = false
+      end
+    end
+
+    if @perro.edad > 5 && !@perro.vacunacions.where(tipo_vacuna: 'parvovirus').empty?
+      if Date.today.to_time.to_i - @perro.vacunacions.where(tipo_vacuna: 'parvovirus').last.created_at.to_time.to_i < 31536000
+        @mostrar_parvovirus = false
+      end
+    end
+
   end
 
   # GET /perros/new

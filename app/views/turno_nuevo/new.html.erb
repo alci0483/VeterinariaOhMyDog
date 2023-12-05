@@ -3,13 +3,13 @@
     <%= error %>
   </div>
 <% end %>
-<h1>Sacar Turnopara un Perro</h1>
+<h1>Sacar Turno</h1>
 
 <div class="perdidos-list">
-  <%= form_with model: @turno, url: turno_nuevo_index_path do |f| %>
+  <%= form_with model: @turno, url: turno_nuevo_index_path   do |f| %>
 
   <%= f.label :nombre_perro, "Selecciona el perro" %>
-  <%= f.select :nombre_perro, options_for_select(current_user.perros.pluck(:nombre)), {}, required: true %>
+  <%= f.text_field :nombre_perro, class: "input-tamanocampo", required: true, readonly: true, value: @perro.nombre %>
 
   <div class="form-group">
     <%= f.label :primera_visita, "Voy a llevar un nuevo perro a la veterinaria." %>
@@ -17,7 +17,7 @@
   </div>
 
   <%= f.label :tipo_servicio, "Selecciona el tipo de servicio" %>
-  <%= f.select :tipo_servicio, ["vacunacion", "desparasitacion", "castracion", "consulta general"], {}, required: true %>
+  <%= f.select :tipo_servicio, ["aplicacion vacuna antirrabica", "aplicacion vacuna parvovirus", "desparasitacion", "castracion", "consulta general"], {}, required: true %>
 
   <div class="form-group">
   <b>  <%= f.label :banda_horaria, "En que horario piensas llevar a tu perrito?" %></b>
