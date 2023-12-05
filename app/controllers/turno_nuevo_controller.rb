@@ -19,7 +19,11 @@ class TurnoNuevoController < ApplicationController
     if hora_en_banda_horaria(@turno) && @turno.save
       redirect_to turnos_path, notice: 'Turno creado exitosamente.'
     else
-      redirect_to new_turno_nuevo_path, notice: @turno.errors[:base]
+       if  @turno.errors[:base] == []
+            redirect_to new_turno_nuevo_path, notice: 'No se puede sacar turno para esa Banda Horaria .'
+       else
+             redirect_to new_turno_nuevo_path, notice: @turno.errors[:base]
+       end
     end
   end
 

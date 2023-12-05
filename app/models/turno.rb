@@ -17,7 +17,7 @@ class Turno < ApplicationRecord
     private
 # no se permiten sacar turnos en la misma vanda horaria en ese dia
    def validacion_turnos_no_repetidos
-     if user.turnos.exists?(banda_horaria: banda_horaria) && !user.turnos.where(banda_horaria: banda_horaria, fecha: fecha).empty?
+     if user.turnos.exists?(banda_horaria: banda_horaria) && !user.turnos.where(banda_horaria: banda_horaria, fecha: fecha,tipo_servicio: tipo_servicio).empty?
       errors.add(:base, "No se puede sacar turno para esa Banda Horaria ")
      end
   end
@@ -41,7 +41,7 @@ class Turno < ApplicationRecord
       antirrabicas=perro.vacunacions.where(tipo_vacuna: 'antirrabica')
       if tipo_servicio == 'antirrabica' && perro.edad < 4 && !antirrabicas.empty?
         v=antirrabicas.last
-        if Date.today.to_time.to_i - v.created_at.to_time.to_i < 1814400
+        if Date.today.to_time.to_i - v.created_at.to_time.to_i > 1 && Date.today.to_time.to_i - v.created_at.to_time.to_i < 1814400
           errors.add(:base, "este perro no se puede aplicar la vacuna antirrabica porque tiene entre 2 y 3 meses y se la aplico hace menos de 21 dias")
         end
       end
@@ -52,8 +52,8 @@ class Turno < ApplicationRecord
       antirrabicas=perro.vacunacions.where(tipo_vacuna: 'antirrabica')
       if tipo_servicio == 'antirrabica' && perro.edad > 3 && !antirrabicas.empty?
         v=antirrabicas.last
-        if Date.today.to_time.to_i - v.created_at.to_time.to_i < 31536000
-          errors.add(:base, "este perro no se puede aplicar la vacuna antirrabica porque tiene mas al menos 4 meses y se la aplico hace menos de un año")
+        if Date.today.to_time.to_i - v.created_at.to_time.to_i > 1 && Date.today.to_time.to_i - v.created_at.to_time.to_i < 31536000
+          errors.add(:base, "este perro no se puede aplicar la vacuna antirrabica porque tiene al menos 4 meses y se la aplico hace menos de un año")
         end
       end
     end
@@ -70,7 +70,7 @@ class Turno < ApplicationRecord
       v_parvovirus= perro.vacunacions.where(tipo_vacuna: 'antirrabica')
       if tipo_servicio == 'parvovirus' && perro.edad > 5 && !v_parvovirus.empty?
         v=v_parvovirus.last
-        if Date.today.to_time.to_i - v.created_at.to_time.to_i < 31536000
+        if Date.today.to_time.to_i - v.created_at.to_time.to_i > 1 && Date.today.to_time.to_i - v.created_at.to_time.to_i < 31536000
           errors.add(:base, "este perro no se puede aplicar la vacuna parvovirus porque tiene al menos 6 meses y se la aplico hace menos de un año")
         end
       end

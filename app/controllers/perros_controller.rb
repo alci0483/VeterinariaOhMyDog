@@ -13,6 +13,23 @@ class PerrosController < ApplicationController
 
     @mostrar_antirrabica = true
     @mostrar_parvovirus = true
+    @tiene_turno_antirrabica = Turno.exists?(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'antirrabica')
+
+  # Verifica si hay un turno para parvovirus
+    @tiene_turno_parvovirus = Turno.exists?(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'parvovirus')
+    @tiene_turno_castracion = Turno.exists?(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'castracion')
+    @tiene_turno_desparasitacion = Turno.exists?(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'desparasitacion')
+    @tiene_turno_consultageneral = Turno.exists?(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'consulta general')
+
+
+    @estado_turno_antirrabica = Turno.find_by(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'antirrabica')&.estado_turno
+    @estado_turno_parvovirus = Turno.find_by(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'parvovirus')&.estado_turno
+    @estado_turno_castracion = Turno.find_by(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'castracion')&.estado_turno
+    @estado_turno_desparasitacion = Turno.find_by(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'desparasitacion')&.estado_turno
+    @estado_turno_consultageneral = Turno.find_by(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'consulta general')&.estado_turno
+
+
+
 
     if @perro.edad > 1 && @perro.edad <4 && !@perro.vacunacions.where(tipo_vacuna: 'antirrabica').empty?
       if Date.today.to_time.to_i - @perro.vacunacions.where(tipo_vacuna: 'antirrabica').last.created_at.to_time.to_i < 1814400

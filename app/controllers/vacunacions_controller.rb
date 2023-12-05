@@ -16,9 +16,16 @@ class VacunacionsController < ApplicationController
 
     @usuario = User.find(params[:user_id])
     @perro = @usuario.perros.find_by(nombre: params[:nombre].strip)
-    @turno = Turno.find(params[:id])
-    @turno.update_column(:estado_turno, 'atendido')
-    mensaje = Mensaje.new(contenido: @usuario.name + " te acaban de atender un turno para: " + @turno.tipo_servicio,user_id: @usuario.id)
+  
+    if params[:id].to_i < 100
+      @turno = Turno.find(params[:id])
+
+      @turno.update_column(:estado_turno, 'atendido')
+      mensaje = Mensaje.new(contenido: @usuario.name + " te acaban de atender un turno para: " + @turno.tipo_servicio,user_id: @usuario.id)
+    else
+      mensaje = Mensaje.new(contenido: @usuario.name + " te acaban de atender un turno para: antirrabica" ,user_id: @usuario.id)
+    end
+
     mensaje.save
     @servicio=params[:tipo_s]
 end
@@ -84,6 +91,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def vacunacion_params
-      params.require(:vacunacion).permit(:tipo_vacuna, :marca_vacuna, :dosis, :numero_lote, :perro_id)
+      params.require(:vacunacion).permit(:tipo_vacuna, :marca_vacuna, :dosis, :numero_lote, :perro_id,:fecha)
     end
 end

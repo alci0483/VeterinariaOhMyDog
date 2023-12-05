@@ -16,6 +16,10 @@
     <%= form.label :dosis, style: "display: block" %>
     <%= form.number_field :dosis, class: "input-tamanocampo", required: true %>
   </div>
+  <div >
+    <%= form.label :fecha ,"Fecha"%>
+    <%= form.date_field :fecha,max: Date.today.to_s, required: true %>
+  </div>
 
   <div class="form-group">
     <%= form.label "Numero de Lote", style: "display: block" %>

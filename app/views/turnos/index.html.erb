@@ -26,7 +26,8 @@
             <p> Nombre del Usuario:   <b> <%= User.find(turno.user_id).name %> </b></p>
             <% end %>
             <% if !turno.nombre_perro.blank? %>
-            <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
+            <% perro = Perro.find_by(nombre: turno.nombre_perro, user_id: turno.user_id) %>
+            <p> Nombre del Perro:   <b>   <%= link_to turno.nombre_perro, perro_path(perro)%>
             <% end %>
             <% # Obtén el objeto Perro asociado al turno %>
          <% perro = Perro.find_by(nombre: turno.nombre_perro, user_id: turno.user_id) %>
@@ -88,8 +89,16 @@
             <p> Nombre del Usuario:   <b> <%= User.find(turno.user_id).name %> </b></p>
             <% end %>
             <% if !turno.nombre_perro.blank? %>
-            <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
+            <% perro = Perro.find_by(nombre: turno.nombre_perro, user_id: turno.user_id) %>
+            <p> Nombre del Perro:   <b>   <%= link_to turno.nombre_perro, perro_path(perro)%>
             <% end %>
+            <% perro = Perro.find_by(nombre: turno.nombre_perro, user_id: turno.user_id) %>
+
+            <% if perro.present? %>
+              <p>Edad del Perro: <b><%= perro.edad %></b></p>
+          <% else %>
+               <p>Edad del Perro: <b>No disponible</b></p>
+           <% end %>
 
             <% if !turno.motivo_rechazo.blank? %>
             <p> Motivo de rechazo:   <b> <%= turno.motivo_rechazo %> </b></p>
