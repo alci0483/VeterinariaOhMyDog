@@ -42,6 +42,9 @@
             <p> Tipo de servicio:   <b> <%= turno.tipo_servicio %> </b></p>
             <!-- Agrega aquí más detalles según sea necesario -->
             <p>Estado: <b><%= turno.estado_turno %></b></p>
+            <% if user_signed_in? && !current_user.admin? %>
+              <%= button_to "Cancelar Turno", cancelar_turno_path(turno), method: :post, class: 'btn btn-success' %>
+            <% end %>
 
             <% if user_signed_in? && current_user.admin? %>
             <%= button_to "Confirmar Turno", confirmar_turno_path(turnos_for_band.first), method: :post, class: 'btn btn-success' %>
@@ -79,6 +82,10 @@
             <% if !turno.nombre_perro.blank? %>
             <p> Nombre del Perro:   <b> <%= turno.nombre_perro %> </b></p>
             <% end %>
+
+            <% if !turno.motivo_rechazo.blank? %>
+            <p> Motivo de rechazo:   <b> <%= turno.motivo_rechazo %> </b></p>
+            <% end %>
             <p> Llevaras a un nuevo perro a la Veterinaria:
                <% if turno.primera_visita %>
                <b>si
@@ -94,6 +101,22 @@
             <% if user_signed_in? && !current_user.admin? && turno.estado_turno == 'confirmado'%>
               <%= button_to "Cancelar Turno", cancelar_turno_path(turno), method: :post, class: 'btn btn-success' %>
             <% end %>
+            <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='vacunacion'%>
+                 <%= link_to "Registrar Vacunación", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id), class: "btn btn-success" %>
+                    <!-- Agrega botones para otros tipos de servicios si es necesario -->
+           <% end %>
+           <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='castracion'%>
+                <%= link_to "Registrar Castracion", new_castracion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id), class: "btn btn-success" %>
+                   <!-- Agrega botones para otros tipos de servicios si es necesario -->
+          <% end %>
+          <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='desparasitación'%>
+               <%= link_to "Registrar Desparasitacion", new_desparasitacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id), class: "btn btn-success" %>
+                  <!-- Agrega botones para otros tipos de servicios si es necesario -->
+         <% end %>
+         <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='consulta general'%>
+              <%= link_to "Registrar Consulta General", new_consulta_general_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id), class: "btn btn-success" %>
+                 <!-- Agrega botones para otros tipos de servicios si es necesario -->
+        <% end %>
           </div>
         </li>
       <% end %>

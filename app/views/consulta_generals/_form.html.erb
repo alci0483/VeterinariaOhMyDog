@@ -16,9 +16,11 @@
   </div>
 
   <div >
-    <%= form.label :fecha ,"Fecha realizacion  de consulta"%>
-    <%= form.date_field :fecha,min: Date.today.to_s, required: true %>
+    <%= form.label :fecha ,"Fecha"%>
+    <%= form.date_field :fecha,max: Date.today.to_s, required: true %>
   </div>
+
+
 
     <%= form.hidden_field :perro_id, value: @perro_id %>
 

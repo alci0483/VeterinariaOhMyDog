@@ -13,7 +13,25 @@ class ConsultaGeneralsController < ApplicationController
   # GET /consulta_generals/new
   def new
     @consulta_general = ConsultaGeneral.new
-    @perro_id = params[:perro_id]
+    if params.key?(:nombre) && params.key?(:user_id)
+      # Si tienes tanto el nombre como el user_id, busca el perro por nombre dentro de los perros del usuario.
+      usuario = User.find(params[:user_id])
+      perro = usuario.perros.find_by(nombre: params[:nombre].strip)
+      @turno = Turno.find(params[:id])
+      @turno.update_column(:estado_turno, 'atendido')
+      @usuario = User.find(@turno.user_id)
+      mensaje = Mensaje.new(
+        contenido: @usuario.name + " te acaban de atender un turno para: " + @turno.tipo_servicio,
+        user_id: @usuario.id
+      )
+      mensaje.save
+    else
+      # Si no tienes el nombre, busca el perro por su ID.
+      perro = Perro.find(params[:perro_id])
+    end
+
+    @perro_id = perro.id
+    @edad_perro = perro.edad
   end
 
   # GET /consulta_generals/1/edit

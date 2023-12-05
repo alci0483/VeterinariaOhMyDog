@@ -13,9 +13,26 @@ class VacunacionsController < ApplicationController
   # GET /vacunacions/new
   def new
     @vacunacion = Vacunacion.new
-    @perro=Perro.find(params[:perro_id])
-    @servicio=params[:tipo_s]
+    #if params.key?(:nombre) && params.key?(:user_id)
+      # Si tienes tanto el nombre como el user_id, busca el perro por nombre dentro de los perros del usuario.
+    #  usuario = User.find(params[:user_id])
+    #  perro = usuario.perros.find_by(nombre: params[:nombre].strip)
+    #  @turno = Turno.find(params[:id])
+    #  @turno.update_column(:estado_turno, 'atendido')
+    #  @usuario = User.find(@turno.user_id)
+    #  mensaje = Mensaje.new(
+    #    contenido: @usuario.name + " te acaban de atender un turno para: " + @turno.tipo_servicio,
+    #  mensaje.save
+    #else
+      # Si no tienes el nombre, busca el perro por su ID.
+    #  perro = Perro.find(params[:perro_id])
+    #end
+    @perro = Perro.find(params[:perro_id])
+
   end
+
+  @perro=Perro.find(params[:perro_id])
+  @servicio=params[:tipo_s]
 
 
   # GET /vacunacions/1/edit

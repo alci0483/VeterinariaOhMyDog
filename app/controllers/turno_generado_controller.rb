@@ -26,7 +26,7 @@ class TurnoGeneradoController < ApplicationController
   private
 
   def turno_params
-    params.require(:turno).permit(:nombre_perro, :primera_visita, :tipo_servicio, :banda_horaria, :fecha, :descripcion, :user_id, :estado_turno, :perro_no_registrado)
+    params.require(:turno).permit(:nombre_perro, :primera_visita, :tipo_servicio, :banda_horaria, :fecha, :descripcion, :user_id, :estado_turno, :perro_no_registrado, :motivo_rechazo)
   end
 
 end

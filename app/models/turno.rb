@@ -16,11 +16,11 @@ class Turno < ApplicationRecord
 
     private
 # no se permiten sacar turnos en la misma vanda horaria en ese dia
-    def validacion_turnos_no_repetidos
-      if user.turnos.exists?(banda_horaria: banda_horaria) && !user.turnos.where(banda_horaria: banda_horaria, fecha: fecha).empty?
-        errors.add(:base, "No se puede sacar turno para esa Banda Horaria ")
-      end
-    end
+   def validacion_turnos_no_repetidos
+     if user.turnos.exists?(banda_horaria: banda_horaria) && !user.turnos.where(banda_horaria: banda_horaria, fecha: fecha).empty?
+      errors.add(:base, "No se puede sacar turno para esa Banda Horaria ")
+     end
+  end
 
     def validacion_castracion
       perro = Perro.find_by(nombre: nombre_perro)

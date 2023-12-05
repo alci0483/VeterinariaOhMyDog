@@ -1,0 +1,11 @@
+
+<%= form_with(model: @turno, url: generador_motivo_path(@turno), method: :patch) do |f| %>
+
+
+  <div class="form-group">
+    <%= f.label :motivo_rechazo, "Agrega el motivo del rechazo del Turno" %>
+    <%= f.text_area :motivo_rechazo, class: "input-tamanocampo", required: true %>
+  </div>
+
+  <%= f.submit "Confirmar" %>
+<% end %>
