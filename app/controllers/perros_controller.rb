@@ -3,7 +3,7 @@ class PerrosController < ApplicationController
 
   # GET /perros or /perros.json
   def index
-    @perros = Perro.all.order(created_at: :desc)
+    @perros = Perro.all.order(edad: :asc)
   end
 
   # GET /perros/1 or /perros/1.json
