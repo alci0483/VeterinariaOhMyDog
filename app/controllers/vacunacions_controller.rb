@@ -16,8 +16,8 @@ class VacunacionsController < ApplicationController
 
     @usuario = User.find(params[:user_id])
     @perro = @usuario.perros.find_by(nombre: params[:nombre].strip)
-  
-    if params[:id].to_i < 100
+
+    if params[:id].to_i >=0
       @turno = Turno.find(params[:id])
 
       @turno.update_column(:estado_turno, 'atendido')

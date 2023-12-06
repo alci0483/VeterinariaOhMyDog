@@ -39,12 +39,12 @@
        <p>El perro ya tiene un turno para parvovirus.</p>
      <% end %>
      <% if @mostrar_antirrabica%>
-      <%= link_to new_vacunacion_path(nombre: @perro.nombre, user_id:@perro.user_id ,id: 100,tipo_s: "antirrabica"), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+      <%= link_to new_vacunacion_path(nombre: @perro.nombre, user_id:@perro.user_id ,id: -1,tipo_s: "antirrabica"), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
        <p>Aplicar Vacuna antirrabica</p>
          <% end %>
      <% end %>
      <% if @mostrar_parvovirus %>
-     <%= link_to new_vacunacion_path(nombre: @perro.nombre, user_id:@perro.user_id ,id: 100,tipo_s: "parvovirus"), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
+     <%= link_to new_vacunacion_path(nombre: @perro.nombre, user_id:@perro.user_id ,id: -1,tipo_s: "parvovirus"), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
        <p>Aplicar Vacuna parvovirus</p>
          <% end %>
        <% end %>
@@ -64,7 +64,7 @@
      <% else %>
        <p>No hay castración registrada para este perro.</p>
      <% end %>
-     <% if user_signed_in? && current_user.admin? && @tiene_turno_castracion  && @estado_turno_castracion=='pendiente'||@estado_turno_castracion =='confirmado' %>  
+     <% if user_signed_in? && current_user.admin? && @tiene_turno_castracion  && @estado_turno_castracion=='pendiente'||@estado_turno_castracion =='confirmado' %>
       <p>El perro ya tiene un turno para castracion.</p>
    <% end %>
 

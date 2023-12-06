@@ -123,28 +123,52 @@
               <%= button_to "No asistio al Turno", inasistir_turno_path(turno), method: :post, class: 'btn btn-success' %>
             <% end %>
 
-            <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=="antirrabica"%>
 
-                 <%= link_to "Aplicar Vacunación Antirrabica", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "antirrabica"), class: "btn btn-success" %>
-                    <!-- Agrega botones para otros tipos de servicios si es necesario -->
+
+            <% perro = Perro.find_by(nombre: turno.nombre_perro, user_id: turno.user_id) %>
+
+
+            <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=="antirrabica" %>
+
+                 <%if perro.vacunacions.exists?(tipo_vacuna: "antirrabica") %>
+                   <% anti=perro.vacunacions.where(tipo_vacuna: "antirrabica").last %>
+                   <%if perro.edad < 4 %>
+                       <%if (Date.today.to_time-anti.created_at.to_time).to_i > 21 %>
+                          <%= link_to "Aplicar Vacunación Antirrabica", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "antirrabica"), class: "btn btn-success" %>
+                      <% end %>
+                   <% else %>
+                      <%if (Date.today.to_time-anti.created_at.to_time).to_i > 365 %>
+                        <%= link_to "Aplicar Vacunación Antirrabica", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "antirrabica"), class: "btn btn-success" %>
+                      <% end %>
+                  <% end %>
+                <% else %>
+                  <%= link_to "Aplicar Vacunación Antirrabica", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "antirrabica"), class: "btn btn-success" %>
+                <% end %>
+
            <% end %>
 
            <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=="parvovirus"%>
-                <%= link_to "Aplicar Vacunación Parvovirus", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "parvovirus"), class: "btn btn-success" %>
-                   <!-- Agrega botones para otros tipos de servicios si es necesario -->
+             <%if perro.vacunacions.exists?(tipo_vacuna: "parvovirus") %>
+               <% anti=perro.vacunacions.where(tipo_vacuna: "parvovirus").last %>
+               <%if perro.edad > 5 %>
+                  <%if (Date.today.to_time-anti.created_at.to_time).to_i > 365 %>
+                    <%= link_to "Aplicar Vacunación Parvovirus", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "parvovirus"), class: "btn btn-success" %>
+                  <% end %>
+              <% end %>
+            <% else %>
+               <%= link_to "Aplicar Vacunación Parvovirus", new_vacunacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id,tipo_s: "parvovirus"), class: "btn btn-success" %>
+            <% end %>
           <% end %>
 
-
-
-           <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='castracion'%>
+           <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='castracion' && turno.fecha == Date.today%>
                 <%= link_to "Registrar Castracion", new_castracion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id), class: "btn btn-success" %>
                    <!-- Agrega botones para otros tipos de servicios si es necesario -->
           <% end %>
-          <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='desparasitacion'%>
+          <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='desparasitacion' &&turno.fecha == Date.today%>
                <%= link_to "Registrar Desparasitacion", new_desparasitacion_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id), class: "btn btn-success" %>
                   <!-- Agrega botones para otros tipos de servicios si es necesario -->
          <% end %>
-         <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='consulta general'%>
+         <% if user_signed_in?  && current_user.admin? && turno.estado_turno == 'confirmado' && turno.tipo_servicio=='consulta general' && turno.fecha == Date.today%>
               <%= link_to "Registrar Consulta General", new_consulta_general_path(nombre:turno.nombre_perro, user_id:User.find(turno.user_id),id:turno.id), class: "btn btn-success" %>
                  <!-- Agrega botones para otros tipos de servicios si es necesario -->
         <% end %>
