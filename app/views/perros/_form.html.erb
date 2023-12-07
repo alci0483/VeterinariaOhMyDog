@@ -23,12 +23,12 @@
 
   <div>
     <%= form.label :raza, style: "display: block" %>
-    <%= form.text_field :raza, required: true %>
+    <%= form.select :raza, ['Labrador Retriever', 'Golden Retriever', 'German Shepherd', 'Bulldog', 'Beagle', 'Poodle', 'Rottweiler', 'Dachshund', 'Boxer', 'Shih Tzu', 'Siberian Husky', 'Doberman Pinscher', 'Great Dane', 'Chihuahua', 'Pug', 'Yorkshire Terrier', 'Border Collie', 'Cocker Spaniel', 'Australian Shepherd', 'Shetland Sheepdog', 'Maltese', 'Dalmatian', 'Basset Hound', 'Cavalier King Charles Spaniel','Otra'], required: true %> 
   </div>
 
   <div>
     <%= form.label :sexo, style: "display: block" %>
-    <%= form.text_field :sexo, required: true %>
+    <%= form.select :sexo, ['Macho', 'Hembra'], required: true %>
   </div>
 
   <div>

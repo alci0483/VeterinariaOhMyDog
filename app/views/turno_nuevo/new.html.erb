@@ -11,10 +11,7 @@
   <%= f.label :nombre_perro, "Selecciona el perro" %>
   <%= f.text_field :nombre_perro, class: "input-tamanocampo", required: true, readonly: true, value: @perro.nombre %>
 
-  <div class="form-group">
-    <%= f.label :primera_visita, "Voy a llevar un nuevo perro a la veterinaria." %>
-    <%= f.check_box :primera_visita %>
-  </div>
+  
 
   <%= f.label :tipo_servicio, "Selecciona el tipo de servicio" %>
   <%= f.select :tipo_servicio, ["aplicacion vacuna antirrabica", "aplicacion vacuna parvovirus", "desparasitacion", "castracion", "consulta general"], {}, required: true %>

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
    resources :perros do
   get 'generar_turno', on: :member
    end
-  resources :turnos, only: [:index, :new, :create]
+  resources :turnos, only: [:index, :new, :create, :show]
   resources :consulta_generals
   resources :desparasitacions
   resources :castracions

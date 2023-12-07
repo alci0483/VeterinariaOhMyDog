@@ -39,13 +39,17 @@
        <p>El perro ya tiene un turno para parvovirus.</p>
      <% end %>
      <% if @mostrar_antirrabica%>
+      <% if user_signed_in? && current_user.admin? && @perro.edad  >1 %>
       <%= link_to new_vacunacion_path(nombre: @perro.nombre, user_id:@perro.user_id ,id: -1,tipo_s: "antirrabica"), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
        <p>Aplicar Vacuna antirrabica</p>
+        <% end %>
          <% end %>
      <% end %>
      <% if @mostrar_parvovirus %>
+       <% if user_signed_in? && current_user.admin? && @perro.edad  > 5 %>
      <%= link_to new_vacunacion_path(nombre: @perro.nombre, user_id:@perro.user_id ,id: -1,tipo_s: "parvovirus"), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
        <p>Aplicar Vacuna parvovirus</p>
+        <% end %>
          <% end %>
        <% end %>
    </div>
@@ -69,8 +73,10 @@
    <% end %>
 
      <% unless @perro.castracions.any? %>
+         <% if user_signed_in? && current_user.admin? && @perro.edad  > 5%>
        <%= link_to new_castracion_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
          <p>Registrar una Castración</p>
+           <% end %>
        <% end %>
      <% end %>
    </div>
@@ -89,11 +95,16 @@
        <p>No hay desparasitaciones registradas para este perro.</p>
      <% end %>
      <% if user_signed_in? && current_user.admin? &&  @tiene_turno_desparasitacion  && @estado_turno_desparasitacion=='pendiente'||@estado_turno_desparasitacion =='confirmado' %>
-      <p>El perro ya tiene un turno para desparasitacion.</p>
-   <% end %>
+            <% turno= User.find(@perro.user_id).turnos.where(nombre_perro: @perro.nombre, tipo_servicio: 'desparasitacion').last %>
+            <%= link_to "El perro ya tiene un turno para desparasitacion.", new_desparasitacion_path(nombre:@perro.nombre, user_id:@perro.user_id,id: turno.id )%>
+   <% else %>
+   <% if user_signed_in? && current_user.admin? && @perro.edad  >= 3%>
      <%= link_to new_desparasitacion_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
        <p>Registrar una desparasitacion</p>
+       <% end %>
      <% end %>
+  <% end %>
+
    </div>
  </div>
  <br>
@@ -112,8 +123,10 @@
      <% if user_signed_in? && current_user.admin? &&  @tiene_turno_consultageneral  && @estado_turno_consultageneral=='pendiente'||@estado_turno_consultageneral =='confirmado' %>
       <p>El perro ya tiene un turno para consulta general.</p>
    <% end %>
+       <% if user_signed_in? && current_user.admin?%>
      <%= link_to new_consulta_general_path(perro_id: @perro), class: "btn bg-success p-2 text-white bg-opacity-50" do %>
        <p>Registrar una consulta general</p>
+          <% end %>
      <% end %>
    </div>
  </div>

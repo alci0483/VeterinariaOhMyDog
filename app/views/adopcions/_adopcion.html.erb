@@ -8,23 +8,26 @@
       <strong>Tamanio:</strong>
       <%= adopcion.tamanio %>
     </h6>
+
     <h6 class="card-text text-center">
       <strong>Edad:</strong>
       <%= adopcion.edad %>
     </h6>
+
     <h6 class="card-text text-center">
       <strong>Ubicacion:</strong>
       <%= adopcion.ubicacion %>
     </h6>
+
     <h6 class="card-text text-center">
       <strong>Raza:</strong>
       <%= adopcion.raza %>
-      
     </h6>
+
     <h6 class="card-text text-center">
     <strong>estado:</strong>
     <td><%= adopcion.estado %></td>
-    
+
     </h6>
     <% if user_signed_in? && !current_user.admin? && adopcion.estado == 'en adopcion' && adopcion.user_id == current_user.id%>
     <%= button_to "Adoptado", adoptar_adopcion_path(adopcion), method: :post, class: 'btn btn-success' %>
@@ -32,6 +35,7 @@
     <% if user_signed_in? && adopcion.user_id != current_user.id %>
       <button onclick="return confirm('acercate a la veterinaria para más información')">Contactar</button>
     <% end %>
-    
+    <br>
+    <%= link_to 'Modificar', edit_adopcion_path(adopcion), class: "btn bg-success p-2 text-white bg-opacity25" %>
   </div>
 </div>

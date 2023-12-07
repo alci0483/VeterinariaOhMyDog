@@ -1,4 +1,7 @@
 class TurnosController < ApplicationController
+  def show
+    @turno = Turno.find(params[:id])
+  end
 
   def index
     if user_signed_in? && !current_user.admin?

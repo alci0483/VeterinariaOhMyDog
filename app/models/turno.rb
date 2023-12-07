@@ -5,14 +5,17 @@ class Turno < ApplicationRecord
   validate :validacion_vacunacion_antirrabica_1
   validate :validacion_vacunacion_antirrabica_2
 
+  validate :validacion_castracion_edad
+  validate :validacion_vacunacion_desparasitacion_edad
+
   validate :validacion_vacunacion_parvovirus
   validate :validacion_vacunacion_parvovirus_1
 
-  validate :validacion_turno_pendiente_antirrabica
-  validate :validacion_turno_pendiente_parvovirus
-  validate :validacion_turno_pendiente_castracion
-  validate :validacion_turno_pendiente_desparasitacion
-  validate :validacion_turno_pendiente_consulta_general
+  validate :validacion_turno_pendiente_confirmado_antirrabica
+  validate :validacion_turno_pendiente_confirmado_parvovirus
+  validate :validacion_turno_pendiente_confirmado_castracion
+  validate :validacion_turno_pendiente_confirmado_desparasitacion
+  validate :validacion_turno_pendiente_confirmado_consulta_general
 
 
   attribute :primera_visita, :boolean
@@ -24,7 +27,7 @@ class Turno < ApplicationRecord
     private
 # no se permiten sacar turnos en la misma vanda horaria en ese dia
    def validacion_turnos_no_repetidos
-     if user.turnos.exists?(banda_horaria: banda_horaria, estado_turno: "pendiente") && !user.turnos.where(banda_horaria: banda_horaria, fecha: fecha, estado_turno: "pendiente", tipo_servicio: tipo_servicio).empty?
+     if ((user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: tipo_servicio, banda_horaria: banda_horaria, estado_turno: "pendiente") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: tipo_servicio, banda_horaria: banda_horaria, fecha: fecha, estado_turno: "pendiente").empty?) || (user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: tipo_servicio, banda_horaria: banda_horaria, estado_turno: "pendiente") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: tipo_servicio, banda_horaria: banda_horaria, fecha: fecha, estado_turno: "pendiente").empty?))
       errors.add(:base, "No se puede sacar turno para esa Banda Horaria ")
      end
   end
@@ -35,6 +38,22 @@ class Turno < ApplicationRecord
         errors.add(:base, "este perro ya fue castrado")
       end
     end
+
+
+    def validacion_castracion_edad
+      perro = Perro.find_by(nombre: nombre_perro)
+      if tipo_servicio == 'castracion' && perro.edad< 6
+        errors.add(:base, "este perro  no puede sacar turno  para castracion por que tiene menos de 6 meses")
+      end
+    end
+
+    def validacion_vacunacion_desparasitacion_edad
+      perro = Perro.find_by(nombre: nombre_perro)
+      if tipo_servicio == 'desparasitacion' && perro.edad< 3
+        errors.add(:base, "este perro  no puede sacar turno  para desparasitacion por que tiene menos de 3 meses")
+      end
+    end
+
 
     def validacion_vacunacion_antirrabica
       perro = Perro.find_by(nombre: nombre_perro)
@@ -83,32 +102,34 @@ class Turno < ApplicationRecord
       end
     end
 
-    def validacion_turno_pendiente_antirrabica
-      if tipo_servicio=="antirrabica" && user.turnos.exists?(tipo_servicio: "antirrabica", estado_turno: "pendiente") && !user.turnos.where(tipo_servicio: "antirrabica", estado_turno: "pendiente").empty?
+
+
+    def validacion_turno_pendiente_confirmado_antirrabica
+      if tipo_servicio=="antirrabica" && ((user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: "antirrabica", estado_turno: "pendiente") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: "antirrabica", estado_turno: "pendiente").empty?) || (user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: "antirrabica", estado_turno: "confirmado") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: "antirrabica", estado_turno: "confirmado").empty?))
        errors.add(:base, "no puede sacar otro turno para vacunacion antirrabica porque ya saco uno previamente ")
       end
     end
 
-    def validacion_turno_pendiente_parvovirus
-      if tipo_servicio=="parvovirus" && user.turnos.exists?(tipo_servicio: "parvovirus", estado_turno: "pendiente") && !user.turnos.where(tipo_servicio: "parvovirus", estado_turno: "pendiente").empty?
+    def validacion_turno_pendiente_confirmado_parvovirus
+      if tipo_servicio=="parvovirus" && ((user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: "parvovirus", estado_turno: "pendiente") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: "parvovirus", estado_turno: "pendiente").empty?) || (user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: "parvovirus", estado_turno: "confirmado") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: "parvovirus", estado_turno: "confirmado").empty?))
        errors.add(:base, "no puede sacar otro turno para vacunacion Parvovirus porque ya saco uno previamente ")
       end
     end
 
-    def validacion_turno_pendiente_castracion
-      if tipo_servicio=="castracion" && user.turnos.exists?(tipo_servicio: "castracion", estado_turno: "pendiente") && !user.turnos.where(tipo_servicio: "castracion", estado_turno: "pendiente").empty?
+    def validacion_turno_pendiente_confirmado_castracion
+      if tipo_servicio=="castracion" && ((user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: "castracion", estado_turno: "pendiente") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: "castracion", estado_turno: "pendiente").empty?) || (user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: "castracion", estado_turno: "confirmado") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: "castracion", estado_turno: "confirmado").empty?))
        errors.add(:base, "no puede sacar otro turno para castracion porque ya saco uno previamente ")
       end
     end
 
-    def validacion_turno_pendiente_desparasitacion
-      if tipo_servicio=="desparasitacion" && user.turnos.exists?(tipo_servicio: "desparasitacion", estado_turno: "pendiente") && !user.turnos.where(tipo_servicio: "desparasitacion", estado_turno: "pendiente").empty?
+    def validacion_turno_pendiente_confirmado_desparasitacion
+      if tipo_servicio=="desparasitacion" && ((user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: "desparasitacion", estado_turno: "pendiente") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: "desparasitacion", estado_turno: "pendiente").empty?) || (user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: "desparasitacion", estado_turno: "confirmado") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: "desparasitacion", estado_turno: "confirmado").empty?))
        errors.add(:base, "no puede sacar otro turno para desparasitacion porque ya saco uno previamente ")
       end
     end
 
-    def validacion_turno_pendiente_consulta_general
-      if tipo_servicio=="consulta general" && user.turnos.exists?(tipo_servicio: "consulta general", estado_turno: "pendiente") && !user.turnos.where(tipo_servicio: "consulta general", estado_turno: "pendiente").empty?
+    def validacion_turno_pendiente_confirmado_consulta_general
+      if tipo_servicio=="consulta general" && ((user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: "consulta general", estado_turno: "pendiente") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: "consulta general", estado_turno: "pendiente").empty?) || (user.turnos.exists?(nombre_perro: nombre_perro, tipo_servicio: "consulta general", estado_turno: "confirmado") && !user.turnos.where(nombre_perro: nombre_perro, tipo_servicio: "consulta general", estado_turno: "confirmado").empty?))
        errors.add(:base, "no puede sacar otro turno para consulta general porque ya saco uno previamente ")
       end
     end
