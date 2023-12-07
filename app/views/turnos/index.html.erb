@@ -42,12 +42,12 @@
             <!-- Agrega aquí más detalles según sea necesario -->
             <p>Estado: <b><%= turno.estado_turno %></b></p>
             <% if user_signed_in? && !current_user.admin? %>
-              <%= button_to "Cancelar Turno", cancelar_turno_path(turno), method: :post, class: 'btn btn-success' %>
+              <%= button_to "Cancelar Turno", cancelar_turno_path(turno), method: :post, class: 'btn btn-success', onclick: 'return confirm("¿Estás seguro de que deseas marcarlo como cancelado?");' %>
             <% end %>
 
             <% if user_signed_in? && current_user.admin? %>
-            <%= button_to "Confirmar Turno", confirmar_turno_path(turnos_for_band.first), method: :post, class: 'btn btn-success' %>
-            <%= button_to "Rechazar Turno", rechazar_turno_path(turnos_for_band.first), method: :post, class: 'btn btn-success' %>
+            <%= button_to "Confirmar Turno", confirmar_turno_path(turnos_for_band.first), method: :post, class: 'btn btn-success', onclick: 'return confirm("¿Estás seguro de que deseas marcarlo como confirmado?");'  %>
+            <%= button_to "Rechazar Turno", rechazar_turno_path(turnos_for_band.first), method: :post, class: 'btn btn-success', onclick: 'return confirm("¿Estás seguro de que deseas marcarlo como rechazado?");' %>
             <% end %>
 
           </div>
@@ -98,11 +98,11 @@
             <!-- Agrega aquí más detalles según sea necesario -->
             <p>Estado: <b><%= turno.estado_turno %></b></p>
             <% if user_signed_in? && !current_user.admin? && turno.estado_turno == 'confirmado'%>
-              <%= button_to "Cancelar Turno", cancelar_turno_path(turno), method: :post, class: 'btn btn-success' %>
+              <%= button_to "Cancelar Turno", cancelar_turno_path(turno), method: :post, class: 'btn btn-success', onclick: 'return confirm("¿Estás seguro de que deseas marcarlo como cancelado?");' %>
             <% end %>
 
             <% if user_signed_in? && current_user.admin? && turno.estado_turno == 'confirmado'%>
-              <%= button_to "No asistio al Turno", inasistir_turno_path(turno), method: :post, class: 'btn btn-success' %>
+              <%= button_to "No asistio al Turno", inasistir_turno_path(turno), method: :post, class: 'btn btn-success', onclick: 'return confirm("¿Estás seguro de  marcarlo como que no asistio?");' %>
             <% end %>
 
 

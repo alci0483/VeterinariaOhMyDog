@@ -9,24 +9,20 @@ class PerrosController < ApplicationController
   # GET /perros/1 or /perros/1.json
   def show
     @perro = Perro.find(params[:id])
+    @usuario= User.find(@perro.user_id)
     @castracion = @perro.castracions
 
     @mostrar_antirrabica = true
     @mostrar_parvovirus = true
-    @tiene_turno_antirrabica = Turno.exists?(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'antirrabica')
-
-  # Verifica si hay un turno para parvovirus
-    @tiene_turno_parvovirus = Turno.exists?(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'parvovirus')
-    @tiene_turno_castracion = Turno.exists?(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'castracion')
-    @tiene_turno_desparasitacion = Turno.exists?(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'desparasitacion')
-    @tiene_turno_consultageneral = Turno.exists?(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'consulta general')
 
 
-    @estado_turno_antirrabica = Turno.find_by(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'antirrabica')&.estado_turno
-    @estado_turno_parvovirus = Turno.find_by(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'parvovirus')&.estado_turno
-    @estado_turno_castracion = Turno.find_by(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'castracion')&.estado_turno
-    @estado_turno_desparasitacion = Turno.find_by(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'desparasitacion')&.estado_turno
-    @estado_turno_consultageneral = Turno.find_by(nombre_perro: @perro.nombre, user_id: @perro.user_id, tipo_servicio: 'consulta general')&.estado_turno
+    @tiene_turno_antirrabica = ((@usuario.turnos.exists?(nombre_perro: @perro.nombre,tipo_servicio: 'antirrabica', estado_turno: "pendiente")) || (@usuario.turnos.exists?(nombre_perro: @perro.nombre,tipo_servicio: 'antirrabica', estado_turno: "confirmado")))
+    @tiene_turno_parvovirus = ((@usuario.turnos.exists?(nombre_perro: @perro.nombre,tipo_servicio: 'parvovirus', estado_turno: "pendiente")) || (@usuario.turnos.exists?(nombre_perro: @perro.nombre,tipo_servicio: 'parvovirus', estado_turno: "confirmado")))
+    @tiene_turno_castracion = ((@usuario.turnos.exists?(nombre_perro: @perro.nombre,tipo_servicio: 'castracion', estado_turno: "pendiente")) || (@usuario.turnos.exists?(nombre_perro: @perro.nombre,tipo_servicio: 'castracion', estado_turno: "confirmado")))
+    @tiene_turno_desparasitacion = ((@usuario.turnos.exists?(nombre_perro: @perro.nombre,tipo_servicio: 'desparasitacion', estado_turno: "pendiente")) || (@usuario.turnos.exists?(nombre_perro: @perro.nombre,tipo_servicio: 'desparasitacion', estado_turno: "confirmado")))
+    @tiene_turno_consultageneral = ((@usuario.turnos.exists?(nombre_perro: @perro.nombre,tipo_servicio: 'consulta general', estado_turno: "pendiente")) || (@usuario.turnos.exists?(nombre_perro: @perro.nombre,tipo_servicio: 'consulta general', estado_turno: "confirmado")))
+
+
 
 
 
